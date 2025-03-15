@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reviewer.css">
+    <title>Software Process Models - CIT 214</title>
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Left side navigation -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <h3>MIDTERM REVIEWER</h3>
+                </a>
+                <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle navigation">
+                    <span class="toggle-icon"></span>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <ul class="subject-list">
+                    <li class="subject-item">
+                        <span class="subject-name">Software Engineering</span>
+                        <ul class="chapter-list">
+                            <li><a href="SEChap1.html">Software</a></li>
+                            <li><a href="SEChap2.html">Software Engineering</a></li>
+                            <li><a href="SEChap3.html">Software Engineering Activities</a></li>
+                            <li><a href="SEChap4.html">Software Engineering Principles</a></li>
+                            <li><a href="SEChap5.html">Ethics in Software Engineering</a></li>
+                            <li><a href="SEChap6.html">SDLC & Software Process</a></li>
+                            <li><a href="SEChap7.html">Software Process Models</a></li>
+                            <li><a href="SEChap8.html">Agile Development</a></li>
+                        </ul>
+                    </li>
+                    <li class="subject-item">
+                        <span class="subject-name">System Analysis & Design</span>
+                        <ul class="chapter-list">
+                            <li><a href="../SAD/SADChap1.html">Intro to SAD</a></li>
+                            <li><a href="../SAD/SADChap2.html">Analyzing Business Case</a></li>
+                            <li><a href="../SAD/SADChap3.html">Managing System Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="subject-item">
+                        <span class="subject-name">Machine Learning</span>
+                        <ul class="chapter-list">
+                            <li><a href="../ML/MLChap1.html">Intro to Machine Learning</a></li>
+                            <li><a href="../ML/MLChap2.html">EDA</a></li>
+                            <li><a href="../ML/MLChap3.html">Regression</a></li>
+                            <li><a href="../ML/MLChap4.html">Time Series</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main id="content" class="maincontent">
+            <h1>SOFTWARE</h1>
+            <p class="highlight-box">CIT 214 - Software Engineering</p>
+        
+            <!-- What is Software Section -->
+            <div class="model-section">
+                <h2>WHAT IS SOFTWARE?</h2>
+                
+                <div class="concept">
+                    <p>Software is a collection of instructions, data, or computer programs that are used to run machines and carry out particular activities.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Software</strong> is a set of instructions or commands that tell a computer what to do.</p>
+                </div>
+                
+                <p>Software is the antithesis of hardware, which refers to a computer's external components.</p>
+                
+                <p>A device's running programs, scripts, and applications are collectively referred to as "software" in this context.</p>
+            </div>
+        
+            <!-- System Software Section -->
+            <div class="model-section">
+                <h2>SYSTEM SOFTWARE</h2>
+                
+                <div class="concept">
+                    <p>System Software directly operates the computer hardware and provides the basic functionality to the users as well as to the other software to operate smoothly.</p>
+                </div>
+                
+                <p>It controls a computer's internal functioning and also controls hardware devices such as monitors, printers, and storage devices, etc.</p>
+                
+                <div class="tabs">
+                    <div class="tab tab-blue active" onclick="openTab(event, 'os')" title="Operating System"></div>
+                    <div class="tab tab-blue" onclick="openTab(event, 'processor')" title="Language Processor"></div>
+                    <div class="tab tab-blue" onclick="openTab(event, 'driver')" title="Device Driver"></div>
+                    <div class="tab tab-purple" onclick="openTab(event, 'features')" title="Features"></div>
+                </div>
+                
+                <div id="os" class="tab-content information-tab active">
+                    <h3>Operating System (OS)</h3>
+                    <p>Main program of a computer system. When the computer system ON it is the first software that loads into the computer's memory.</p>
+                    <p>It manages all the resources such as computer memory, CPU, printer, hard disk, etc., and provides an interface to the user, which helps the user to interact with the computer system.</p>
+                    <p>Examples of operating systems are Linux, Apple macOS, and Microsoft Windows.</p>
+                </div>
+                
+                <div id="processor" class="tab-content information-tab">
+                    <h3>Language Processor</h3>
+                    <p>System software converts the human-readable language into a machine language and vice versa. This conversion is done by the language processor.</p>
+                    <p>It converts programs written in high-level programming languages like Java, C, C++, Python, etc. (known as source code), into sets of instructions that are easily readable by machines (known as object code or machine code).</p>
+                </div>
+                
+                <div id="driver" class="tab-content information-tab">
+                    <h3>Device Driver</h3>
+                    <p>A program or software that controls a device and helps that device to perform its functions.</p>
+                    <p>Every device like a printer, mouse, modem, etc. needs a driver to connect with the computer system eternally.</p>
+                    <p>So, when you connect a new device with your computer system, first you need to install the driver of that device so that your operating system knows how to control or manage that device.</p>
+                </div>
+                
+                <div id="features" class="tab-content best-practice-tab">
+                    <h3>Features of System Software</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Closer to the computer system.</li>
+                        <li>Written in a low-level language in general.</li>
+                        <li>Difficult to design and understand.</li>
+                        <li>Fast in speed (working speed).</li>
+                        <li>Less interactive for the users in comparison to application software.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Application Software Section -->
+            <div class="model-section">
+                <h2>APPLICATION SOFTWARE</h2>
+                
+                <div class="concept">
+                    <p>Application software is designed to help users perform specific tasks or functions.</p>
+                </div>
+                
+                <p>There are different types of application software:</p>
+                
+                <div class="tabs">
+                    <div class="tab tab-blue active" onclick="openTab(event, 'general')" title="General Purpose"></div>
+                    <div class="tab tab-blue" onclick="openTab(event, 'customized')" title="Customized"></div>
+                    <div class="tab tab-blue" onclick="openTab(event, 'utility')" title="Utility"></div>
+                    <div class="tab tab-purple" onclick="openTab(event, 'appfeatures')" title="Features"></div>
+                </div>
+                
+                <div id="general" class="tab-content information-tab active">
+                    <h3>General Purpose Software</h3>
+                    <p>Used for a variety of tasks and it is not limited to performing a specific task only.</p>
+                    <p>For example, MS-Word, MS-Excel, PowerPoint, etc.</p>
+                </div>
+                
+                <div id="customized" class="tab-content information-tab">
+                    <h3>Customized Software</h3>
+                    <p>Used or designed to perform specific tasks or functions or designed for specific organizations.</p>
+                    <p>For example, railway reservation system, airline reservation system, invoice management system, etc.</p>
+                </div>
+                
+                <div id="utility" class="tab-content information-tab">
+                    <h3>Utility Software</h3>
+                    <p>Used to support the computer infrastructure. It is designed to analyze, configure, optimize and maintain the system, and take care of its requirements as well.</p>
+                    <p>For example, antivirus, disk fragmenter, memory tester, disk repair, disk cleaners, registry cleaners, disk space analyzer, etc.</p>
+                </div>
+                
+                <div id="appfeatures" class="tab-content best-practice-tab">
+                    <h3>Features of Application Software</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Performs more specialized tasks like word processing, spreadsheets, email, etc.</li>
+                        <li>Requires more storage space.</li>
+                        <li>More interactive for the users, so it is easy to use and design.</li>
+                        <li>Easy to design and understand.</li>
+                        <li>Written in a high-level language in general.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Characteristics of Software Section -->
+            <div class="model-section">
+                <h2>CHARACTERISTICS OF SOFTWARE</h2>
+                
+                <div class="concept">
+                    <p>Software has several key characteristics that define its quality and performance.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Characteristics of Software</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Reliability:</strong> The ability of the software to consistently perform its intended tasks without unexpected failures or errors.</li>
+                        <li><strong>Usability:</strong> How easily and effectively users can interact with and navigate through the software.</li>
+                        <li><strong>Efficiency:</strong> The optimal utilization of system resources to perform tasks on time.</li>
+                        <li><strong>Maintainability:</strong> How easily and cost-effectively software can be modified, updated, or extended.</li>
+                        <li><strong>Portability:</strong> The ability of software to run on different platforms or environments without requiring significant modifications.</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <div class="maincontent" style="font-size: 80%;">
+            <div class="key-takeaway">
+                <h3>2 Types of Software</h3>
+                <ul>
+                    <li><strong>System Software</strong> - operates the computer hardware and provides the basic functionality</li>
+                    <li><strong>Application Software</strong> - designed to help users perform specific tasks or functions</li>
+                </ul>
+            </div>
+            <div class="best-practice">
+                <h3>3 Components of System Software</h3>
+                <ul>
+                    <li><strong>Operating System (OS)</strong> - main program of a computer system</li>
+                    <li><strong>Language Processor</strong> - converts the human-readable language into a machine language (source code to object code)</li>
+                    <li><strong>Device Drivers</strong> controls a device and helps that device to perform its functions</li>
+                </ul>
+            </div>
+            <div class="best-practice">
+                <h3>3 Types of Application Software</h3>
+                <ul>
+                    <li><strong>General Purpose Software</strong> - used for a variety of tasks by anyone</li>
+                    <li><strong>Customized Software</strong> - designed to perform specific tasks or functions or designed for specific organizations</li>
+                    <li><strong>Utility Software</strong> - designed to analyze, configure, optimize and maintain the system</li>
+                </ul>
+            </div>
+            <div class="information">
+                <h3>Characteristics of Software (PRUME)</h3>
+                <ul>
+                    <li>Portability</li>
+                    <li>Reliability</li>
+                    <li>Usability</li>
+                    <li>Maintainability</li>
+                    <li>Efficiency</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    <script src="../reviewer.js"></script>
+</body>
+</html>

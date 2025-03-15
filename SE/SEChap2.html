@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reviewer.css">
+    <title>Software Process Models - CIT 214</title>
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Left side navigation -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <h3>MIDTERM REVIEWER</h3>
+                </a>
+                <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle navigation">
+                    <span class="toggle-icon"></span>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <ul class="subject-list">
+                    <li class="subject-item">
+                        <span class="subject-name">Software Engineering</span>
+                        <ul class="chapter-list">
+                            <li><a href="SEChap1.html">Software</a></li>
+                            <li><a href="SEChap2.html">Software Engineering</a></li>
+                            <li><a href="SEChap3.html">Software Engineering Activities</a></li>
+                            <li><a href="SEChap4.html">Software Engineering Principles</a></li>
+                            <li><a href="SEChap5.html">Ethics in Software Engineering</a></li>
+                            <li><a href="SEChap6.html">SDLC & Software Process</a></li>
+                            <li><a href="SEChap7.html">Software Process Models</a></li>
+                            <li><a href="SEChap8.html">Agile Development</a></li>
+                        </ul>
+                    </li>
+                    <li class="subject-item">
+                        <span class="subject-name">System Analysis & Design</span>
+                        <ul class="chapter-list">
+                            <li><a href="../SAD/SADChap1.html">Intro to SAD</a></li>
+                            <li><a href="../SAD/SADChap2.html">Analyzing Business Case</a></li>
+                            <li><a href="../SAD/SADChap3.html">Managing System Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="subject-item">
+                        <span class="subject-name">Machine Learning</span>
+                        <ul class="chapter-list">
+                            <li><a href="../ML/MLChap1.html">Intro to Machine Learning</a></li>
+                            <li><a href="../ML/MLChap2.html">EDA</a></li>
+                            <li><a href="../ML/MLChap3.html">Regression</a></li>
+                            <li><a href="../ML/MLChap4.html">Time Series</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main id="content" class="maincontent">
+            <h1>SOFTWARE ENGINEERING</h1>
+            <p class="highlight-box">CIT 214 - Software Engineering</p>
+        
+            <!-- What is Software Engineering Section -->
+            <div class="model-section">
+                <h2>WHAT IS SOFTWARE ENGINEERING?</h2>
+                
+                <div class="concept">
+                    <p>Software Engineering is an engineering discipline that involves all aspects of developing and maintaining a software product. Like other engineering disciplines such as civil and electrical, it involves the design, analysis, and construction of an artifact for some practical purpose.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>The IEEE defines software engineering as:</strong> 1. The application of a systematic, disciplined, quantifiable approach to the development, operation and maintenance of software, that is, the application of engineering to software. 2. The study of approaches as in (1).</p>
+                </div>
+                
+                <p>It's not only what is produced that's important but also how it is produced. Engineering disciplines employ an established set of systematic, disciplined, and quantifiable approaches to development of artifacts.</p>
+                
+                <p>By applying an analogous set of approaches to the development of software, we can expect the production of software that is highly reliable, is maintainable, and meets specified requirements.</p>
+                
+                <p>A disciplined approach is particularly important as the size of a software project grows.</p>
+                
+                <div class="key-takeaway">
+                    <h3>Goal of Software Engineering</h3>
+                    <p>The creation of software systems that meet the needs of customers and are <strong>reliable, efficient, and maintainable</strong>. The system should be produced in an economical fashion, meeting project schedules and budgets.</p>
+                </div>
+            </div>
+        
+            <!-- Software Disasters Section -->
+            <div class="model-section">
+                <h2>SOFTWARE DISASTERS</h2>
+                
+                <div class="tabs">
+                    <div class="tab tab-red active" onclick="openTab(event, 'mariner')" title="Mariner Bug"></div>
+                    <div class="tab tab-red" onclick="openTab(event, 'ww3')" title="World War III"></div>
+                    <div class="tab tab-red" onclick="openTab(event, 'therac')" title="Therac-25"></div>
+                    <div class="tab tab-red" onclick="openTab(event, 'y2k')" title="Y2K"></div>
+                    <div class="tab tab-red" onclick="openTab(event, 'cancer')" title="Cancer Treatment"></div>
+                </div>
+                
+                <div id="mariner" class="tab-content warning-tab active">
+                    <h3>Mariner Bugs Out (1962)</h3>
+                    <p><strong>Cost:</strong> $18.5 million</p>
+                    <p><strong>Disaster:</strong> The Mariner 1 rocket with a space probe headed for Venus diverted from its intended flight path shortly after launch. Mission Control destroyed the rocket 293 seconds after liftoff.</p>
+                    <p><strong>Cause:</strong> A programmer incorrectly transcribed a handwritten formula into computer code, missing a single superscript bar. Without the smoothing function indicated by the bar, the software treated normal variations of velocity as if they were serious, causing faulty corrections that sent the rocket off course.</p>
+                </div>
+                
+                <div id="ww3" class="tab-content warning-tab">
+                    <h3>World War III… Almost (1983)</h3>
+                    <p><strong>Cost:</strong> Nearly all of humanity</p>
+                    <p><strong>Disaster:</strong> The Soviet early warning system falsely indicated the United States had launched five ballistic missiles. Fortunately the Soviet duty officer had a "funny feeling in my gut" and reasoned if the U.S. was really attacking they would launch more than five missiles, so he reported the apparent attack as a false alarm.</p>
+                    <p><strong>Cause:</strong> A bug in the Soviet software failed to filter out false missile detections caused by sunlight reflecting off cloud-tops.</p>
+                </div>
+                
+                <div id="therac" class="tab-content warning-tab">
+                    <h3>Medical Machine Kills (1985)</h3>
+                    <p><strong>Cost:</strong> Three people dead, three people critically injured</p>
+                    <p><strong>Disaster:</strong> Canada's Therac-25 radiation therapy machine malfunctioned and delivered lethal radiation doses to patients.</p>
+                    <p><strong>Cause:</strong> Because of a subtle bug called a race condition, a technician could accidentally configure Therac-25 so the electron beam would fire in high-power mode without the proper patient shielding.</p>
+                </div>
+                
+                <div id="y2k" class="tab-content warning-tab">
+                    <h3>Y2K (1999)</h3>
+                    <p><strong>Cost:</strong> $500 billion</p>
+                    <p><strong>Disaster:</strong> One man's disaster is another man's fortune, as demonstrated by the infamous Y2K bug. Businesses spent billions on programmers to fix a glitch in legacy software. While no significant computer failures occurred, preparation for the Y2K bug had a significant cost and time impact on all industries that use computer technology.</p>
+                    <p><strong>Cause:</strong> To save computer storage space, legacy software often stored the year for dates as two digit numbers, such as "99" for 1999. The software also interpreted "00" to mean 1900 rather than 2000, so when the year 2000 came along, bugs would result.</p>
+                </div>
+                
+                <div id="cancer" class="tab-content warning-tab">
+                    <h3>Cancer Treatment to Die For (2000)</h3>
+                    <p><strong>Cost:</strong> Eight people dead, 20 critically injured</p>
+                    <p><strong>Disaster:</strong> Radiation therapy software by Multidata Systems International miscalculated the proper dosage, exposing patients to harmful and in some cases fatal levels of radiation. The physicians, who were legally required to double-check the software's calculations, were indicted for murder.</p>
+                    <p><strong>Cause:</strong> The software calculated radiation dosage based on the order in which data was entered, sometimes delivering a double dose of radiation.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>How can a simple software error end up costing so much?</h3>
+                    <p>The financial toll of software errors depends on a few factors:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>The direct cost of paying developers and software engineers to sort out the mess.</li>
+                        <li>Downtime, lost data, and squandered transactions.</li>
+                        <li>In the aftermath, there's the reputational damage to consider.</li>
+                        <li>As well as monetary repercussions, there can also be negative effects on people's privacy, valuable data and even their safety.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Why Software Fail or Succeed Section -->
+            <div class="model-section">
+                <h2>WHY SOFTWARE FAIL OR SUCCEED</h2>
+                
+                <div class="concept">
+                    <p>An unsuccessful project is one that fails to meet expectations. The undesirable outcomes may include:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Over budget</li>
+                        <li>Exceeds schedule and/or misses market window</li>
+                        <li>Doesn't meet stated customer requirements</li>
+                        <li>Lower quality than expected</li>
+                        <li>Performance doesn't meet expectations</li>
+                        <li>Too difficult to use</li>
+                    </ul>
+                </div>
+                
+                <p>Failing to meet just one of these objectives can cause a project to be deemed unsuccessful.</p>
+                
+                <div class="example">
+                    <h3>Example</h3>
+                    <p>If a project is completed under budget, meets all requirements and functionality, has high quality, good performance and is easy to use, it may still not be successful if the schedule was missed and no customers are willing to purchase it as a result.</p>
+                </div>
+                
+                <div class="tabs">
+                    <div class="tab tab-red active" onclick="openTab(event, 'failure')" title="Failure"></div>
+                    <div class="tab tab-blue" onclick="openTab(event, 'factors')" title="Factors"></div>
+                    <div class="tab tab-purple" onclick="openTab(event, 'role')" title="Role"></div>
+                </div>
+                
+                <div id="failure" class="tab-content warning-tab active">
+                    <h3>Reasons for Software Failure</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Unrealistic or unarticulated project goals</li>
+                        <li>Poor project management</li>
+                        <li>Inaccurate estimates of needed resources</li>
+                        <li>Badly defined system requirements</li>
+                        <li>Poor reporting of the project's status</li>
+                        <li>Unmanaged risks</li>
+                        <li>Poor communication among customers, developers, and users</li>
+                        <li>Inability to handle the project's complexity</li>
+                    </ul>
+                </div>
+                
+                <div id="factors" class="tab-content information-tab">
+                    <h3>Other Contributing Factors</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Poor software design methodology</li>
+                        <li>Wrong or inefficient set of development tools</li>
+                        <li>Poor testing methodology</li>
+                        <li>Inadequate test coverage</li>
+                        <li>Inappropriate (or lack of) software process</li>
+                    </ul>
+                </div>
+                
+                <div id="role" class="tab-content best-practice-tab">
+                    <h3>Role of Software Engineering</h3>
+                    <p>Unsuccessful software projects usually fall victim to several of these factors. The goal of software engineering is to create software systems that are reliable, efficient, maintainable, and meets the needs of the customers.</p>
+                    <p>Software engineering provides the tools and methodologies necessary to accomplish these goals, resulting in the development of successful systems.</p>
+                </div>
+            </div>
+        </main>
+        <div class="maincontent" style="font-size: 80%;">
+            <div class="information">
+                <p><strong>IEEE</strong> - Institute of Electrical and Electronics Engineers</p>
+            </div>
+            <div class="information">
+                <h3>The Goal of Software Engineering</h3>
+                <p>The goal of software engineering is to create software systems that are reliable, efficient, maintainable, and meets the needs of the customers.</p>
+            </div>
+        </div>
+    </div>
+    <script src="../reviewer.js"></script>
+</body>
+</html>

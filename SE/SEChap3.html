@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reviewer.css">
+    <title>Software Process Models - CIT 214</title>
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Left side navigation -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <h3>MIDTERM REVIEWER</h3>
+                </a>
+                <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle navigation">
+                    <span class="toggle-icon"></span>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <ul class="subject-list">
+                    <li class="subject-item">
+                        <span class="subject-name">Software Engineering</span>
+                        <ul class="chapter-list">
+                            <li><a href="SEChap1.html">Software</a></li>
+                            <li><a href="SEChap2.html">Software Engineering</a></li>
+                            <li><a href="SEChap3.html">Software Engineering Activities</a></li>
+                            <li><a href="SEChap4.html">Software Engineering Principles</a></li>
+                            <li><a href="SEChap5.html">Ethics in Software Engineering</a></li>
+                            <li><a href="SEChap6.html">SDLC & Software Process</a></li>
+                            <li><a href="SEChap7.html">Software Process Models</a></li>
+                            <li><a href="SEChap8.html">Agile Development</a></li>
+                        </ul>
+                    </li>
+                    <li class="subject-item">
+                        <span class="subject-name">System Analysis & Design</span>
+                        <ul class="chapter-list">
+                            <li><a href="../SAD/SADChap1.html">Intro to SAD</a></li>
+                            <li><a href="../SAD/SADChap2.html">Analyzing Business Case</a></li>
+                            <li><a href="../SAD/SADChap3.html">Managing System Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="subject-item">
+                        <span class="subject-name">Machine Learning</span>
+                        <ul class="chapter-list">
+                            <li><a href="../ML/MLChap1.html">Intro to Machine Learning</a></li>
+                            <li><a href="../ML/MLChap2.html">EDA</a></li>
+                            <li><a href="../ML/MLChap3.html">Regression</a></li>
+                            <li><a href="../ML/MLChap4.html">Time Series</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main id="content" class="maincontent">
+            <h1>SOFTWARE ENGINEERING ACTIVITIES</h1>
+            <p class="highlight-box">CIT 214 - Software Engineering</p>
+            <div class="model-section">
+                <h2>SOFTWARE ENGINEERING ACTIVITIES</h2>
+                
+                <div class="definition">
+                    <p>Software engineering activities involve the coordination of people, product development, project management, and process implementation to create successful software products.</p>
+                </div>
+                
+                <p>Software engineering activities, especially for large systems, require the coordination of many people (stakeholders) who must be arranged into teams. Their primary objective is to build a product that meets defined requirements. The entire effort must be organized into a cohesive project with a solid plan for success. Finally, to successfully develop the product, the activities of the people must be organized through use of an orderly and well-defined process.</p>
+                
+                <!-- Tab System -->
+                <div class="tabs">
+                    <div class="tab tab-green active" onclick="openTab(event, 'peopleTab')" title="People"></div>
+                    <div class="tab tab-blue" onclick="openTab(event, 'productTab')" title="Product"></div>
+                    <div class="tab tab-red" onclick="openTab(event, 'projectTab')" title="Project"></div>
+                    <div class="tab tab-purple" onclick="openTab(event, 'processTab')" title="Process"></div>
+                </div>
+                
+                <div id="peopleTab" class="tab-content key-takeaway-tab active">
+                    <h3>People in Software Engineering</h3>
+                    <p>The most important resource on a software project and the lifeblood of any successful project. Several groups of people <strong>(stakeholders)</strong> have a stake in a project's outcome, including business management, project management, the development team, customers, and end users.</p>
+                </div>
+                
+                <div id="productTab" class="tab-content information-tab">
+                    <h3>Product in Software Engineering</h3>
+                    <p>The product consists of much more than just source and object code. It also includes documentation, test plans and results, customer documentation or manuals, and productivity measurements. These products are called <strong>artifacts</strong>.</p>
+                </div>
+                
+                <div id="projectTab" class="tab-content warning-tab">
+                    <h3>Project in Software Engineering</h3>
+                    <p>A software project defines the activities and associated results needed to produce a software product. <strong>Every project involves a similar set of activities</strong>: planning, determining requirements, determining how the software should be built, implementing the software, testing, and maintaining it.</p>
+                </div>
+                
+                <div id="processTab" class="tab-content best-practice-tab">
+                    <h3>Process in Software Engineering</h3>
+                    <p>A software process is a framework for carrying out the activities of a project in an organized and disciplined manner. It imposes structure and helps guide the many people and activities in a coherent manner. Specific software process implementations are called <strong>software process models</strong>.</p>
+                </div>
+            </div>
+            
+            <!-- PEOPLE Section -->
+            <div class="model-section">
+                <h2>PEOPLE</h2>
+                
+                <div class="definition">
+                    <p>People are the most important resource on a software project and are the lifeblood of any successful project.</p>
+                </div>
+                
+                <p>Several groups of people are involved with and have a stake in a project's outcome. These are called stakeholders. Stakeholders include business management, project management, the development team, customers, and end users.</p>
+                
+                <div class="information">
+                    <h3>Business Management</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>People responsible for the business side of the company developing the software.</li>
+                        <li>Primary focus is on business issues including profit, cost effectiveness, market competitiveness, and customer satisfaction.</li>
+                        <li>Are typically not particularly knowledgeable about or involved in the technical aspects of the project.</li>
+                        <li>Includes senior management, marketing, and development management.</li>
+                    </ul>
+                </div>
+                
+                <div class="information">
+                    <h3>Project Management</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Are responsible for planning and tracking a project.</li>
+                        <li>Are involved throughout managing the people, process, and activities.</li>
+                        <li>Continuously monitor progress and proactively implement necessary changes and improvements to keep the project on schedule and within budget.</li>
+                    </ul>
+                </div>
+                
+                <div class="information">
+                    <h3>Development Team</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Software engineers are responsible for developing and maintaining the software.</li>
+                        <li>Handles requirements gathering, software architecture and design, implementation, testing, configuration management, and documentation.</li>
+                    </ul>
+                </div>
+                
+                <div class="information">
+                    <h3>Customers</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Responsible for purchasing the software.</li>
+                        <li>They may or may not actually use the software. They may be purchasing it for use by others in their organization.</li>
+                        <li>Primarily interested in software that is cost-effective, meets specific business needs, and is of high quality.</li>
+                        <li>Involved in some aspects of specifying requirements, and since they are paying for the project, they have the ultimate say in defining the requirements.</li>
+                    </ul>
+                </div>
+                
+                <div class="information">
+                    <h3>End-Users</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>End users are people who interact with and use software after it is finished being developed.</li>
+                        <li>Motivated by software that is easy to use and helps them perform their jobs as efficiently as possible.</li>
+                    </ul>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Key Takeaway</h3>
+                    <p>People are the most critical element in software engineering projects. Understanding the roles, responsibilities, and motivations of different stakeholders is essential for successful project execution.</p>
+                </div>
+            </div>
+            
+            <!-- PRODUCT Section -->
+            <div class="model-section">
+                <h2>PRODUCT</h2>
+                
+                <div class="definition">
+                    <p>The product of a software development effort consists of much more than the source and object code.</p>
+                </div>
+                
+                <p>Software products also include documentation, test plans and results, customer documentation or manuals, and productivity measurements. These products are called artifacts.</p>
+                
+                <div class="information">
+                    <h3>Main Product Artifacts of a Software Project</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Project documentation:</strong> Documents produced during software definition and development.</li>
+                        <li><strong>Code:</strong> Source and object. (Source code = Human readable, Object code = Machine readable)</li>
+                        <li><strong>Test documents:</strong> Plans, cases, and results.</li>
+                        <li><strong>Customer documents:</strong> Documents explaining how to use and operate the product.</li>
+                        <li><strong>Productivity measurements:</strong> Analyze project productivity.</li>
+                    </ul>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Key Takeaway</h3>
+                    <p>The complete software product includes not just code, but also various types of documentation and measurements that contribute to the overall quality and usefulness of the software.</p>
+                </div>
+            </div>
+            
+            <!-- PROJECT Section -->
+            <div class="model-section">
+                <h2>PROJECT</h2>
+                
+                <div class="definition">
+                    <p>A software project defines the activities and associated results needed to produce a software product.</p>
+                </div>
+                
+                <p>Every project involves a similar set of activities: planning, determining what's required, determining how the software should be built to meet the requirements, implementing the software, testing the software, and maintaining it once delivered to customers.</p>
+                
+                <div class="information">
+                    <h3>Major Activities of a Software Project</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Planning:</strong> Plan, monitor, and control the software project.</li>
+                        <li><strong>Requirements analysis:</strong> Define what to build.</li>
+                        <li><strong>Design:</strong> Describe how to build the software.</li>
+                        <li><strong>Implementation:</strong> Program the software.</li>
+                        <li><strong>Testing:</strong> Validate that software meets the requirements.</li>
+                        <li><strong>Deployment:</strong> Install the software for client use.</li>
+                        <li><strong>Maintenance:</strong> Resolve problems, adapt software to meet new requirements.</li>
+                    </ul>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Key Takeaway</h3>
+                    <p>A software project is a structured approach to developing software, involving a series of well-defined activities from planning to maintenance that must be carefully managed to ensure success.</p>
+                </div>
+            </div>
+            
+            <!-- PROCESS Section -->
+            <div class="model-section">
+                <h2>PROCESS</h2>
+                
+                <div class="definition">
+                    <p>A software process is a framework for carrying out the activities of a project in an organized and disciplined manner.</p>
+                </div>
+                
+                <p>It imposes structure and helps guide the many people and activities in a coherent manner. A software project progresses through different phases, each interrelated and bounded by time and a software process expresses the interrelationships among the phases by defining their order and frequency, as well as defining the deliverables of the project. Specific software process implementations are called software process models.</p>
+                
+                <div class="best-practice">
+                    <h3>Best Practice</h3>
+                    <p>Choosing the right software process model for a project is crucial for its success. The process should be tailored to the specific needs, constraints, and goals of the project.</p>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Key Takeaway</h3>
+                    <p>A well-defined software process provides structure and guidance to the project, ensuring that activities are carried out in a coherent and disciplined manner.</p>
+                </div>
+            </div>
+        </main>
+        <div class="maincontent" style="font-size: 80%;">
+            <div class="key-takeaway">
+                <h3>4 P's of Project Management</h3>
+                <ul>
+                    <li><strong>People</strong> - most important resource, the lifeblood</li>
+                    <li><strong>Product</strong> - not just the code but also documents</li>
+                    <li><strong>Project</strong> - activities and results needed to make the product</li>
+                    <li><strong>Process</strong> - framework for carrying out activities</li>
+                </ul>
+            </div>
+            <div class="information">
+                <h3>Stakeholders (BPDCE)</h3>
+                <p>People involved with and have a stake in a project's outcome.</p>
+                <ul>
+                    <li><strong>Business Management</strong> - Business side of the software development</li>
+                    <li><strong>Project Management</strong> - Plans and tracks the project</li>
+                    <li><strong>Development Team</strong> - Develops and maintains the software</li>
+                    <li><strong>Customers</strong> - Purchases the software</li>
+                    <li><strong>End-Users</strong> - Interacts with the software</li>
+                </ul>
+            </div>
+            <div class="information">
+                <h3>Main Product Artifacts (PCTCP)</h3>
+                <ul>
+                    <li>Project Documentation</li>
+                    <li>Code</li>
+                    <li>Test Documents</li>
+                    <li>Customer Documents</li>
+                    <li>Productivity Measurements</li>
+                </ul>
+            </div>
+            <div class="information">
+                <h3>Software Project Major Activities (PRDITDM)</h3>
+                <ul>
+                    <li>Planning</li>
+                    <li>Requirements Analysis</li>
+                    <li>Design</li>
+                    <li>Implementation</li>
+                    <li>Testing</li>
+                    <li>Deployment</li>
+                    <li>Maintenance</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../reviewer.js"></script>
+</body>

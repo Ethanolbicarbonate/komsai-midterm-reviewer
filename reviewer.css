@@ -1,0 +1,544 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap');
+
+footer {
+    text-align: center;
+    color: #333;
+}
+img {
+    padding-top: 16px;
+    width: 100%; /* Fills the container */
+    border-radius: 4px; /* Rounded corners */
+    display: block; /* Removes extra space below inline images */
+}
+
+body {
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Adjust as needed */
+    font-style: normal;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 0;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+
+
+@media (max-width: 600px) {
+
+    .tab{
+        font-size: 8px;
+    }
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+h2 {
+    color: #2980b9;
+    margin-top: 20px;
+    padding-left: 8px;
+    
+    /* Sticky behavior - updated */
+    position: sticky;
+    top: 0px;
+    background: linear-gradient(to bottom, white 80%, rgba(255, 255, 255, 0)); /* Fading effect */
+    z-index: 999; /* Slightly lower than sidebar but still above regular content */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+h3 {
+    color: #2c3e50;
+    margin-top: 25px;
+}
+.model-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.advantages, .disadvantages {
+    background-color: #fff;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 25px;
+}
+li {
+    margin-bottom: 10px;
+}
+.highlight-box {
+    background-color: #eaf2f8;
+    border-left: 3px solid #3498db;
+    padding: 10px 15px;
+    margin: 15px 0;
+}
+/* Warning and failure factors - Red theme */
+.warning, .failure-factors {
+    background-color: #ffebee;
+    border-left: 3px solid #f44336;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+/* Success factors - Green theme */
+.success-factors {
+    background-color: #e8f5e9;
+    border-left: 3px solid #4caf50;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+/* Information - Blue theme */
+.information, .concept {
+    background-color: #e3f2fd;
+    padding: 5px 15px;
+    margin: 15px 0; 
+    margin: 10px 0;
+    padding-left: 15px;
+    border-left: 3px solid #2196f3;
+}
+
+/* Tips - Purple theme */
+.tip, .best-practice {
+    background-color: #f3e5f5;
+    border-left: 3px solid #9c27b0;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 3px;
+}
+
+/* Example - Orange theme */
+.example, .case-study {
+    background-color: #fff3e0;
+    border-left: 3px solid #ff9800;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 3px;
+}
+
+/* Important note - Teal theme */
+.important, .key-takeaway {
+    background-color: #e0f2f1;
+    border-left: 3px solid #009688;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 3px;
+}
+
+/* Question - Light purple theme */
+.question, .reflection {
+    background-color: #ede7f6;
+    border-left: 3px solid #673ab7;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 3px;
+}
+.definition {
+    font-style: italic;
+    color: #606060;
+    margin: 10px 0;
+    padding-left: 15px;
+    border-left: 3px solid #a665c7;
+}
+
+.content {
+    color: #606060;
+    margin: 10px 0;
+    padding-left: 15px;
+}
+.maincontent {
+    flex-grow: 1;
+    padding: 0px 20px 0px 20px;
+    max-width: 800px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    position: relative; /* Creates a positioning context for sticky elements */
+    height: 100vh; /* Ensures the content area is tall enough to scroll */
+    overflow-y: auto; /* Enables scrolling within the content area */
+}
+
+/* Base styles for all expandable lists */
+.expandable-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.expandable-item {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.expandable-title {
+    color: #2a2a2a;
+    font-weight: normal;
+    padding: 0px 12px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expandable-description {
+    font-style: italic;
+    border-left: 2px solid #888888;
+    color: rgb(87, 86, 86);
+    padding: 10px 12px;
+    margin-top: 5px;
+    margin-left: 10px;
+    border-radius: 3px;
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.expandable-item.active .expandable-description {
+    display: block;
+}
+
+ul:hover li {
+    opacity: 0.5;
+}
+
+ul:hover li:hover {
+    opacity: 1;
+}
+
+.success-factors .expandable-title:hover {
+    background-color: rgba(99, 225, 103, 0.2);
+}
+
+.failure-factors .expandable-title:hover {
+    background-color: rgba(244, 67, 54, 0.2);
+}
+
+.information .expandable-title {
+    background-color: rgba(33, 150, 243, 0.1);
+}
+
+.information .expandable-title:hover {
+    background-color: rgba(33, 150, 243, 0.2);
+}
+
+/* CSS Styles (add to your existing style section) */
+.toggle-container {
+    margin: 20px 0;
+}
+
+.toggle-button {
+justify-self: center;
+background-color: #ffffff00;
+color: rgb(82, 82, 82);
+border: none;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+color: black;
+}
+
+.toggle-button.active {
+color: #000000;
+}
+
+.toggle-content {
+display: none;
+margin-top: 15px;
+animation: fadeIn 0.4s ease-in-out;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 0;
+    margin-left: 8px;
+}
+
+.tab {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    top: 1px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.15);
+}
+
+.tab.active {
+    transform: scale(1.2);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+}
+
+.tab-blue {
+    background-color: #e6f7ff;
+    border: 2px solid #91d5ff;
+}
+
+.tab-green {
+    background-color: #e6ffe6;
+    border: 2px solid #b7eb8f;
+}
+
+.tab-red {
+    background-color: #fff0f0;
+    border: 2px solid #ffa39e;
+}
+
+.tab-purple {
+    background-color: #f3e6ff;
+    border: 2px solid #d3adf7;
+}
+
+.tab-yellow {
+    background-color: #fffbe6;
+    border: 2px solid #ffe58f;
+}
+
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border-top: none;
+    animation: fadeIn 0.5s;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.information-tab {
+    background-color: #e6f7ff;
+}
+
+.key-takeaway-tab {
+    background-color: #e6ffe6;
+}
+
+.warning-tab {
+    background-color: #fff0f0;
+}
+
+.best-practice-tab {
+    background-color: #f3e6ff;
+}
+
+.example-tab {
+    background-color: #fff9e6; /* Light yellow */
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+/* Add these styles to your reviewer.css file */
+
+/* Main layout containers */
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar navigation */
+.sidebar {
+    background-color: #2c3e50;
+    color: white;
+    width: 280px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1001;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #1a2530;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.sidebar-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.toggle-icon {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+.toggle-icon:before,
+.toggle-icon:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: all 0.3s ease;
+    left: -0.2px;
+}
+
+.toggle-icon:before {
+    top: -8px;
+}
+
+.toggle-icon:after {
+    bottom: -8px;
+}
+
+/* Main content area */
+.maincontent {
+    padding: 0px 20px 0px 20px;
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+/* Sidebar navigation elements */
+.subject-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subject-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subject-name {
+    display: block;
+    padding: 12px 15px;
+    background-color: #34495e;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.subject-name:hover {
+    background-color: #3d566e;
+}
+
+.chapter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.subject-item:hover .chapter-list,
+.subject-item.active .chapter-list {
+    max-height: 500px;
+}
+
+.chapter-list li {
+    margin: 0;
+}
+
+.chapter-list a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 8px 15px 8px 30px;
+    transition: all 0.2s;
+    font-size: 0.70rem;
+}
+
+.chapter-list a:hover,
+.chapter-list a.active {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    body{
+        font-size: 80%;
+    }
+    .page-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .sidebar-toggle {
+        display: block;
+    }
+    
+    .sidebar-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .sidebar.active .sidebar-content {
+        max-height: 2000px;
+    }
+    
+    .maincontent {
+        margin-left: 0;
+    }
+    
+    h2 {
+        top: 0px; /* Stick to the top of the viewport on mobile */
+    }
+}
+
+/* Ensure scrolling still works */
+.maincontent {
+    padding: 0px 20px 0px 20px;
+    overflow: auto;
+    -ms-overflow-style: none;  /* Hides scrollbar in Internet Explorer & Edge */
+    scrollbar-width: none;  /* Hides scrollbar in Firefox */
+}

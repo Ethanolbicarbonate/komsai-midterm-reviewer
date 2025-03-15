@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reviewer.css">
+    <title>Software Process Models - CIT 214</title>
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Left side navigation -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <h3>MIDTERM REVIEWER</h3>
+                </a>
+                <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle navigation">
+                    <span class="toggle-icon"></span>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <ul class="subject-list">
+                    <li class="subject-item">
+                        <span class="subject-name">Software Engineering</span>
+                        <ul class="chapter-list">
+                            <li><a href="SEChap1.html">Software</a></li>
+                            <li><a href="SEChap2.html">Software Engineering</a></li>
+                            <li><a href="SEChap3.html">Software Engineering Activities</a></li>
+                            <li><a href="SEChap4.html">Software Engineering Principles</a></li>
+                            <li><a href="SEChap5.html">Ethics in Software Engineering</a></li>
+                            <li><a href="SEChap6.html">SDLC & Software Process</a></li>
+                            <li><a href="SEChap7.html">Software Process Models</a></li>
+                            <li><a href="SEChap8.html">Agile Development</a></li>
+                        </ul>
+                    </li>
+                    <li class="subject-item">
+                        <span class="subject-name">System Analysis & Design</span>
+                        <ul class="chapter-list">
+                            <li><a href="../SAD/SADChap1.html">Intro to SAD</a></li>
+                            <li><a href="../SAD/SADChap2.html">Analyzing Business Case</a></li>
+                            <li><a href="../SAD/SADChap3.html">Managing System Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="subject-item">
+                        <span class="subject-name">Machine Learning</span>
+                        <ul class="chapter-list">
+                            <li><a href="../ML/MLChap1.html">Intro to Machine Learning</a></li>
+                            <li><a href="../ML/MLChap2.html">EDA</a></li>
+                            <li><a href="../ML/MLChap3.html">Regression</a></li>
+                            <li><a href="../ML/MLChap4.html">Time Series</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <main id="content" class="maincontent">
+        <h1>SOFTWARE PROCESS</h1>
+    <p class="highlight-box">CIT 214 - Software Engineering</p>
+
+    <!-- The Software Process Section -->
+    <div class="model-section">
+        <h2>The Software Process</h2>
+        
+        <div class="definition">
+            <p>A <strong>software process</strong> prescribes how a software project progresses through various activities from inception to post-release maintenance.</p>
+        </div>
+        
+        <p>A software project progresses through a series of activities, starting at its inception and continuing even beyond its release to customers. Typically, a project is organized into phases, each with a prescribed set of activities conducted during that phase.</p>
+        
+        <p>A software process prescribes the interrelationships among the phases by expressing their order and frequency, as well as defining the deliverables of the project. It also specifies the criteria for moving from one phase to the next.</p>
+    </div>
+
+    <!-- The Activities of Software Process Section -->
+    <div class="model-section">
+        <h2>The Activities of Software Process</h2>
+        
+        <div class="concept">
+            <p>Most software process models include similar phases but differ in their order and frequency of execution.</p>
+        </div>
+        
+        <p>Most software process models prescribe a similar set of phases and activities. The difference between models is the order and frequency of the phases. Some process models, like the waterfall, execute each phase only once while others, like the iterative models, cycle through multiple times.</p>
+        
+        <div class="information">
+            <h3>Core Activities of Software Process</h3>
+            <ul style="list-style-type: disc; margin-left: 20px;">
+                <li><strong>Inception</strong><br> Software product is conceived and defined</li>
+                <li><strong>Planning</strong><br> Initial schedule, resources, and cost are determined</li>
+                <li><strong>Requirements Analysis</strong><br> Specify what the application must do, answers "what?"</li>
+                <li><strong>Design</strong><br> Specify the parts and how they fit, answers "how?"</li>
+                <li><strong>Implementation</strong><br> Write code</li>
+                <li><strong>Testing</strong><br> Execute the application with input test data</li>
+                <li><strong>Maintenance</strong><br> Repair defects and add capability</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Inception Section -->
+    <div class="model-section">
+        <h2>1. Inception</h2>
+        
+        <div class="definition">
+            <p><strong>Inception</strong> is the phase where initial product ideas are formulated and a vision of the software is conceived.</p>
+        </div>
+        
+        <p>Whether it is a brand new product or an improvement to existing software, every project starts with an idea of what is to be built. Major functionality and project scope is defined. Target customers and market segments are identified. During inception, the goal is to gather very high level feedback.</p>
+        
+        <div class="example">
+            <h3>Inception Example Scenario</h3>
+            <p>As an example, suppose a company is considering building a video store application. A market analysis may be conducted to determine the existence of competing video store applications. A summary of their features and an analysis of their strengths and weaknesses is compiled. The commercial success of the proposed application is determined by identifying potential new customers and contacting them for information.</p>
+        </div>
+    </div>
+
+    <!-- Planning Section -->
+    <div class="model-section">
+        <h2>2. Planning</h2>
+        
+        <div class="definition">
+            <p><strong>Planning</strong> is the phase where a plan is formulated to produce the application after a high-level idea is developed.</p>
+        </div>
+        
+        <p>Once a high-level idea for the application is developed, a plan is formulated to produce it. Since this is still very early in the overall life cycle and detailed information is not yet available, the plan will be a rough estimate. A project plan that identifies the high-level activities, work items, schedule, and resources is developed. From this information a costs estimate can be developed.</p>
+        
+        <p>If the cost is deemed too high, a reduction in features may be necessary. If the product release date is too late, more resources may be added.</p>
+        
+        <div class="key-takeaway">
+            <h3>Planning Deliverables</h3>
+            <p>The result of this phase is typically captured in a Software Project Management Plan (SPMP). A plan is also developed for managing project artifacts such as technical specifications and source code. This is known as <strong>configuration management</strong>, and includes tasks such as tracking changes to artifacts and handling multiple versions.</p>
+        </div>
+        
+        <div class="best-practice">
+            <h3>Best Practice</h3>
+            <p>Configuration management is planned at this early project stage, before the first project artifacts are generated.</p>
+        </div>
+    </div>
+
+    <!-- Requirements Analysis Section -->
+    <div class="model-section">
+        <h2>3. Requirements Analysis</h2>
+        
+        <div class="definition">
+            <p><strong>Requirements Analysis</strong> is the phase where detailed information regarding customer wants and needs, and problems the software is intended to solve are gathered.</p>
+        </div>
+        
+        <p>Information gathered and documented is in much greater detail than it was in the inception phase. During this phase, specific product functions and features are defined along with requirements such as performance, reliability, and usability. Requirements must be generated in a form that is completely readable and understandable by customers.</p>
+        
+        <p>High-level requirements in particular are typically expressed in ordinary English (or the local language). Various techniques are used to obtain this information, including customer interviews and brainstorming sessions.</p>
+        
+        <div class="key-takeaway">
+            <h3>Requirements Analysis Outcome</h3>
+            <p>Requirements describe what the application is intended to accomplish and are specified in sufficient detail so they can be used as input for the subsequent design phase, which defines how the software will be built. The results of this phase are typically captured in a formal Software Requirements Specification (SRS) document, which serves as input to the next phase.</p>
+        </div>
+    </div>
+
+    <!-- Software Design Section -->
+    <div class="model-section">
+        <h2>4. Software Design</h2>
+        
+        <div class="definition">
+            <p><strong>Software Design</strong> is the phase that defines how the software will be constructed to satisfy the requirements. The internal structure of the software is defined.</p>
+        </div>
+        
+        <p>The two main levels of software design are <strong>software architecture</strong> and <strong>detailed design</strong>.</p>
+        <div class="example">
+            <h3>Software Architecture</h3>
+            <p>For example, the architecture for a video store application may consist of components such as user interface module, a problem domain module, and a database module.</p>
+            <p>Software architecture specifies how the software is broken into subsystems or modules and the software interfaces between them.</p>
+        </div>
+        
+        <div class="information">
+            <h3>Detailed Design</h3>
+            <p>Agile projects generally perform design, implementation, and much testing in an interweaved fashion rather than calling out design as a separate phase.</p>
+            <p>The detailed design would include details such as algorithms and data structures, as well as user interface design and database design.</p>
+        </div>
+        
+        <p>The output of software design is specified in a Software Design Document (SDD) and is used as input to the implementation phase.</p>
+    </div>
+
+    <!-- Implementation Section -->
+    <div class="model-section">
+        <h2>5. Implementation</h2>
+        
+        <div class="definition">
+            <p><strong>Implementation</strong> is the phase that consists of programming, which is the translation of the software design developed in the previous phase to a programming language.</p>
+        </div>
+        
+        <p>It also involves integration, the assembly of software parts. The output consists of program code that is ready to be tested for correctness.</p>
+        
+        <div class="information">
+            <h3>Implementation in Agile Approaches</h3>
+            <p>For agile techniques, design implementation and much testing are performed in tandem.</p>
+        </div>
+    </div>
+
+    <!-- Testing Section -->
+    <div class="model-section">
+        <h2>6. Testing</h2>
+        
+        <div class="definition">
+            <p><strong>Testing</strong> is the phase where the code produced during the implementation phase is tested for correctness.</p>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab tab-blue active" onclick="openTab(event, 'testing-levels')" title="Testing Levels"></div>
+            <div class="tab tab-yellow" onclick="openTab(event, 'customer-testing')" title="Customer Testing"></div>
+            <div class="tab tab-green" onclick="openTab(event, 'acceptance-testing')" title="Acceptance Testing"></div>
+        </div>
+        
+        <div id="testing-levels" class="tab-content information-tab active">
+            <h3>Testing Levels</h3>
+            <p>Testing is performed in three levels:</p>
+            <ul>
+                <li><strong>First</strong>, individual modules are tested by developers.</li>
+                <li><strong>Second</strong>, modules are integrated and tested to ensure that they interface properly.</li>
+                <li><strong>Third</strong>, once all the modules had been integrated, the entire system is tested to ensure that it meets the user requirements.</li>
+            </ul>
+            <p>System testing is typically conducted by an independent quality assurance (QA) team.</p>
+        </div>
+        
+        <div id="customer-testing" class="tab-content example-tab">
+            <h3>Customer Testing (Beta Testing)</h3>
+            <p>Once system testing has been completed, several levels of customer testing are conducted. During beta testing, the software is as close to the final release as possible, and is given to part of the customer community with the understanding that they report defects they find. The goal is to uncover a set of problems that could only be discovered with this type of "real-world" testing.</p>
+        </div>
+        
+        <div id="acceptance-testing" class="tab-content key-takeaway-tab">
+            <h3>Acceptance Testing</h3>
+            <p>Once beta testing is complete, acceptance testing is conducted on the "final" release of software. Acceptance tests are comprised of a subset of system tests, and are conducted by either the customer or a representative of the customer to ensure that it meets the customer's criteria for release. Sometimes a round of acceptance testing is conducted prior to beta testing, to make sure that the system meets certain criteria before it is given to customers for beta testing.</p>
+        </div>
+    </div>
+
+    <!-- Maintenance Section -->
+    <div class="model-section">
+        <h2>7. Maintenance</h2>
+        
+        <div class="definition">
+            <p><strong>Maintenance</strong> is the phase that begins after the software is officially released to customers.</p>
+        </div>
+        
+        <p>During maintenance, modifications are made to the software that arise through one of the following:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>The repair of software defects that are discovered during normal customer use of the system</li>
+            <li>Customer requests for enhancements</li>
+            <li>A desire to improve attributes of the system such as performance or reliability</li>
+        </ul>
+        
+        <p>Modifications to the software are bundled together, and new versions of the software with these modifications are released.</p>
+    </div>
+
+    <!-- Software Process Examples Section -->
+    <div class="model-section">
+        <h2>Software Process Examples</h2>
+        
+        <div class="concept">
+            <p>Below are examples illustrating each phase of the software process in the context of a video rental application.</p>
+        </div>
+        
+        <div class="example">
+            <h3>Software Process Phase Examples</h3>
+            <ul style="list-style-type: disc; margin-left: 20px;">
+                <li><strong>Inception:</strong> "An application is needed to keep track of video rentals"</li>
+                <li><strong>Planning:</strong> "The project will take 12 months, require 10 people and cost $2M"</li>
+                <li><strong>Requirements analysis:</strong> "The clerk shall enter video title, renter name and date rented. The system shall.."</li>
+                <li><strong>Design:</strong> "classes Video Store, DVD, related by…"</li>
+                <li><strong>Implementation:</strong> "class VideoStore(String name,..)..."</li>
+                <li><strong>Testing:</strong> Run test case: Rent "The Matrix" on Oct 3<br>Result: "The Matrix" due Oct 3, balance of $8 (correct)..</li>
+                <li><strong>Maintenance:</strong> 
+                    <ul>
+                        <li>Defect repair: "Application crashes when balance is $10 and attempt is made to rent 'Gone With the Wind'"</li>
+                        <li>Enhancement: Allow searching by director</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<div class="maincontent" style="font-size: 80%;">
+    <div class="information">
+        <h3>Activities of Software Process (IPRADIT M)</h3>
+        <ul>
+            <li>Inception</li>
+            <li>Planning</li>
+            <li>Requirements Analysis</li>
+            <li>Design</li>
+            <li>Implementation</li>
+            <li>Testing</li>
+            <li>Maintenance</li>
+        </ul>
+    </div>
+    <div class="example">
+        <h3>Planning</h3>
+        <p>typically captured in a Software Project Management Plan (SPMP)</p>
+        <p><strong>Configuration Management</strong> - managing project artifacts</p>
+        <hr style="opacity: 20%;">
+        <h3>Requirements Analysis</h3>
+        <p>typically captured in a formal Software Requirements Specification (SRS) document</p>
+        <hr style="opacity: 20%;">
+        <h3>Software Design</h3>
+        <p><strong>Two Main Levels in Software design</strong></p>
+        <ul>
+            <li>Software Architecture - Basically the overall structure and     major components.</li>
+            <li>Detailed Design - Basically the tiny details and specific algos.</li>
+        </ul>
+        <hr style="opacity: 20%;">
+        <h3>Testing</h3>
+        <p><strong>3 Levels of Testing</strong></p>
+        <ul>
+            <li>Devs <strong>test individual modules</strong></li>
+            <li>Modules are then <strong>integrated and tested</strong></li>
+            <li>The <strong>entire system is then tested</strong> - typically conducted by an independent quality assurance (QA) team</li>
+        </ul>
+        <p><strong>Costumer Testing (Beta Testing)</strong> is done after system testing to uncover problems that can only be discovered with "real world" testing.</p>
+        <p><strong>Acceptance Testing</strong> It’s conducted after beta testing or sometimes before, to verify readiness for beta release. Done to verify if the final software meets customer criteria, often using a subset of system tests.</p>    
+    </div>
+</div>
+</div>
+<script src="../reviewer.js"></script>
+</body>
+</html>
