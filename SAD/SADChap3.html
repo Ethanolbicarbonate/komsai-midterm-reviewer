@@ -56,10 +56,363 @@
             </div>
         </nav>
 
+        <main id="content" class="maincontent">
+            <h1>Managing Systems Projects</h1>
+            <p class="highlight-box">CC 207 A - System Analysis and Design</p>
+        
+            <!-- Project Management Overview -->
+            <div class="model-section">
+                <h2>Project Management Overview</h2>
+                
+                <div class="concept">
+                    <p>A successful project must be completed on time, within budget, meet requirements, and satisfy users. Project management is the process of planning, scheduling, monitoring, and reporting on the development of an information system.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Project Management</strong> is the process of planning, scheduling, monitoring, and reporting on the development of an information system.</p>
+                </div>
+                
+                <p>Project management involves balancing several key factors that shape a project's success.</p>
+        
+                <!-- Tab System -->
+                <div class="tabs">
+                    <div class="tab tab-blue active" onclick="openTab(event, 'project-triangle')" title="Project Triangle"></div>
+                    <div class="tab tab-green" onclick="openTab(event, 'project-manager')" title="Project Manager Role"></div>
+                </div>
+                
+                <div id="project-triangle" class="tab-content information-tab active">
+                    <h3>The Project Triangle</h3>
+                    <p>A project triangle shows the relationship among project <strong>cost, scope, and time</strong>. Usually one of these is fixed:</p>
+                    <ul>
+                        <li>A budget cast in stone</li>
+                        <li>An inflexible scope</li>
+                        <li>A schedule fixed by factors beyond the firm's control</li>
+                    </ul>
+                    <p>A successful project <strong>must balance cost, scope, and time</strong> against a set of constraints. A change in any leg of the triangle will affect the other two legs.</p>
+                    <img src="../images/projtriangle.png" alt="Project Triangle" style="width: 40vh;" />
+                </div>
+                
+                <div id="project-manager" class="tab-content key-takeaway-tab">
+                    <h3>Project Manager Role</h3>
+                    <p>The project manager is responsible for:</p>
+                    <ul>
+                        <li><strong>Project planning:</strong> Identify all project tasks and estimate the completion time and cost of each</li>
+                        <li><strong>Project scheduling:</strong> Create a specific timetable that shows tasks, task dependencies, and critical tasks that might delay the project</li>
+                        <li><strong>Project monitoring:</strong> Guiding, supervising, and coordinating the project team's workload</li>
+                        <li><strong>Project reporting:</strong> Create regular progress reports to management, users, and the project team itself</li>
+                    </ul>
+                    <p>Project managers must be alert, technically competent, and highly resourceful. They also must be good communicators with strong human resource skills.</p>
+                </div>
+            </div>
+        
+            <!-- Work Breakdown Structure -->
+            <div class="model-section">
+                <h2>Work Breakdown Structure (WBS)</h2>
+                
+                <div class="definition">
+                    <p><strong>Work Breakdown Structure (WBS)</strong> is the process of identifying all project tasks and includes an estimated duration for each task.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Task</strong> is any work that has a beginning and an end and requires the use of company resources such as people, time, or money.</p>
+                </div>
+                
+                <p>Tasks are basic units of work that the project manager plans, schedules, and monitors — so they should be relatively small and manageable.</p>
+        
+                <div class="information">
+                    <h3>Creating a Work Breakdown Structure</h3>
+                    <ul>
+                        <li>List all tasks</li>
+                        <li>Put tasks in order</li>
+                        <li>Add a description</li>
+                        <li>Decide how long each task takes</li>
+                        <li>Decide which tasks must go first</li>
+                    </ul>
+                </div>
+        
+                <div class="information">
+                    <h3>Estimating Task Duration</h3>
+                    <p>Tasks can be measured in hours, days, or weeks. If tasks use days as the unit of measurement, they are called person-days. A person-day represents the work that one person can complete in one day.</p>
+                </div>
+        
+                <div class="key-takeaway">
+                    <h3>Factors Affecting Task Duration</h3>
+                    <ul>
+                        <li><strong>Project Size:</strong> Must identify all project tasks and how much time will be needed for each task. Allow time for meetings, project reviews, training, and other factors.</li>
+                        <li><strong>Human Resources:</strong> Assemble a development team with appropriate skills and experience. Consider turnover and job vacancies.</li>
+                        <li><strong>Experience with Similar Projects:</strong> Develop estimates based on resources used for similar, previously developed systems.</li>
+                        <li><strong>Constraints:</strong> Conditions, restrictions, or requirements that the system must satisfy.</li>
+                    </ul>
+                </div>
+        
+                <!-- Toggle Container -->
+                <div class="toggle-container">
+                    <button class="toggle-button">Show Content</button>
+                    <div class="toggle-content">
+                        <div class="content">
+                            <h3>Work Breakdown Structure Example</h3>
+                            <p>A complete WBS includes task number, task name, duration, and predecessor tasks. In Microsoft Project, you can display the same WBS information, including task number, task name, duration, and predecessor tasks.</p>
+                            <p>Tasks must be clearly identified and should include estimated durations. The WBS forms the foundation for all project scheduling activities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Task Patterns -->
+            <div class="model-section">
+                <h2>Task Patterns</h2>
+                
+                <div class="concept">
+                    <p>Tasks depend on each other and must be performed in a sequence. Task patterns involve dependent tasks, multiple successor tasks, and multiple predecessor tasks.</p>
+                </div>
+        
+                <p>To create a project model, task boxes are used with information including task name, task ID, task duration, start day/date, and finish day/date.</p>
+        
+                <div class="information">
+                    <h3>Task Box Components</h3>
+                    <ul>
+                        <li><strong>Task Name:</strong> Should be brief and descriptive</li>
+                        <li><strong>Task ID:</strong> Can be a number or code that provides unique identification</li>
+                        <li><strong>Task Duration:</strong> Amount of time it will take to complete a task</li>
+                        <li><strong>Start Day/Date:</strong> The time that a task is scheduled to begin</li>
+                        <li><strong>Finish Day/Date:</strong> The time that a task is scheduled to be completed</li>
+                    </ul>
+                </div>
+        
+                <div class="example">
+                    <h3>Types of Task Patterns</h3>
+                    <ul>
+                        <li><strong>Dependent Tasks:</strong> When tasks must be completed one after another. One task depends on the other, similar to a relay race. 
+                            <p style="font-style: italic; opacity: 70%;">"Do Task 1, then do Task 2"</p>
+                        </li>
+                        <li><strong>Multiple Successor Tasks:</strong> When several tasks can start at the same time. Each is called a concurrent task. Often, two or more concurrent tasks depend on a single prior task, which is called a predecessor task.
+                            <p style="font-style: italic; opacity: 70%;">"When Task 2 is finished, start two tasks: Task 3 and Task 4"</p>
+                        </li>
+                        <li><strong>Multiple Predecessor Tasks:</strong> When a task requires two or more prior tasks to be completed before it can start.
+                            <p style="font-style: italic; opacity: 70%;">"When Tasks 5 and 6 are done, start Task 7"</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Critical Path Analysis -->
+            <div class="model-section">
+                <h2>Critical Path Analysis</h2>
+                
+                <div class="definition">
+                    <p><strong>Critical Path</strong> is a series of tasks which, if delayed, would affect the completion date of the overall project. If any task on the critical path falls behind schedule, the entire project will be delayed.</p>
+                </div>
+                
+                <p>To calculate the critical path, you need to review task patterns and determine start and finish dates for each task.</p>
+        
+                <div class="warning">
+                    <h3>Critical Path Importance</h3>
+                    <p>The critical path identifies the sequence of tasks that control the project completion date. Project managers must pay special attention to critical path tasks to ensure the project stays on schedule.</p>
+                </div>
+                
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/4oDLMs11Exs?si=NnmkLlwuX5ciY2JF" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+        
+                <!-- Toggle Container -->
+                <div class="toggle-container">
+                    <button class="toggle-button">Show Content</button>
+                    <div class="toggle-content">
+                        <div class="content">
+                            <h3>Critical Path Calculation</h3>
+                            <p>To calculate the critical path:</p>
+                            <ol>
+                                <li>Review task patterns and determine the start and finish dates for each task</li>
+                                <li>Identify the longest path through the network of tasks</li>
+                                <li>This path represents the critical path</li>
+                            </ol>
+                            <p>The critical path determines the overall project duration. Any delay in a critical path task will delay the entire project.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Project Management Tools -->
+            <div class="model-section">
+                <h2>Project Management Tools</h2>
+                
+                <div class="information">
+                    <h3>Gantt Charts</h3>
+                    <p>A Gantt chart is a horizontal bar chart that represents the project schedule with <strong>time on the horizontal axis</strong> and <strong>tasks arranged vertically</strong>. Developed by mechanical engineer and management consultant <strong>Henry L. Gantt</strong> almost 100 years ago, it shows planned and actual progress on a project.</p>
+                </div>
+        
+                <div class="information">
+                    <h3>PERT/CPM Charts</h3>
+                    <p><strong>Program Evaluation Review Technique (PERT)</strong> was developed by the U.S. Navy to manage complex projects.</p>
+                    <p><strong>Critical Path Method (CPM)</strong> is similar to PERT, developed by private industry.</p>
+                    <p>Most analysts call both a PERT Chart. It shows the project as a network diagram with tasks connected by arrows.</p>
+                </div>
+        
+                <div class="best-practice">
+                    <h3>Gantt vs. PERT Comparison</h3>
+                    <img src="../images/ganttVSpert.png" alt="">
+                </div>
+        
+                <div class="information">
+                    <h3>Project Management Software</h3>
+                    <p>Most project managers use project management software such as:</p>
+                    <ul>
+                        <li><strong>Microsoft Project:</strong> A full-featured program that holds the dominant share of the market, providing Gantt chart, network diagram, and calendar views</li>
+                        <li><strong>GanttProject:</strong> A free, open source program</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Project Monitoring and Control -->
+            <div class="model-section">
+                <h2>Project Monitoring and Control</h2>
+                
+                <div class="concept">
+                    <p>Project monitoring and control involves guiding, supervising, and coordinating the project team's work. It's essential to maintain the schedule and address problems that arise.</p>
+                </div>
+        
+                <div class="information">
+                    <ul>
+                        <li><strong>Monitoring and Control Techniques</strong> - Structured walkthrough (Organized peer review process where a group evaluates technical aspects to identify errors and enhance quality)</li>
+                        <li><strong>Maintaining a Schedule</strong> - Most projects tune into some problems or delays</li>
+                        <li><strong>Project Status Meetings</strong> - Regular meetings to update the team and discuss project status, issues, problems, and opportunities</li>
+                        <li><strong>Project Status Reports</strong> - can be verbal but usually written. Often includes Gantt charts to show project status graphically</li>
+                    </ul>
+                </div>
+        
+                <div class="best-practice">
+                    <h3>Maintaining a Schedule</h3>
+                    <p>Most projects run into some problems or delays. The project manager should:</p>
+                    <ul>
+                        <li>Anticipate problems</li>
+                        <li>Avoid them when possible</li>
+                        <li>Minimize their impact</li>
+                        <li>Identify potential solutions</li>
+                        <li>Select the best way to solve the problem</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Risk Management -->
+            <div class="model-section">
+                <h2>Risk Management</h2>
+                
+                <div class="definition">
+                    <p><strong>Risk Management</strong> involves identifying, analyzing, and addressing potential issues that could impact project success.</p>
+                </div>
+        
+                <div class="information">
+                    <h3>Steps in Risk Management</h3>
+                    <ol>
+                        <li><strong>Develop a risk management plan:</strong> Review the project's scope, stakeholders, budget, schedule, and other factors that might affect the project. Define project roles and responsibilities, risk management methods and procedures, categories of risks, and contingency plans.</li>
+                        <li><strong>Identify the risks:</strong> List each risk and assess the likelihood that it could affect the project.</li>
+                        <li><strong>Analyze the risks:</strong> 
+                            <ul>
+                                <li>Qualitative risk analysis evaluates each risk by estimating the probability and degree of impact</li>
+                                <li>Quantitative risk analysis understands the actual impact in terms of dollars, time, project scope, or quality</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+        
+                <div class="information">
+                    <h3>Risk Management Software</h3>
+                    <p>Software can help with risk management by:</p>
+                    <ul>
+                        <li>Assigning specific dates as constraints</li>
+                        <li>Aligning task dependencies</li>
+                        <li>Noting external factors that might affect a task</li>
+                        <li>Tracking progress</li>
+                        <li>Displaying tasks that are behind schedule</li>
+                        <li>Linking risks with specific tasks and projects</li>
+                        <li>Specifying probability and impact</li>
+                        <li>Assigning ownership</li>
+                    </ul>
+                </div>
+            </div>
 
-        <div class="maincontent" style="font-size: 80%;">
+        </main>
 
-            
+        <div class="notecontent">
+            <div class="information">
+                <h3>Key Notes</h3>
+                <p><strong>Project Management</strong> - the process of <strong>(PSMR)</strong> on the development of an information system. And the <strong>Project Manager</strong> is responsible for this.</p>
+                <p><strong>Project Manager Role (PSMR)</strong></p>
+                <ul>
+                    <li style="padding: 0px; margin: 0px;">Planning</li>
+                    <li style="padding: 0px; margin: 0px;">Scheduling</li>
+                    <li style="padding: 0px; margin: 0px;">Monitoring</li>
+                    <li style="padding: 0px; margin: 0px;">Reporting</li>
+                </ul>
+                <hr style="opacity: 30%;">
+                <p><strong>Project Triangle</strong> shows the relationship among</p>
+                <ul>
+                    <li style="padding: 0px; margin: 0px;">Cost</li>
+                    <li style="padding: 0px; margin: 0px;">Scope</li>
+                    <li style="padding: 0px; margin: 0px;">Time</li>
+                </ul>
+                <p>Usually one of these is fixed and A change in any leg of the triangle will affect the other two legs</p>
+                <hr style="opacity: 30%;">
+                <p><strong>Critical Path</strong> - series of tasks which, if delayed, would affect the completion date of the overall project</p>
+                <hr style="opacity: 30%;">
+                <p><strong>Risk Management</strong> - identifying, analyzing, and addressing potential issues that could impact project success</p>
+                <p><strong>Steps in Risk Management (DIA)</strong></p>
+                <ul>
+                    <li style="padding: 0px; margin: 0px;">Develop a risk management plan</li>
+                    <li style="padding: 0px; margin: 0px;">Identify the risks</li>
+                    <li style="padding: 0px; margin: 0px;">Analyze the risks</li>
+                </ul>
+            </div>
+            <div class="key-takeaway">
+                <p><strong>Tasks</strong> - basic units of work. Any work that has a beginning and an end</p>
+                <p><strong>Work Breakdown Structure (WBS)</strong> - process of identifying all project tasks and estimated duration for each task</p>
+                <p><strong>Steps in creating a WBS (LOD DP)</strong></p>
+                <ul>
+                    <li style="padding: 0px; margin: 0px;"><strong>List</strong> all task</li>
+                    <li style="padding: 0px; margin: 0px;">put tasks in <strong>Order</strong></li>
+                    <li style="padding: 0px; margin: 0px;">add <strong>Description</strong> for each task</li>
+                    <li style="padding: 0px; margin: 0px;">estimate <strong>Duration</strong> for each task</li>
+                    <li style="padding: 0px; margin: 0px;">identify <strong>Predecessor</strong> task/s (which task must go first)</li>
+                </ul>
+            </div>
+            <div class="key-takeaway">
+                <p><strong>Factors Affecting Task Duration (PHEC)</strong></p>
+                <ul>
+                    <li style="padding: 0px; margin: 0px;">Project size</li>
+                    <li style="padding: 0px; margin: 0px;">Human resources</li>
+                    <li style="padding: 0px; margin: 0px;">Experience with similar projects</li>
+                    <li style="padding: 0px; margin: 0px;">Constraints</li>
+                </ul>
+            <hr style="opacity: 30%;">
+                <p><strong>Task Patterns</strong>
+                    <ul>
+                        <li style="padding: 0px; margin: 0px;">dependent tasks</li>
+                        <li style="padding: 0px; margin: 0px;">multiple successor tasks</li>
+                        <li style="padding: 0px; margin: 0px;">multiple predecessor tasks</li>
+                    </ul> 
+                <p><strong>Task Box Components</strong></p>
+                <ul>
+                    <li style="padding: 0px; margin: 0px;">Task Name</li>
+                    <li style="padding: 0px; margin: 0px;">Task ID</li>
+                    <li style="padding: 0px; margin: 0px;">Task Duration</li>
+                    <li style="padding: 0px; margin: 0px;">Start Day/Date</li>
+                    <li style="padding: 0px; margin: 0px;">Finish Day/Date</li>
+                </ul>
+            </div>
+            <div class="information">
+                <p><strong>Gantt Charts</strong> - time on the horizontal axis, tasks arranged vertically. Developed by <strong>Henry L. Gantt</strong></p>
+                <p><strong>PERT/CPM Charts</strong> - shows the project as a network diagram with tasks connected by arrows</p>
+                <h3>Gantt vs. PERT Comparison</h3>
+                <p><strong>Gantt</strong> is better for simple projects, provides time-based visuallization of project schedule</p>
+                <p><strong>PERT</strong> is better for complex projects, more detailed, provides a visual representation of project tasks and their dependencies</p>
+            </div>
         </div>
     </div>
     <script src="../reviewer.js"></script>

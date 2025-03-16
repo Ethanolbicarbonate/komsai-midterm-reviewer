@@ -168,6 +168,17 @@ li {
     overflow-y: auto; /* Enables scrolling within the content area */
 }
 
+.notecontent {
+    flex-grow: 1;
+    padding: 0px 20px 0px 20px;
+    max-width: 800px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    position: relative; /* Creates a positioning context for sticky elements */
+    height: 100vh; /* Ensures the content area is tall enough to scroll */
+    overflow-y: auto; /* Enables scrolling within the content area */
+}
+
 /* Base styles for all expandable lists */
 .expandable-list {
     list-style-type: none;
@@ -430,6 +441,15 @@ animation: fadeIn 0.4s ease-in-out;
     transition: all 0.3s ease;
 }
 
+.notecontent {
+    padding: 0px 20px 0px 20px;
+    font-size: 80%;
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
 /* Sidebar navigation elements */
 .subject-list {
     list-style: none;
@@ -525,6 +545,11 @@ animation: fadeIn 0.4s ease-in-out;
     .maincontent {
         margin-left: 0;
     }
+
+    .notecontent {
+        margin-left: 0;
+        font-size: 100%;
+    }
     
     h2 {
         top: 0px; /* Stick to the top of the viewport on mobile */
@@ -537,4 +562,27 @@ animation: fadeIn 0.4s ease-in-out;
     overflow: auto;
     -ms-overflow-style: none;  /* Hides scrollbar in Internet Explorer & Edge */
     scrollbar-width: none;  /* Hides scrollbar in Firefox */
+}
+
+.notecontent {
+    padding: 0px 20px 0px 20px;
+    overflow: auto;
+    -ms-overflow-style: none;  /* Hides scrollbar in Internet Explorer & Edge */
+    scrollbar-width: none;  /* Hides scrollbar in Firefox */
+}
+
+.video-container {
+    position: relative;
+    width: 100%; /* Video will stretch to fill the container */
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (Height adjusts automatically) */
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
