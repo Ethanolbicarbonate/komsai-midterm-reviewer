@@ -3,79 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reviewer.css">
     <title>Course Reviewer Hub</title>
     <style>
-        .welcome-section {
-            text-align: center;
-            padding: 40px 20px;
-            margin-bottom: 30px;
-            background-color: #eaf2f8;
-            border-radius: 8px;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        :root {
+            --primary-dark: #1a2530;
+            --primary-light: #2c3e50;
+            --accent-color: #3498db;
+            --text-light: #f5f5f5;
+            --text-dark: #333;
+            --hover-color: #3d566e;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f5f5f5;
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #e4ebf5 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-bottom: none;
+            text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-section {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            text-align: center;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .welcome-section h3 {
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .welcome-section p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
         .subjects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 1.5rem;
         }
-        
+
         .subject-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .subject-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
-        
+
         .subject-title {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-top: 0;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
         }
-        
+
         .subject-links {
-            list-style-type: none;
-            padding-left: 0;
+            list-style: none;
+            padding: 1.5rem;
         }
-        
+
         .subject-links li {
-            margin-bottom: 8px;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.8rem;
         }
-        
+
+        .subject-links li:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
         .subject-links a {
-            display: block;
-            padding: 8px 10px;
+            color: var(--primary-light);
             text-decoration: none;
-            color: #2980b9;
+            display: block;
+            transition: all 0.2s ease;
+            padding: 0.5rem;
             border-radius: 4px;
-            transition: background-color 0.2s;
+            font-weight: 500;
         }
-        
+
         .subject-links a:hover {
-            background-color: #f0f7fc;
-            color: #1a5276;
+            background-color: rgba(52, 152, 219, 0.1);
+            color: var(--accent-color);
+            padding-left: 1rem;
         }
+
+        .subject-links a::before {
+            content: "→";
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .subject-links a:hover::before {
+            transform: translateX(3px);
+        }
+
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .welcome-section {
+                padding: 1.5rem;
+                margin: 1.5rem 1rem;
+            }
+
+            .subjects-container {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            .welcome-section h3 {
+                font-size: 1.3rem;
+            }
+
+            .welcome-section p {
+                font-size: 1rem;
+            }
+
+            .subject-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .subject-card {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .subject-card:nth-child(1) { animation-delay: 0.1s; }
+        .subject-card:nth-child(2) { animation-delay: 0.2s; }
+        .subject-card:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
-
 <body>
     <header>
-        <h1>Course Reviewer Hub</h1>
+        <h1>CS Reviewer</h1>
     </header>
-    
+   
     <section class="welcome-section">
         <h3>Welcome to Your Comprehensive Course Reviewer</h3>
-        <p>Access study materials, notes, and reviewers for all your subjects in one place.</p>
+        <p>Access study materials, notes, and reviewers for all your subjects in one place. Everything you need to excel in your courses, organized and ready for you.</p>
     </section>
-    
+   
     <main class="subjects-container">
         <article class="subject-card">
             <h3 class="subject-title">Software Engineering</h3>
@@ -90,17 +247,17 @@
                 <li><a href="SE/SEChap8.html">Agile Development</a></li>
             </ul>
         </article>
-        
+       
         <article class="subject-card">
             <h3 class="subject-title">Machine Learning</h3>
             <ul class="subject-links">
                 <li><a href="ML/MLChap1.html">Intro to Machine Learning</a></li>
-                <li><a href="ML/MLChap2.html">EDA</a></li>
+                <li><a href="ML/MLChap2.html">Exploratory Data Analysis</a></li>
                 <li><a href="ML/MLChap3.html">Regression</a></li>
                 <li><a href="ML/MLChap4.html">Time Series</a></li>
             </ul>
         </article>
-
+        
         <article class="subject-card">
             <h3 class="subject-title">Software Analysis & Design</h3>
             <ul class="subject-links">
@@ -110,10 +267,24 @@
             </ul>
         </article>
     </main>
-    <footer>
-        <p>Inihahandog ni Itan</p>
-    </footer>
     
+    <footer>
+        <p>Inihahandog ni Itan &copy; 2025</p>
+    </footer>
+
     <script src="reviewer.js"></script>
+    <script>
+        // Additional animations and interactions can be added here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add a subtle hover effect to the header
+            const header = document.querySelector('header');
+            header.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)';
+            });
+            header.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            });
+        });
+    </script>
 </body>
 </html>
