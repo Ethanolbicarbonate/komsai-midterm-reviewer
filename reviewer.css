@@ -8,6 +8,7 @@ footer {
 }
 img {
     padding-bottom: 30px;
+    padding-top: 30px;
     width: 100%; /* Fills the container */
     border-radius: 4px; /* Rounded corners */
     display: block; /* Removes extra space below inline images */
@@ -171,7 +172,7 @@ li {
 .notecontent {
     flex-grow: 1;
     padding: 0px 20px 0px 20px;
-    max-width: 800px;
+    width: 30vw;
     overflow-y: auto;
     transition: all 0.3s ease;
     position: relative; /* Creates a positioning context for sticky elements */
@@ -445,7 +446,6 @@ animation: fadeIn 0.4s ease-in-out;
     padding: 0px 20px 0px 20px;
     font-size: 80%;
     flex-grow: 1;
-    padding: 20px;
     overflow-y: auto;
     transition: all 0.3s ease;
 }
@@ -525,7 +525,7 @@ animation: fadeIn 0.4s ease-in-out;
     .sidebar {
         width: 100%;
         height: auto;
-        position: relative;
+        position: sticky;
     }
     
     .sidebar-toggle {
@@ -544,10 +544,13 @@ animation: fadeIn 0.4s ease-in-out;
     
     .maincontent {
         margin-left: 0;
+        height: fit-content;
     }
 
     .notecontent {
-        margin-left: 0;
+        margin-right: 20px;
+        height: fit-content;
+        width: 90vw;
         font-size: 100%;
     }
     

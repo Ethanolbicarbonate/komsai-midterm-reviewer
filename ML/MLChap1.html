@@ -56,6 +56,247 @@
             </div>
         </nav>
 
+        <main id="content" class="maincontent">
+            <h1>Introduction to Machine Learning Concepts</h1>
+            <p class="highlight-box">CCS 247 - Machine Learning</p>
+        
+            <!-- What is Machine Learning Section -->
+            <div class="model-section">
+                <h2>What is Machine Learning?</h2>
+                
+                <div class="concept">
+                    <p>Machine Learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Machine Learning</strong> is the science (and art) of programming computers so they can learn from data.</p>
+                </div>
+                
+                <p><span style="color: rgb(187, 46, 84);">Traditional programming approaches <strong>require explicit rules</strong></span>, while <span style="color: rgb(18, 123, 194);">machine learning uses data to <strong>automatically adapt to change and learn patterns</strong> without being explicitly programmed.</span></p>
+        
+                <div class="information">
+                    <h3>Learning from Data</h3>
+                    <p>Machine learning systems learn from examples and can adapt when exposed to new data. This differs from traditional programming where explicit instructions must be coded.</p>
+                </div>
+            </div>
+        
+            <!-- Supervised Learning Section -->
+            <div class="model-section">
+                <h2>Supervised Learning</h2>
+                
+                <div class="concept">
+                    <p>Learning a model from labeled training data to make predictions about unseen or future data.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Supervised Learning</strong> refers to a set of training examples (data inputs) where the desired output signals (labels) are already known.</p>
+                </div>
+                
+                <p>In supervised learning, the algorithm is provided with labeled data, receives direct feedback, and learns to predict outcomes or future results.</p>
+        
+                <div class="tabs">
+                    <div class="tab tab-blue active" onclick="openTab(event, 'classification')" title="Classification"></div>
+                    <div class="tab tab-green" onclick="openTab(event, 'regression')" title="Regression"></div>
+                    <div class="tab tab-purple" onclick="openTab(event, 'algorithms')" title="Algorithms"></div>
+                </div>
+                
+                <div id="classification" class="tab-content information-tab active">
+                    <h3>Classification</h3>
+                    <p>Classification algorithms predict categorical class labels of new instances based on past observations. Class labels are discrete, unordered labels that can be understood as the group memberships of the instances.</p>
+                    <p>Types include:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Binary classification</li>
+                        <li>Multiclass classification</li>
+                    </ul>
+                </div>
+                
+                <div id="regression" class="tab-content key-takeaway-tab">
+                    <h3>Regression</h3>
+                    <p>Regression focuses on the prediction of continuous outcomes. Given several predictor (explanatory) variables and a continuous response variable (outcome/target), a relationship between those variables is found.</p>
+                </div>
+                
+                <div id="algorithms" class="tab-content best-practice-tab">
+                    <h3>Supervised Learning Algorithms</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>k-Nearest Neighbors</li>
+                        <li>Linear Regression</li>
+                        <li>Logistic Regression</li>
+                        <li>Support Vector Machines (SVMs)</li>
+                        <li>Decision Trees and Random Forests</li>
+                        <li>Neural networks</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Unsupervised Learning Section -->
+            <div class="model-section">
+                <h2>Unsupervised Learning</h2>
+                
+                <div class="concept">
+                    <p>Exploring the structure of data to extract meaningful information without the guidance of a known outcome variable or reward function.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Unsupervised Learning</strong> deals with unlabeled data or data of unknown structure to find hidden patterns.</p>
+                </div>
+                
+                <p>In unsupervised learning, there are no labels, no feedback, and the algorithm works to find hidden structures in the data.</p>
+        
+                <div class="tabs">
+                    <div class="tab tab-red" onclick="openTab(event, 'clustering')" title="Clustering">Clustering</div>
+                    <div class="tab tab-yellow" onclick="openTab(event, 'dimensionality')" title="Dimensionality Reduction">Dimensionality</div>
+                    <div class="tab tab-green" onclick="openTab(event, 'unsupervised-algorithms')" title="Algorithms">Algorithms</div>
+                </div>
+                
+                <div id="clustering" class="tab-content warning-tab">
+                    <h3>Clustering</h3>
+                    <p>An exploratory data analysis technique that allows us to organize information into meaningful subgroups (clusters) without having any prior knowledge of their group memberships.</p>
+                    <p>Each cluster that arises during the analysis defines a group of objects that share a certain degree of similarity but are more dissimilar to objects in other clusters.</p>
+                </div>
+                
+                <div id="dimensionality" class="tab-content example-tab">
+                    <h3>Dimensionality Reduction</h3>
+                    <p>A commonly used approach in feature preprocessing to remove noise from data. These techniques compress the data onto a smaller dimensional subspace while retaining most of the relevant information.</p>
+                </div>
+                
+                <div id="unsupervised-algorithms" class="tab-content key-takeaway-tab">
+                    <h3>Unsupervised Learning Algorithms</h3>
+                    <p>Clustering:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>K-Means</li>
+                        <li>DBSCAN</li>
+                        <li>Hierarchical Cluster Analysis (HCA)</li>
+                        <li>Anomaly detection and novelty detection</li>
+                        <li>One-class SVM</li>
+                        <li>Isolation Forest</li>
+                    </ul>
+                    <p>Visualization and dimensionality reduction:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Principal Component Analysis (PCA)</li>
+                        <li>Kernel PCA</li>
+                        <li>Locally-Linear Embedding (LLE)</li>
+                        <li>t-distributed Stochastic Neighbor Embedding (t-SNE)</li>
+                    </ul>
+                    <p>Association rule learning:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Apriori</li>
+                        <li>Eclat</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Reinforcement Learning Section -->
+            <div class="model-section">
+                <h2>Reinforcement Learning</h2>
+                
+                <div class="concept">
+                    <p>Learning through interaction with an environment to maximize rewards over time.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Reinforcement Learning</strong> develops a system (agent) that improves its performance based on interactions with the environment.</p>
+                </div>
+                
+                <p>Reinforcement learning involves a decision process, reward system, and learning a series of actions to maximize the reward. Through interaction with the environment, an agent can learn a series of actions via an exploratory trial-and-error approach or deliberative planning.</p>
+        
+                <div class="key-takeaway">
+                    <h3>Key Takeaway</h3>
+                    <p>Unlike supervised learning, reinforcement learning doesn't require labeled data. Instead, it learns optimal behaviors through trial and error to achieve maximum rewards.</p>
+                </div>
+            </div>
+        
+            <!-- Learning Types Section -->
+            <div class="model-section">
+                <h2>Batch and Online Learning</h2>
+                
+                <div class="information">
+                    <h3>Batch Learning</h3>
+                    <p>In batch learning, the system is incapable of learning incrementally: it must be trained using all the available data.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Online Learning</h3>
+                    <p>In online learning, the system is trained incrementally by feeding it data instances sequentially, either individually or by small groups called mini batches.</p>
+                </div>
+            </div>
+        
+            <!-- Terminology Section -->
+            <div class="model-section">
+                <h2>Basic Terminologies</h2>
+                
+                <div class="tabs">
+                    <div class="tab tab-blue" onclick="openTab(event, 'data-terms')" title="Data Terms">Data Terms</div>
+                    <div class="tab tab-purple" onclick="openTab(event, 'model-terms')" title="Model Terms">Model Terms</div>
+                </div>
+                
+                <div id="data-terms" class="tab-content information-tab">
+                    <h3>Data Terminology</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Training example:</strong> A row in a table representing the dataset and synonymous with an observation, record, instance, or sample (in most contexts, sample refers to a collection of training examples).</li>
+                        <li><strong>Feature (X):</strong> A column in a data table or data (design) matrix. Synonymous with predictor, variable, input, attribute, or covariate.</li>
+                        <li><strong>Target (y):</strong> Synonymous with outcome, output, response variable, dependent variable, (class) label, and ground truth.</li>
+                    </ul>
+                </div>
+                
+                <div id="model-terms" class="tab-content best-practice-tab">
+                    <h3>Model Terminology</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Training:</strong> Model fitting, for parametric models like parameter estimation.</li>
+                        <li><strong>Loss function:</strong> Often used synonymously with a cost function. Sometimes the loss function is also called an error function. In some literature, the term "loss" refers to the loss measured for a single data point, and the cost is a measurement that computes the loss (average or summed) over the entire dataset.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- ML System Building Section -->
+            <div class="model-section">
+                <h2>Building Machine Learning Systems</h2>
+                
+                <div class="information">
+                    <h3>Preprocessing</h3>
+                    <p>Raw data rarely comes in the form and shape that is necessary for the optimal performance of a learning algorithm. Many machine learning algorithms also require that the selected features are on the same scale for optimal performance, which is often achieved by transforming the features in the range [0, 1] or a standard normal distribution with zero mean and unit variance.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Training and Selecting a Predictive Model</h3>
+                    <p>Cross-validation divides a dataset into training and validation subsets to estimate the generalization performance of the model. This helps determine which model performs well without using the final test dataset.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Evaluating Models</h3>
+                    <p>A test dataset is used to estimate the selected model's performance on unseen data. Various performance metrics (accuracy, loss, etc.) are used to evaluate the model's performance.</p>
+                </div>
+            </div>
+        
+            <!-- ML Challenges Section -->
+            <div class="model-section">
+                <h2>Main Challenges of Machine Learning</h2>
+                
+                <div class="tabs">
+                    <div class="tab tab-red" onclick="openTab(event, 'data-challenges')" title="Data Challenges">Data</div>
+                    <div class="tab tab-yellow" onclick="openTab(event, 'model-challenges')" title="Model Challenges">Models</div>
+                </div>
+                
+                <div id="data-challenges" class="tab-content warning-tab">
+                    <h3>Data-Related Challenges</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Insufficient Quantity of Training Data</strong></li>
+                        <li><strong>Nonrepresentative Training Data</strong></li>
+                        <li><strong>Poor-Quality Data</strong></li>
+                        <li><strong>Irrelevant Features</strong></li>
+                        <li><strong>Data Mismatch</strong></li>
+                    </ul>
+                </div>
+                
+                <div id="model-challenges" class="tab-content warning-tab">
+                    <h3>Model-Related Challenges</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Overfitting the Training Data</strong></li>
+                        <li><strong>Underfitting the Training Data</strong></li>
+                        <li><strong>Hyperparameter Tuning and Model Selection</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
 
         <div class="notecontent">
             <h2>NOTES</h2>
