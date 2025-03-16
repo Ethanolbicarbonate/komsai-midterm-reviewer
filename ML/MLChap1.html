@@ -94,37 +94,39 @@
                 
                 <p>In supervised learning, the algorithm is provided with labeled data, receives direct feedback, and learns to predict outcomes or future results.</p>
         
-                <div class="tabs">
-                    <div class="tab tab-blue active" onclick="openTab(event, 'classification')" title="Classification"></div>
-                    <div class="tab tab-green" onclick="openTab(event, 'regression')" title="Regression"></div>
-                    <div class="tab tab-purple" onclick="openTab(event, 'algorithms')" title="Algorithms"></div>
-                </div>
-                
-                <div id="classification" class="tab-content information-tab active">
-                    <h3>Classification</h3>
-                    <p>Classification algorithms predict categorical class labels of new instances based on past observations. Class labels are discrete, unordered labels that can be understood as the group memberships of the instances.</p>
-                    <p>Types include:</p>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Binary classification</li>
-                        <li>Multiclass classification</li>
-                    </ul>
-                </div>
-                
-                <div id="regression" class="tab-content key-takeaway-tab">
-                    <h3>Regression</h3>
-                    <p>Regression focuses on the prediction of continuous outcomes. Given several predictor (explanatory) variables and a continuous response variable (outcome/target), a relationship between those variables is found.</p>
-                </div>
-                
-                <div id="algorithms" class="tab-content best-practice-tab">
-                    <h3>Supervised Learning Algorithms</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>k-Nearest Neighbors</li>
-                        <li>Linear Regression</li>
-                        <li>Logistic Regression</li>
-                        <li>Support Vector Machines (SVMs)</li>
-                        <li>Decision Trees and Random Forests</li>
-                        <li>Neural networks</li>
-                    </ul>
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-blue active" onclick="openTab(event, 'classification')" title="Classification"></div>
+                        <div class="tab tab-green" onclick="openTab(event, 'regression')" title="Regression"></div>
+                        <div class="tab tab-purple" onclick="openTab(event, 'algorithms')" title="Algorithms"></div>
+                    </div>
+                    
+                    <div id="classification" class="tab-content information-tab active">
+                        <h3>Classification</h3>
+                        <p>Classification algorithms predict categorical class labels of new instances based on past observations. Class labels are discrete, unordered labels that can be understood as the group memberships of the instances.</p>
+                        <p>Types include:</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Binary classification</li>
+                            <li>Multiclass classification</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="regression" class="tab-content key-takeaway-tab">
+                        <h3>Regression</h3>
+                        <p>Regression focuses on the prediction of continuous outcomes. Given several predictor (explanatory) variables and a continuous response variable (outcome/target), a relationship between those variables is found.</p>
+                    </div>
+                    
+                    <div id="algorithms" class="tab-content best-practice-tab">
+                        <h3>Supervised Learning Algorithms</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>k-Nearest Neighbors</li>
+                            <li>Linear Regression</li>
+                            <li>Logistic Regression</li>
+                            <li>Support Vector Machines (SVMs)</li>
+                            <li>Decision Trees and Random Forests</li>
+                            <li>Neural networks</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         
@@ -142,46 +144,48 @@
                 
                 <p>In unsupervised learning, there are no labels, no feedback, and the algorithm works to find hidden structures in the data.</p>
         
-                <div class="tabs">
-                    <div class="tab tab-red active" onclick="openTab(event, 'clustering')" title="Clustering"></div>
-                    <div class="tab tab-yellow" onclick="openTab(event, 'dimensionality')" title="Dimensionality Reduction"></div>
-                    <div class="tab tab-green" onclick="openTab(event, 'unsupervised-algorithms')" title="Algorithms"></div>
-                </div>
-                
-                <div id="clustering" class="tab-content warning-tab active">
-                    <h3>Clustering</h3>
-                    <p>An exploratory data analysis technique that allows us to organize information into meaningful subgroups (clusters) without having any prior knowledge of their group memberships.</p>
-                    <p>Each cluster that arises during the analysis defines a group of objects that share a certain degree of similarity but are more dissimilar to objects in other clusters.</p>
-                </div>
-                
-                <div id="dimensionality" class="tab-content example-tab">
-                    <h3>Dimensionality Reduction</h3>
-                    <p>A commonly used approach in feature preprocessing to remove noise from data. These techniques compress the data onto a smaller dimensional subspace while retaining most of the relevant information.</p>
-                </div>
-                
-                <div id="unsupervised-algorithms" class="tab-content key-takeaway-tab">
-                    <h3>Unsupervised Learning Algorithms</h3>
-                    <p>Clustering:</p>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>K-Means</li>
-                        <li>DBSCAN</li>
-                        <li>Hierarchical Cluster Analysis (HCA)</li>
-                        <li>Anomaly detection and novelty detection</li>
-                        <li>One-class SVM</li>
-                        <li>Isolation Forest</li>
-                    </ul>
-                    <p>Visualization and dimensionality reduction:</p>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Principal Component Analysis (PCA)</li>
-                        <li>Kernel PCA</li>
-                        <li>Locally-Linear Embedding (LLE)</li>
-                        <li>t-distributed Stochastic Neighbor Embedding (t-SNE)</li>
-                    </ul>
-                    <p>Association rule learning:</p>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Apriori</li>
-                        <li>Eclat</li>
-                    </ul>
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-red active" onclick="openTab(event, 'clustering')" title="Clustering"></div>
+                        <div class="tab tab-yellow" onclick="openTab(event, 'dimensionality')" title="Dimensionality Reduction"></div>
+                        <div class="tab tab-green" onclick="openTab(event, 'unsupervised-algorithms')" title="Algorithms"></div>
+                    </div>
+                    
+                    <div id="clustering" class="tab-content warning-tab active">
+                        <h3>Clustering</h3>
+                        <p>An exploratory data analysis technique that allows us to organize information into meaningful subgroups (clusters) without having any prior knowledge of their group memberships.</p>
+                        <p>Each cluster that arises during the analysis defines a group of objects that share a certain degree of similarity but are more dissimilar to objects in other clusters.</p>
+                    </div>
+                    
+                    <div id="dimensionality" class="tab-content example-tab">
+                        <h3>Dimensionality Reduction</h3>
+                        <p>A commonly used approach in feature preprocessing to remove noise from data. These techniques compress the data onto a smaller dimensional subspace while retaining most of the relevant information.</p>
+                    </div>
+                    
+                    <div id="unsupervised-algorithms" class="tab-content key-takeaway-tab">
+                        <h3>Unsupervised Learning Algorithms</h3>
+                        <p>Clustering:</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>K-Means</li>
+                            <li>DBSCAN</li>
+                            <li>Hierarchical Cluster Analysis (HCA)</li>
+                            <li>Anomaly detection and novelty detection</li>
+                            <li>One-class SVM</li>
+                            <li>Isolation Forest</li>
+                        </ul>
+                        <p>Visualization and dimensionality reduction:</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Principal Component Analysis (PCA)</li>
+                            <li>Kernel PCA</li>
+                            <li>Locally-Linear Embedding (LLE)</li>
+                            <li>t-distributed Stochastic Neighbor Embedding (t-SNE)</li>
+                        </ul>
+                        <p>Association rule learning:</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Apriori</li>
+                            <li>Eclat</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         
@@ -224,26 +228,28 @@
             <div class="model-section">
                 <h2>Basic Terminologies</h2>
                 
-                <div class="tabs">
-                    <div class="tab tab-blue active" onclick="openTab(event, 'data-terms')" title="Data Terms"></div>
-                    <div class="tab tab-purple" onclick="openTab(event, 'model-terms')" title="Model Terms"></div>
-                </div>
-                
-                <div id="data-terms" class="tab-content information-tab active">
-                    <h3>Data Terminology</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li><strong>Training example:</strong> A row in a table representing the dataset and synonymous with an observation, record, instance, or sample (in most contexts, sample refers to a collection of training examples).</li>
-                        <li><strong>Feature (X):</strong> A column in a data table or data (design) matrix. Synonymous with predictor, variable, input, attribute, or covariate.</li>
-                        <li><strong>Target (y):</strong> Synonymous with outcome, output, response variable, dependent variable, (class) label, and ground truth.</li>
-                    </ul>
-                </div>
-                
-                <div id="model-terms" class="tab-content best-practice-tab">
-                    <h3>Model Terminology</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li><strong>Training:</strong> Model fitting, for parametric models like parameter estimation.</li>
-                        <li><strong>Loss function:</strong> Often used synonymously with a cost function. Sometimes the loss function is also called an error function. In some literature, the term "loss" refers to the loss measured for a single data point, and the cost is a measurement that computes the loss (average or summed) over the entire dataset.</li>
-                    </ul>
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-blue active" onclick="openTab(event, 'data-terms')" title="Data Terms"></div>
+                        <div class="tab tab-purple" onclick="openTab(event, 'model-terms')" title="Model Terms"></div>
+                    </div>
+                    
+                    <div id="data-terms" class="tab-content information-tab active">
+                        <h3>Data Terminology</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li><strong>Training example:</strong> A row in a table representing the dataset and synonymous with an observation, record, instance, or sample (in most contexts, sample refers to a collection of training examples).</li>
+                            <li><strong>Feature (X):</strong> A column in a data table or data (design) matrix. Synonymous with predictor, variable, input, attribute, or covariate.</li>
+                            <li><strong>Target (y):</strong> Synonymous with outcome, output, response variable, dependent variable, (class) label, and ground truth.</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="model-terms" class="tab-content best-practice-tab">
+                        <h3>Model Terminology</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li><strong>Training:</strong> Model fitting, for parametric models like parameter estimation.</li>
+                            <li><strong>Loss function:</strong> Often used synonymously with a cost function. Sometimes the loss function is also called an error function. In some literature, the term "loss" refers to the loss measured for a single data point, and the cost is a measurement that computes the loss (average or summed) over the entire dataset.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         
@@ -272,29 +278,31 @@
             <div class="model-section">
                 <h2>Main Challenges of Machine Learning</h2>
                 
-                <div class="tabs">
-                    <div class="tab tab-red active" onclick="openTab(event, 'data-challenges')" title="Data Challenges"></div>
-                    <div class="tab tab-yellow" onclick="openTab(event, 'model-challenges')" title="Model Challenges"></div>
-                </div>
-                
-                <div id="data-challenges" class="tab-content warning-tab active">
-                    <h3>Data-Related Challenges</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Insufficient Quantity of Training Data</li>
-                        <li>Nonrepresentative Training Data</li>
-                        <li>Poor-Quality Data</li>
-                        <li>Irrelevant Features</li>
-                        <li>Data Mismatch</li>
-                    </ul>
-                </div>
-                
-                <div id="model-challenges" class="tab-content warning-tab">
-                    <h3>Model-Related Challenges</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Overfitting the Training Data</li>
-                        <li>Underfitting the Training Data</li>
-                        <li>Hyperparameter Tuning and Model Selection</li>
-                    </ul>
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-red active" onclick="openTab(event, 'data-challenges')" title="Data Challenges"></div>
+                        <div class="tab tab-yellow" onclick="openTab(event, 'model-challenges')" title="Model Challenges"></div>
+                    </div>
+                    
+                    <div id="data-challenges" class="tab-content warning-tab active">
+                        <h3>Data-Related Challenges</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Insufficient Quantity of Training Data</li>
+                            <li>Nonrepresentative Training Data</li>
+                            <li>Poor-Quality Data</li>
+                            <li>Irrelevant Features</li>
+                            <li>Data Mismatch</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="model-challenges" class="tab-content warning-tab">
+                        <h3>Model-Related Challenges</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Overfitting the Training Data</li>
+                            <li>Underfitting the Training Data</li>
+                            <li>Hyperparameter Tuning and Model Selection</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </main>

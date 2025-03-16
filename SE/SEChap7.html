@@ -68,25 +68,27 @@
             <p><strong> One of the oldest software process models.</strong> Despite many of its weaknesses, the waterfall process is still in widespread use today and is the basis for many other more effective processes.</p>
         </div>
 
-        <div class="tabs">
-            <div class="tab tab-blue active" onclick="openTab(event, 'characteristics')" title="Key Characteristics"></div>
-            <div class="tab tab-green" onclick="openTab(event, 'how-it-works')" title="How It Works"></div>
-            <div class="tab tab-red" onclick="openTab(event, 'limitations')" title="Important Limitations"></div>
-        </div>
-             
-        <div id="characteristics" class="tab-content information-tab active">
-            <h3>Key Characteristics</h3>
-            <p>The waterfall model follows a sequential approach with distinct phases. Each phase must be completed before moving to the next, with minimal overlap between phases.</p>
-        </div>
-           
-        <div id="how-it-works" class="tab-content key-takeaway-tab">
-            <h3>How It Works</h3>
-            <p>Organizations typically implement waterfall starting with requirements, excluding inception and planning phases. Each phase produces specific documentation before proceeding to the next phase. Entrance and exit criteria ensure successful phase completion.</p>
-        </div>
-           
-        <div id="limitations" class="tab-content warning-tab">
-            <h3>Important Limitations</h3>
-            <p>Testing occurs at the end of development—the first time the system is tested as a whole. Major issues like timing, performance, and storage problems are discovered late, potentially jeopardizing the project schedule.</p>
+        <div class="tab-group">
+            <div class="tabs">
+                <div class="tab tab-blue active" onclick="openTab(event, 'characteristics')" title="Key Characteristics"></div>
+                <div class="tab tab-green" onclick="openTab(event, 'how-it-works')" title="How It Works"></div>
+                <div class="tab tab-red" onclick="openTab(event, 'limitations')" title="Important Limitations"></div>
+            </div>
+                
+            <div id="characteristics" class="tab-content information-tab active">
+                <h3>Key Characteristics</h3>
+                <p>The waterfall model follows a sequential approach with distinct phases. Each phase must be completed before moving to the next, with minimal overlap between phases.</p>
+            </div>
+            
+            <div id="how-it-works" class="tab-content key-takeaway-tab">
+                <h3>How It Works</h3>
+                <p>Organizations typically implement waterfall starting with requirements, excluding inception and planning phases. Each phase produces specific documentation before proceeding to the next phase. Entrance and exit criteria ensure successful phase completion.</p>
+            </div>
+            
+            <div id="limitations" class="tab-content warning-tab">
+                <h3>Important Limitations</h3>
+                <p>Testing occurs at the end of development—the first time the system is tested as a whole. Major issues like timing, performance, and storage problems are discovered late, potentially jeopardizing the project schedule.</p>
+            </div>
         </div>
 
         <img src="../images/waterfall.png" alt="">
@@ -147,29 +149,31 @@
             <p>An iterative process is <strong>incremental</strong> if each iteration is relatively small. At the conclusion of such an iteration, a piece of operational code is produced that supports a subset of the final product functionality and features.</p>
         </div>
 
-        <div class="tabs">
-            <div class="tab tab-green active" onclick="openTab(event, 'elements')" title="Key Elements"></div>
-            <div class="tab tab-blue" onclick="openTab(event, 'release')" title="Release Types"></div>
-            <div class="tab tab-purple" onclick="openTab(event, 'practices1')" title="Best Practices"></div>
-        </div>
-             
-        <div id="elements" class="tab-content key-takeaway-tab active">
-            <h3>Key Elements</h3>
-            <p>Project artifacts evolve during each phase. Successive increments implement increasing functionality until the final product. Each iteration is self-contained with its own activities, objectives, and evaluation criteria. Iterations can be developed in parallel by separate teams.</p>
-        </div>
-           
-        <div id="release" class="tab-content information-tab">
-            <h3>Release Types</h3>
-            <ul>
-                <li><strong>Proof of concept or feasibility study</strong><br> Demonstrates or investigates feasibility of particular aspects</li>
-                <li><strong>Prototype</strong><br> Working version demonstrating high-risk capabilities</li>
-                <li><strong>Internal release</strong><br> Used by the development team to ensure development is on track</li>
-                <li><strong>External release</strong><br> Shipped to customers for evaluation</li>
-            </ul>
-        </div>
-        <div id="practices1" class="tab-content best-practice-tab">
-            <h3>Best Practices</h3>
-            <p>Testing each iteration as a self-contained project allows clear objectives and reduces complexity. Producing working software at each iteration helps monitor progress and gather feedback. Early iterations should address high-risk aspects to reduce overall project risk.</p>
+        <div class="tab-group">
+            <div class="tabs">
+                <div class="tab tab-green active" onclick="openTab(event, 'elements')" title="Key Elements"></div>
+                <div class="tab tab-blue" onclick="openTab(event, 'release')" title="Release Types"></div>
+                <div class="tab tab-purple" onclick="openTab(event, 'practices1')" title="Best Practices"></div>
+            </div>
+                
+            <div id="elements" class="tab-content key-takeaway-tab active">
+                <h3>Key Elements</h3>
+                <p>Project artifacts evolve during each phase. Successive increments implement increasing functionality until the final product. Each iteration is self-contained with its own activities, objectives, and evaluation criteria. Iterations can be developed in parallel by separate teams.</p>
+            </div>
+            
+            <div id="release" class="tab-content information-tab">
+                <h3>Release Types</h3>
+                <ul>
+                    <li><strong>Proof of concept or feasibility study</strong><br> Demonstrates or investigates feasibility of particular aspects</li>
+                    <li><strong>Prototype</strong><br> Working version demonstrating high-risk capabilities</li>
+                    <li><strong>Internal release</strong><br> Used by the development team to ensure development is on track</li>
+                    <li><strong>External release</strong><br> Shipped to customers for evaluation</li>
+                </ul>
+            </div>
+            <div id="practices1" class="tab-content best-practice-tab">
+                <h3>Best Practices</h3>
+                <p>Testing each iteration as a self-contained project allows clear objectives and reduces complexity. Producing working software at each iteration helps monitor progress and gather feedback. Early iterations should address high-risk aspects to reduce overall project risk.</p>
+            </div>
         </div>
 
         <img src="../images/iterative.png" alt="">
@@ -213,34 +217,37 @@
             <h3>Overview</h3>
             <p>Barry Boehm's Spiral Model is one of the earliest and best-known iterative processes. It's called a "spiral" because development iterates as an outward spiral, with each cycle representing one iteration.</p>
         </div>
-        <div class="tabs">
-            <div class="tab tab-green active" onclick="openTab(event, 'risk-driven')" title="risk-driven approach"></div>
-            <div class="tab tab-blue" onclick="openTab(event, 'spiral-steps')" title="spiral-steps"></div>
-            <div class="tab tab-yellow" onclick="openTab(event, 'spiral-implement')" title="spiral-implement"></div>
-        </div>
-             
-        <div id="risk-driven" class="tab-content key-takeaway-tab active">
-            <h3>Risk-Driven Approach</h3>
-            <p>The goal of each cycle is to increase system definition and implementation while decreasing risk. Risk management is built into the process with early risk identification in each iteration. The overall project risk reduces as you progress outward in the spiral.</p>
-        </div>
-           
-        <div id="spiral-steps" class="tab-content information-tab">
-            <h3>Spiral Model Iteration Steps</h3>
-            <ul>
-                <li>Identify critical objectives and constraints</li>
-                <li>Evaluate project and process alternatives</li>
-                <li>Identify risks</li>
-                <li>Cost-effectively resolve risks using analysis, prototypes, etc.</li>
-                <li>Develop project deliverables</li>
-                <li>Plan for future cycles and update the project plan</li>
-                <li>Review with stakeholders and commit to proceeding</li>
-            </ul>
-        </div>
-           
-        <div id="spiral-implement" class="tab-content example-tab">
-            <h3>Implementation Pattern</h3>
-            <p>Each spiral traversal produces incremental deliverables. Early iterations yield models or prototypes, while later iterations follow a more waterfall-like process producing more complete software versions. The number of cycles depends on project size, identified risks, and their retirement rate.</p>
-        </div>
+        
+        <div class="tab-group">
+            <div class="tabs">
+                <div class="tab tab-green active" onclick="openTab(event, 'risk-driven')" title="risk-driven approach"></div>
+                <div class="tab tab-blue" onclick="openTab(event, 'spiral-steps')" title="spiral-steps"></div>
+                <div class="tab tab-yellow" onclick="openTab(event, 'spiral-implement')" title="spiral-implement"></div>
+            </div>
+                
+            <div id="risk-driven" class="tab-content key-takeaway-tab active">
+                <h3>Risk-Driven Approach</h3>
+                <p>The goal of each cycle is to increase system definition and implementation while decreasing risk. Risk management is built into the process with early risk identification in each iteration. The overall project risk reduces as you progress outward in the spiral.</p>
+            </div>
+            
+            <div id="spiral-steps" class="tab-content information-tab">
+                <h3>Spiral Model Iteration Steps</h3>
+                <ul>
+                    <li>Identify critical objectives and constraints</li>
+                    <li>Evaluate project and process alternatives</li>
+                    <li>Identify risks</li>
+                    <li>Cost-effectively resolve risks using analysis, prototypes, etc.</li>
+                    <li>Develop project deliverables</li>
+                    <li>Plan for future cycles and update the project plan</li>
+                    <li>Review with stakeholders and commit to proceeding</li>
+                </ul>
+            </div>
+            
+            <div id="spiral-implement" class="tab-content example-tab">
+                <h3>Implementation Pattern</h3>
+                <p>Each spiral traversal produces incremental deliverables. Early iterations yield models or prototypes, while later iterations follow a more waterfall-like process producing more complete software versions. The number of cycles depends on project size, identified risks, and their retirement rate.</p>
+            </div>
+        </div>    
 
         <img src="../images/spiral.png" alt="">
         
@@ -304,27 +311,29 @@
             <p>An <strong>agile software process</strong> is one that embraces and conforms to the Agile Manifesto values and principles.</p>
         </div>
 
-        <div class="tabs">
-            <div class="tab tab-green active" onclick="openTab(event, 'agile-characteristics')" title="agile-characteristics"></div>
-            <div class="tab tab-blue" onclick="openTab(event, 'agile-practices')" title="agile-practices"></div>
-        </div>
-             
-        <div id="agile-characteristics" class="tab-content key-takeaway-tab active">
-            <h3>Characteristics of Agile Processes</h3>
-            <p>Agile processes are highly iterative and incremental, focusing on delivering working software quickly and responding to change effectively.</p>
-        </div>
-           
-        <div id="agile-practices" class="tab-content information-tab">
-            <h3>Common Agile Practices</h3>
-            <ul>
-                <li>Small, close-knit teams</li>
-                <li>Regular, frequent, disciplined customer requirements meetings</li>
-                <li>A code-centric approach, documentation on an as-needed basis</li>
-                <li>Customer representatives working within the team</li>
-                <li>The use of user stories as the basis for requirements</li>
-                <li>Pair programming, in which two programmers work at a single workstation</li>
-                <li>Continual unit-testing, and acceptance tests as means of getting customer expectations</li>
-            </ul>
+        <div class="tab-group">
+            <div class="tabs">
+                <div class="tab tab-green active" onclick="openTab(event, 'agile-characteristics')" title="agile-characteristics"></div>
+                <div class="tab tab-blue" onclick="openTab(event, 'agile-practices')" title="agile-practices"></div>
+            </div>
+                
+            <div id="agile-characteristics" class="tab-content key-takeaway-tab active">
+                <h3>Characteristics of Agile Processes</h3>
+                <p>Agile processes are highly iterative and incremental, focusing on delivering working software quickly and responding to change effectively.</p>
+            </div>
+            
+            <div id="agile-practices" class="tab-content information-tab">
+                <h3>Common Agile Practices</h3>
+                <ul>
+                    <li>Small, close-knit teams</li>
+                    <li>Regular, frequent, disciplined customer requirements meetings</li>
+                    <li>A code-centric approach, documentation on an as-needed basis</li>
+                    <li>Customer representatives working within the team</li>
+                    <li>The use of user stories as the basis for requirements</li>
+                    <li>Pair programming, in which two programmers work at a single workstation</li>
+                    <li>Continual unit-testing, and acceptance tests as means of getting customer expectations</li>
+                </ul>
+            </div>
         </div>
 
         <img src="../images/agilemethod.png" alt="">
@@ -379,31 +388,33 @@
             <p>Prototyping is an important risk management technique. It involves creating a partial implementation to identify and retire risky parts of a project.</p>
         </div>
 
-        <div class="tabs">
-            <div class="tab tab-green active" onclick="openTab(event, 'tab1')" title="Tab 1"></div>
-            <div class="tab tab-yellow" onclick="openTab(event, 'tab2')" title="Tab 2"></div>
-            <div class="tab tab-purple" onclick="openTab(event, 'tab3')" title="Tab 3"></div>
-        </div>
-             
-        <div id="tab1" class="tab-content key-takeaway-tab active">
-            <h3>Benefits</h3>
-            <p>Prototyping helps obtain ideas about customer requirements and increases understanding of what's to come, saving expensive rework and removing future roadblocks.</p>
-        </div>
-           
-        <div id="tab2" class="tab-content example-tab">
-            <h3>Implementation Examples</h3>
-            <p>Simple graphics showing GUIs using paint-type tools may be sufficient if the prototype's goal is to envision interfaces. More extensive prototypes can retire more risks.</p>
-        </div>
-           
-        <div id="tab3" class="tab-content best-practice-tab">
-            <h3>When to Consider Prototyping</h3>
-            <p>Consider prototyping when:</p>
-            <ul>
-                <li>Requirements are unclear or complex</li>
-                <li>Stakeholders need visual confirmation</li>
-                <li>New technology is being implemented</li>
-                <li>High-risk components need validation early</li>
-            </ul>
+        <div class="tab-group">
+            <div class="tabs">
+                <div class="tab tab-green active" onclick="openTab(event, 'tab1')" title="Tab 1"></div>
+                <div class="tab tab-yellow" onclick="openTab(event, 'tab2')" title="Tab 2"></div>
+                <div class="tab tab-purple" onclick="openTab(event, 'tab3')" title="Tab 3"></div>
+            </div>
+                
+            <div id="tab1" class="tab-content key-takeaway-tab active">
+                <h3>Benefits</h3>
+                <p>Prototyping helps obtain ideas about customer requirements and increases understanding of what's to come, saving expensive rework and removing future roadblocks.</p>
+            </div>
+            
+            <div id="tab2" class="tab-content example-tab">
+                <h3>Implementation Examples</h3>
+                <p>Simple graphics showing GUIs using paint-type tools may be sufficient if the prototype's goal is to envision interfaces. More extensive prototypes can retire more risks.</p>
+            </div>
+            
+            <div id="tab3" class="tab-content best-practice-tab">
+                <h3>When to Consider Prototyping</h3>
+                <p>Consider prototyping when:</p>
+                <ul>
+                    <li>Requirements are unclear or complex</li>
+                    <li>Stakeholders need visual confirmation</li>
+                    <li>New technology is being implemented</li>
+                    <li>High-risk components need validation early</li>
+                </ul>
+            </div>
         </div>
     </div>
     </main>

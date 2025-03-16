@@ -73,18 +73,21 @@ toggleContainers.forEach(function(container) {
 });
 
 function openTab(evt, tabName) {
-    // Hide all tab content
-    var tabContents = document.getElementsByClassName("tab-content");
+    // Find the parent tab group (closest parent with class "tabs" or a container)
+    var tabGroup = evt.currentTarget.closest('.tabs').parentElement;
+    
+    // Hide all tab content within this group
+    var tabContents = tabGroup.getElementsByClassName("tab-content");
     for (var i = 0; i < tabContents.length; i++) {
         tabContents[i].className = tabContents[i].className.replace(" active", "");
     }
-
-    // Remove active class from all tabs
-    var tabs = document.getElementsByClassName("tab");
+    
+    // Remove active class from all tabs within this group
+    var tabs = tabGroup.getElementsByClassName("tab");
     for (var i = 0; i < tabs.length; i++) {
         tabs[i].className = tabs[i].className.replace(" active", "");
     }
-
+    
     // Show the current tab and add active class
     document.getElementById(tabName).className += " active";
     evt.currentTarget.className += " active";

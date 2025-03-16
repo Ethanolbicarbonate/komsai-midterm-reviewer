@@ -199,26 +199,28 @@
                     </ul>
                 </div>
                 
-                <div class="tabs">
-                    <div class="tab tab-green active" onclick="openTab(event, 'reviewCommittee')" title="Systems Review Committee"></div>
-                    <div class="tab tab-red" onclick="openTab(event, 'committeeLimitations')" title="Committee Limitations"></div>
-                </div>
-                
-                <div id="reviewCommittee" class="tab-content key-takeaway-tab active">
-                    <h3>Advantages of using a committee</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>With a broader viewpoint, a committee can establish priorities more effectively than an individual</li>
-                        <li>One person's bias is less likely to affect the decisions</li>
-                    </ul>
-                </div>
-                
-                <div id="committeeLimitations" class="tab-content warning-tab">
-                    <h3>Limitations of Review Committees</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Action on requests must wait until the committee meets</li>
-                        <li>Members might favor projects requested by their own departments</li>
-                        <li>Internal political differences could delay important decisions</li>
-                    </ul>
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-green active" onclick="openTab(event, 'reviewCommittee')" title="Systems Review Committee"></div>
+                        <div class="tab tab-red" onclick="openTab(event, 'committeeLimitations')" title="Committee Limitations"></div>
+                    </div>
+                    
+                    <div id="reviewCommittee" class="tab-content key-takeaway-tab active">
+                        <h3>Advantages of using a committee</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>With a broader viewpoint, a committee can establish priorities more effectively than an individual</li>
+                            <li>One person's bias is less likely to affect the decisions</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="committeeLimitations" class="tab-content warning-tab">
+                        <h3>Limitations of Review Committees</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Action on requests must wait until the committee meets</li>
+                            <li>Members might favor projects requested by their own departments</li>
+                            <li>Internal political differences could delay important decisions</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         
@@ -244,68 +246,70 @@
                 </ul>
                 <img src="../images/feasibility.png" alt="">
                 
-                <div class="tabs">
-                    <div class="tab tab-blue active" onclick="openTab(event, 'operationalFeasibility')" title="Operational Feasibility"></div>
-                    <div class="tab tab-green" onclick="openTab(event, 'technicalFeasibility')" title="Technical Feasibility"></div>
-                    <div class="tab tab-yellow" onclick="openTab(event, 'economicFeasibility')" title="Economic Feasibility"></div>
-                    <div class="tab tab-purple" onclick="openTab(event, 'scheduleFeasibility')" title="Schedule Feasibility"></div>
-                </div>
-                
-                <div id="operationalFeasibility" class="tab-content information-tab active">
-                    <h4>Operational Feasibility</h4>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Evaluates management and user support for the project.</li>
-                        <li>Considers system adoption, workforce impact, and training needs.</li>
-                        <li>Assesses risks to customer experience, company image, and legal/ethical concerns.</li>
-                        <li>Determines operational changes and user involvement in planning.</li>
-                    </ul>
-                </div>
-            
-                <div id="technicalFeasibility" class="tab-content key-takeaway-tab">
-                    <h4>Technical Feasibility</h4>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Examines availability of hardware, software, and network resources.</li>
-                        <li>Evaluates system reliability, scalability, and performance expectations.</li>
-                        <li>Assesses integration with internal and external systems.</li>
-                        <li>Determines the necessity of a prototype.</li>
-                    </ul>
-                </div>
-            
-                <div id="economicFeasibility" class="tab-content example-tab">
-                    <h4>Economic Feasibility</h4>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Analyzes costs for personnel, hardware, software, and training.</li>
-                        <li>Considers expenses for licensing, consulting, and facilities.</li>
-                        <li>Evaluates the financial impact of delaying or not developing the system.</li>
-                    </ul>
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-blue active" onclick="openTab(event, 'operationalFeasibility')" title="Operational Feasibility"></div>
+                        <div class="tab tab-green" onclick="openTab(event, 'technicalFeasibility')" title="Technical Feasibility"></div>
+                        <div class="tab tab-yellow" onclick="openTab(event, 'economicFeasibility')" title="Economic Feasibility"></div>
+                        <div class="tab tab-purple" onclick="openTab(event, 'scheduleFeasibility')" title="Schedule Feasibility"></div>
+                    </div>
                     
-                    <p>Benefits to consider:</p>
-                    <p><strong>Tangible Benefits:</strong></p>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>A new scheduling system that reduces overtime</li>
-                        <li>An online package tracking system that improves service and decreases the need for clerical staff</li>
-                        <li>A sophisticated inventory control system that cuts excess inventory and eliminates production delays</li>
-                    </ul>
-                    <p><strong>Intangible Benefits:</strong></p>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>A user-friendly system that improves employee job satisfaction</li>
-                        <li>A sales tracking system that supplies better information for marketing decisions</li>
-                        <li>A new Web site that enhances the company's image</li>
-                    </ul>
-                </div>
+                    <div id="operationalFeasibility" class="tab-content information-tab active">
+                        <h4>Operational Feasibility</h4>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Evaluates management and user support for the project.</li>
+                            <li>Considers system adoption, workforce impact, and training needs.</li>
+                            <li>Assesses risks to customer experience, company image, and legal/ethical concerns.</li>
+                            <li>Determines operational changes and user involvement in planning.</li>
+                        </ul>
+                    </div>
                 
-                <div id="scheduleFeasibility" class="tab-content best-practice-tab">
-                    <h3>Schedule Feasibility</h3>
-                    <p>Key considerations:</p>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Evaluates control over factors affecting project timeline.</li>
-                        <li>Determines if management has set a clear timetable.</li>
-                        <li>Identifies necessary conditions for system development.</li>
-                        <li>Assesses risks of an accelerated schedule.</li>
-                        <li>Ensures project management techniques are in place for coordination.</li>
-                        <li>Confirms if a project manager will be assigned.</li>
-                    </ul>
-                </div>                
+                    <div id="technicalFeasibility" class="tab-content key-takeaway-tab">
+                        <h4>Technical Feasibility</h4>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Examines availability of hardware, software, and network resources.</li>
+                            <li>Evaluates system reliability, scalability, and performance expectations.</li>
+                            <li>Assesses integration with internal and external systems.</li>
+                            <li>Determines the necessity of a prototype.</li>
+                        </ul>
+                    </div>
+                
+                    <div id="economicFeasibility" class="tab-content example-tab">
+                        <h4>Economic Feasibility</h4>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Analyzes costs for personnel, hardware, software, and training.</li>
+                            <li>Considers expenses for licensing, consulting, and facilities.</li>
+                            <li>Evaluates the financial impact of delaying or not developing the system.</li>
+                        </ul>
+                        
+                        <p>Benefits to consider:</p>
+                        <p><strong>Tangible Benefits:</strong></p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>A new scheduling system that reduces overtime</li>
+                            <li>An online package tracking system that improves service and decreases the need for clerical staff</li>
+                            <li>A sophisticated inventory control system that cuts excess inventory and eliminates production delays</li>
+                        </ul>
+                        <p><strong>Intangible Benefits:</strong></p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>A user-friendly system that improves employee job satisfaction</li>
+                            <li>A sales tracking system that supplies better information for marketing decisions</li>
+                            <li>A new Web site that enhances the company's image</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="scheduleFeasibility" class="tab-content best-practice-tab">
+                        <h3>Schedule Feasibility</h3>
+                        <p>Key considerations:</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Evaluates control over factors affecting project timeline.</li>
+                            <li>Determines if management has set a clear timetable.</li>
+                            <li>Identifies necessary conditions for system development.</li>
+                            <li>Assesses risks of an accelerated schedule.</li>
+                            <li>Ensures project management techniques are in place for coordination.</li>
+                            <li>Confirms if a project manager will be assigned.</li>
+                        </ul>
+                    </div>
+                </div>                 
 
                 <div class="key-takeaway">
                     <h3>Purpose of Feasibility Analysis</h3>
@@ -337,27 +341,29 @@
                     <li>Are the necessary financial, human, and technical resources available?</li>
                 </ul>
                 
-                <div class="tabs">
-                    <div class="tab tab-green active" onclick="openTab(event, 'discretionary')" title="Discretionary Projects"></div>
-                    <div class="tab tab-red" onclick="openTab(event, 'nondiscretionary')" title="Nondiscretionary Projects"></div>
-                </div>
-                
-                <div id="discretionary" class="tab-content key-takeaway-tab active">
-                    <h3>Discretionary Projects</h3>
-                    <p>Projects where management has a choice in implementing them.</p>
-                    <p>Example: Creating a new report for a user</p>
-                </div>
-                
-                <div id="nondiscretionary" class="tab-content warning-tab">
-                    <h3>Nondiscretionary Projects</h3>
-                    <p>Projects where management must implement them.</p>
-                    <p>Example: Adding a report required by federal law</p>
-                    <p>Most of these projects are predictable:</p>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Annual updates to payroll</li>
-                        <li>Tax percentages</li>
-                        <li>Quarterly changes</li>
-                    </ul>
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-green active" onclick="openTab(event, 'discretionary')" title="Discretionary Projects"></div>
+                        <div class="tab tab-red" onclick="openTab(event, 'nondiscretionary')" title="Nondiscretionary Projects"></div>
+                    </div>
+                    
+                    <div id="discretionary" class="tab-content key-takeaway-tab active">
+                        <h3>Discretionary Projects</h3>
+                        <p>Projects where management has a choice in implementing them.</p>
+                        <p>Example: Creating a new report for a user</p>
+                    </div>
+                    
+                    <div id="nondiscretionary" class="tab-content warning-tab">
+                        <h3>Nondiscretionary Projects</h3>
+                        <p>Projects where management must implement them.</p>
+                        <p>Example: Adding a report required by federal law</p>
+                        <p>Most of these projects are predictable:</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Annual updates to payroll</li>
+                            <li>Tax percentages</li>
+                            <li>Quarterly changes</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
@@ -385,95 +391,97 @@
                         <li>Present results and recommendations to management</li>
                     </ol>
                 </div>
-                
-                <div class="tabs">
-                    <div class="tab tab-blue active" onclick="openTab(event, 'step1')" title="Step 1"></div>
-                    <div class="tab tab-green" onclick="openTab(event, 'step2')" title="Step 2"></div>
-                    <div class="tab tab-yellow" onclick="openTab(event, 'step3')" title="Step 3"></div>
-                    <div class="tab tab-purple" onclick="openTab(event, 'step4')" title="Step 4"></div>
-                    <div class="tab tab-red" onclick="openTab(event, 'step5')" title="Step 5"></div>
-                    <div class="tab tab-blue" onclick="openTab(event, 'step6')" title="Step 6"></div>
-                </div>
-                
-                <div id="step1" class="tab-content information-tab active">
-                    <h3>Step 1: Understand the Problem or Opportunity</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Develop a business profile that describes business processes and functions</li>
-                        <li>Understand how modifications will affect business operations and other information systems</li>
-                        <li>Determine which departments, users, and business processes are involved</li>
-                        <li>Systems request may not reveal an underlying problem</li>
-                        <li>Consider using a fishbone diagram to identify actual causes rather than just symptoms</li>
-                    </ul>
-                </div>
-                
-                <div id="step2" class="tab-content key-takeaway-tab">
-                    <h3>Step 2: Define the Project Scope and Constraints</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Define the specific boundaries, or extent, of the project</li>
-                        <li>Define project scope by creating a list with sections called Must Do, Should Do, Could Do, and Won't Do</li>
-                        <li>Define project scope as clearly as possible to avoid project creep</li>
-                        <li>Identify Constraints</li>
-                        <li>A constraint is a requirement or condition that the system must satisfy or an outcome that the system must achieve</li>
-                    </ul>
-                </div>
-                
-                <div id="step3" class="tab-content example-tab">
-                    <h3>Step 3: Perform Fact-Finding</h3>
-                    <p>Gather data about project usability, costs, benefits, and schedules through various methods:</p>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li><strong>Analyze organization charts:</strong> Understand the functions and identify people you want to interview</li>
-                        <li><strong>Conduct Interviews:</strong>
-                            <ol>
-                                <li>Determine the people to interview</li>
-                                <li>Establish objectives for the interview</li>
-                                <li>Develop interview questions</li>
-                                <li>Prepare for the interview</li>
-                                <li>Conduct the interview</li>
-                                <li>Document the interview</li>
-                                <li>Evaluate the interview</li>
-                            </ol>
-                        </li>
-                        <li><strong>Review Documentation:</strong> Investigate the current system documentation and check with users to confirm accuracy and completeness</li>
-                        <li><strong>Observe Operations:</strong> See how workers carry out typical tasks and sample inputs and outputs of the system</li>
-                        <li><strong>Conduct a User Survey:</strong> A survey is not as flexible as interviews, but it is less expensive, generally takes less time, and can involve a broader cross-section of people</li>
-                        <li><strong>Analyze the Data:</strong> Use tools like Pareto charts and XY charts to identify issues and correlations</li>
-                    </ul>
-                </div>
-                
-                <div id="step4" class="tab-content best-practice-tab">
-                    <h3>Step 4: Analyze Project Usability, Cost, Benefit, and Schedule Data</h3>
-                    <p>Key questions to consider:</p>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>What information must you obtain, and how will you gather and analyze the information?</li>
-                        <li>Will you conduct interviews? How many people will you interview, and how much time will you need to meet with the people and summarize their responses?</li>
-                        <li>Will you conduct a survey? Who will be involved? How much time will it take people to complete it? How much time will it take to tabulate the results?</li>
-                        <li>How much will it cost to analyze the information and prepare a report with findings and recommendations?</li>
-                    </ul>
-                </div>
-                
-                <div id="step5" class="tab-content warning-tab">
-                    <h3>Step 5: Evaluate Feasibility</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li><strong>OPERATIONAL FEASIBILITY:</strong> Review of user needs, requirements, and expectations. Look for areas that might present problems for system users and how they might be resolved.</li>
-                        <li><strong>TECHNICAL FEASIBILITY:</strong> Identify the hardware, software, and network resources needed to develop, install, and operate the system. Develop a checklist that will highlight technical costs and concerns.</li>
-                        <li><strong>ECONOMIC FEASIBILITY:</strong> Apply financial analysis tools. The cost-benefit data will be important.</li>
-                        <li><strong>SCHEDULE FEASIBILITY:</strong> Include stakeholder expectations regarding acceptable timing and completion dates.</li>
-                    </ul>
-                </div>
-                
-                <div id="step6" class="tab-content information-tab">
-                    <h3>Step 6: Present Results and Recommendations to Management</h3>
-                    <p>Typical Report Includes:</p>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Introduction</li>
-                        <li>Systems Request Summary</li>
-                        <li>Findings</li>
-                        <li>Case for Action</li>
-                        <li>Project Roles</li>
-                        <li>Time and Costs Estimates</li>
-                        <li>Expected Benefits</li>
-                        <li>Appendix</li>
-                    </ul>
+
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-blue active" onclick="openTab(event, 'step1')" title="Step 1"></div>
+                        <div class="tab tab-green" onclick="openTab(event, 'step2')" title="Step 2"></div>
+                        <div class="tab tab-yellow" onclick="openTab(event, 'step3')" title="Step 3"></div>
+                        <div class="tab tab-purple" onclick="openTab(event, 'step4')" title="Step 4"></div>
+                        <div class="tab tab-red" onclick="openTab(event, 'step5')" title="Step 5"></div>
+                        <div class="tab tab-blue" onclick="openTab(event, 'step6')" title="Step 6"></div>
+                    </div>
+                    
+                    <div id="step1" class="tab-content information-tab active">
+                        <h3>Step 1: Understand the Problem or Opportunity</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Develop a business profile that describes business processes and functions</li>
+                            <li>Understand how modifications will affect business operations and other information systems</li>
+                            <li>Determine which departments, users, and business processes are involved</li>
+                            <li>Systems request may not reveal an underlying problem</li>
+                            <li>Consider using a fishbone diagram to identify actual causes rather than just symptoms</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="step2" class="tab-content key-takeaway-tab">
+                        <h3>Step 2: Define the Project Scope and Constraints</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Define the specific boundaries, or extent, of the project</li>
+                            <li>Define project scope by creating a list with sections called Must Do, Should Do, Could Do, and Won't Do</li>
+                            <li>Define project scope as clearly as possible to avoid project creep</li>
+                            <li>Identify Constraints</li>
+                            <li>A constraint is a requirement or condition that the system must satisfy or an outcome that the system must achieve</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="step3" class="tab-content example-tab">
+                        <h3>Step 3: Perform Fact-Finding</h3>
+                        <p>Gather data about project usability, costs, benefits, and schedules through various methods:</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li><strong>Analyze organization charts:</strong> Understand the functions and identify people you want to interview</li>
+                            <li><strong>Conduct Interviews:</strong>
+                                <ol>
+                                    <li>Determine the people to interview</li>
+                                    <li>Establish objectives for the interview</li>
+                                    <li>Develop interview questions</li>
+                                    <li>Prepare for the interview</li>
+                                    <li>Conduct the interview</li>
+                                    <li>Document the interview</li>
+                                    <li>Evaluate the interview</li>
+                                </ol>
+                            </li>
+                            <li><strong>Review Documentation:</strong> Investigate the current system documentation and check with users to confirm accuracy and completeness</li>
+                            <li><strong>Observe Operations:</strong> See how workers carry out typical tasks and sample inputs and outputs of the system</li>
+                            <li><strong>Conduct a User Survey:</strong> A survey is not as flexible as interviews, but it is less expensive, generally takes less time, and can involve a broader cross-section of people</li>
+                            <li><strong>Analyze the Data:</strong> Use tools like Pareto charts and XY charts to identify issues and correlations</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="step4" class="tab-content best-practice-tab">
+                        <h3>Step 4: Analyze Project Usability, Cost, Benefit, and Schedule Data</h3>
+                        <p>Key questions to consider:</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>What information must you obtain, and how will you gather and analyze the information?</li>
+                            <li>Will you conduct interviews? How many people will you interview, and how much time will you need to meet with the people and summarize their responses?</li>
+                            <li>Will you conduct a survey? Who will be involved? How much time will it take people to complete it? How much time will it take to tabulate the results?</li>
+                            <li>How much will it cost to analyze the information and prepare a report with findings and recommendations?</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="step5" class="tab-content warning-tab">
+                        <h3>Step 5: Evaluate Feasibility</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li><strong>OPERATIONAL FEASIBILITY:</strong> Review of user needs, requirements, and expectations. Look for areas that might present problems for system users and how they might be resolved.</li>
+                            <li><strong>TECHNICAL FEASIBILITY:</strong> Identify the hardware, software, and network resources needed to develop, install, and operate the system. Develop a checklist that will highlight technical costs and concerns.</li>
+                            <li><strong>ECONOMIC FEASIBILITY:</strong> Apply financial analysis tools. The cost-benefit data will be important.</li>
+                            <li><strong>SCHEDULE FEASIBILITY:</strong> Include stakeholder expectations regarding acceptable timing and completion dates.</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="step6" class="tab-content information-tab">
+                        <h3>Step 6: Present Results and Recommendations to Management</h3>
+                        <p>Typical Report Includes:</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Introduction</li>
+                            <li>Systems Request Summary</li>
+                            <li>Findings</li>
+                            <li>Case for Action</li>
+                            <li>Project Roles</li>
+                            <li>Time and Costs Estimates</li>
+                            <li>Expected Benefits</li>
+                            <li>Appendix</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </main>

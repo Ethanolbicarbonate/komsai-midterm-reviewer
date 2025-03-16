@@ -114,18 +114,20 @@
         <p>After every sprint, teams reflect and look back to see if there was anything that could be improved so they can adjust their strategy for the next sprint.</p>
         
         <!-- Tab System use this for all sections -->
-        <div class="tabs">
-            <div class="tab tab-yellow active" onclick="openTab(event, 'tab2')" title="Tab 2"></div>
-            <div class="tab tab-purple" onclick="openTab(event, 'tab3')" title="Tab 3"></div>
-        </div>
-        
-        <div id="tab2" class="tab-content example-tab active">
-            <h3>Key Aspects of Agile Methodology</h3>
-            <p>One thing that separates Agile from other approaches to software development is the focus on the people doing the work and how they work together. Solutions evolve through collaboration between self-organizing cross-functional teams utilizing the appropriate practices for their context.</p>
-        </div>
-        <div id="tab3" class="tab-content best-practice-tab">
-            <h3>Role of Managers in Agile</h3>
-            <p>Managers make sure team members have, or obtain, the right skill sets. Managers provide an environment that allows the team to be successful. Managers mostly step back and let their teams figure out how they are going to deliver products, but they step in when the teams try but are unable to resolve issues.</p>
+        <div class="tab-group">
+            <div class="tabs">
+                <div class="tab tab-yellow active" onclick="openTab(event, 'tab2')" title="Tab 2"></div>
+                <div class="tab tab-purple" onclick="openTab(event, 'tab3')" title="Tab 3"></div>
+            </div>
+            
+            <div id="tab2" class="tab-content example-tab active">
+                <h3>Key Aspects of Agile Methodology</h3>
+                <p>One thing that separates Agile from other approaches to software development is the focus on the people doing the work and how they work together. Solutions evolve through collaboration between self-organizing cross-functional teams utilizing the appropriate practices for their context.</p>
+            </div>
+            <div id="tab3" class="tab-content best-practice-tab">
+                <h3>Role of Managers in Agile</h3>
+                <p>Managers make sure team members have, or obtain, the right skill sets. Managers provide an environment that allows the team to be successful. Managers mostly step back and let their teams figure out how they are going to deliver products, but they step in when the teams try but are unable to resolve issues.</p>
+            </div>
         </div>
 
     </div>
@@ -143,31 +145,33 @@
     <div class="model-section">
         <h2>FOUR PILLARS OF AGILE</h2>
         
-        <div class="tabs">
-            <div class="tab tab-green active" onclick="openTab(event, 'pillar1')" title="Individuals & Interactions"></div>
-            <div class="tab tab-blue" onclick="openTab(event, 'pillar2')" title="Working Software"></div>
-            <div class="tab tab-red" onclick="openTab(event, 'pillar3')" title="Customer Collaboration"></div>
-            <div class="tab tab-purple" onclick="openTab(event, 'pillar4')" title="Responding to Change"></div>
-        </div>
-        
-        <div id="pillar1" class="tab-content key-takeaway-tab active">
-            <h3>Individuals and Interactions over Processes and Tools</h3>
-            <p>Agile teams value team collaboration and teamwork over working independently and doing things "by the book."</p>
-        </div>
-        
-        <div id="pillar2" class="tab-content information-tab">
-            <h3>Working Software over Comprehensive Documentation</h3>
-            <p>The software that Agile teams develop should work. Additional work, like documentation, is not as important as developing good software.</p>
-        </div>
-        
-        <div id="pillar3" class="tab-content warning-tab">
-            <h3>Customer Collaboration over Contract Negotiation</h3>
-            <p>Customers are extremely important within the Agile methodology. Agile teams allow customers to guide where the software should go. Therefore, customer collaboration is more important than the finer details of contract negotiation.</p>
-        </div>
-        
-        <div id="pillar4" class="tab-content best-practice-tab">
-            <h3>Responding to Change over Following a Plan</h3>
-            <p>One of the major benefits of Agile project management is that it allows teams to be flexible. This framework allows for teams to quickly shift strategies and workflows without derailing an entire project.</p>
+        <div class="tab-group">
+            <div class="tabs">
+                <div class="tab tab-green active" onclick="openTab(event, 'pillar1')" title="Individuals & Interactions"></div>
+                <div class="tab tab-blue" onclick="openTab(event, 'pillar2')" title="Working Software"></div>
+                <div class="tab tab-red" onclick="openTab(event, 'pillar3')" title="Customer Collaboration"></div>
+                <div class="tab tab-purple" onclick="openTab(event, 'pillar4')" title="Responding to Change"></div>
+            </div>
+            
+            <div id="pillar1" class="tab-content key-takeaway-tab active">
+                <h3>Individuals and Interactions over Processes and Tools</h3>
+                <p>Agile teams value team collaboration and teamwork over working independently and doing things "by the book."</p>
+            </div>
+            
+            <div id="pillar2" class="tab-content information-tab">
+                <h3>Working Software over Comprehensive Documentation</h3>
+                <p>The software that Agile teams develop should work. Additional work, like documentation, is not as important as developing good software.</p>
+            </div>
+            
+            <div id="pillar3" class="tab-content warning-tab">
+                <h3>Customer Collaboration over Contract Negotiation</h3>
+                <p>Customers are extremely important within the Agile methodology. Agile teams allow customers to guide where the software should go. Therefore, customer collaboration is more important than the finer details of contract negotiation.</p>
+            </div>
+            
+            <div id="pillar4" class="tab-content best-practice-tab">
+                <h3>Responding to Change over Following a Plan</h3>
+                <p>One of the major benefits of Agile project management is that it allows teams to be flexible. This framework allows for teams to quickly shift strategies and workflows without derailing an entire project.</p>
+            </div>
         </div>
     </div>
     
@@ -238,55 +242,57 @@
     <div class="model-section">
         <h2>AGILE PROCESS MODELS</h2>
         
-        <div class="tabs">
-            <div class="tab tab-green active" onclick="openTab(event, 'kanban')" title="Kanban"></div>
-            <div class="tab tab-blue" onclick="openTab(event, 'scrum')" title="Scrum"></div>
-            <div class="tab tab-red" onclick="openTab(event, 'xp')" title="XP"></div>
-            <div class="tab tab-purple" onclick="openTab(event, 'apf')" title="APF"></div>
-            <div class="tab tab-yellow" onclick="openTab(event, 'xpm')" title="XPM"></div>
-        </div>
-        
-        <div id="kanban" class="tab-content key-takeaway-tab active">
-            <h3>Kanban</h3>
-            <p>Kanban is a visual approach to Agile. Teams use online Kanban board tools to represent where certain tasks are in the development process. Tasks are represented by cards on a board, and stages are represented in columns. As team members work on tasks, they move cards from the backlog column to the column that represents the stage the task is in. This method is a good way for teams to identify roadblocks and to visualize the amount of work that's getting done.</p>
-        </div>
-        
-        <div id="scrum" class="tab-content information-tab">
-            <h3>Scrum</h3>
-            <p>Scrum is a common Agile methodology for small teams and also involves sprints. The team is led by a Scrum master whose main job is to clear all obstacles for others executing the day-to-day work. Scrum teams meet daily to discuss active tasks, roadblocks, and anything else that may affect the development team.</p>
-            <ul>
-                <li><strong>Sprint:</strong> All work in Scrum is done in a series of short projects called Sprints. This enables rapid feedback loops.</li>
-                <li><strong>Sprint planning:</strong> This event kicks off the sprint. Sprint planning outlines what can be delivered in a sprint (and how).</li>
-                <li><strong>Daily scrum:</strong> This is a short, daily meeting to discuss progress and identify blockers, limited to 15 minutes.</li>
-                <li><strong>Sprint review:</strong> At the end of the Sprint, the Sprint Team meets with stakeholders to show what they have accomplished and get feedback.</li>
-                <li><strong>Sprint retrospective:</strong> Finally, the Scrum Team gets together to discuss how the Sprint went and if there are things they could do differently and improve in the next Sprint.</li>
-            </ul>
-        </div>
-        
-        <div id="xp" class="tab-content warning-tab">
-            <h3>Extreme Programming (XP)</h3>
-            <p>Typically used in software development, Extreme Programming (XP) is an Agile framework that outlines values that will allow your team to work together more effectively. The five values of XP include: Communication, Simplicity, Feedback, Courage, and Respect.</p>
-            <p><strong>Common Methods and Techniques:</strong></p>
-            <ul>
-                <li><strong>Pair Programming:</strong> In XP, you write code in pairs sitting at one machine.</li>
-                <li><strong>Ten Minute Build:</strong> The goal is to automatically build the whole system and run all of the tests in ten minutes.</li>
-                <li><strong>Test-First Programming:</strong> You implement your features using the test-first approach, also called test-driven development (TDD).</li>
-                <li><strong>Weekly Cycle:</strong> Synonymous with iteration. The team meets on the first day of the week to reflect on progress.</li>
-                <li><strong>Slack:</strong> Add some low-priority tasks or stories in your weekly and quarterly cycles that can be dropped if the team gets behind.</li>
-                <li><strong>Continuous Integration:</strong> Is a practice where code changes are immediately tested when they are added to a larger code base.</li>
-            </ul>
-        </div>
-        
-        <div id="apf" class="tab-content best-practice-tab">
-            <h3>Adaptive Project Framework (APF)</h3>
-            <p>Also known as Adaptive Project Management (APM), it grew from the idea that unknown factors can show up at any time during a project. This technique is mainly used for IT projects where more traditional project management techniques don't apply.</p>
-            <p>This framework is based on the idea that project resources can change at any time. For example, budgets can change, timelines can shift, or team members working on the project may transition to different teams. APF focuses on the resources that a project has, as opposed to the resources a project needs.</p>
-        </div>
-        
-        <div id="xpm" class="tab-content example-tab">
-            <h3>Extreme Project Management (XPM)</h3>
-            <p>This type of project management is often used for very complex projects with a high level of uncertainty. This approach involves constantly adapting processes until they lead to the desired result. This type of project involves many spontaneous changes and it's normal for teams to switch strategies from one week to the next.</p>
-            <p>XPM requires a lot of flexibility. This is one of the reasons why each sprint is short—only a few weeks maximum. This methodology allows for frequent changes, trial-and-error approaches to problems, and many iterations of self-correction.</p>
+        <div class="tab-group">
+            <div class="tabs">
+                <div class="tab tab-green active" onclick="openTab(event, 'kanban')" title="Kanban"></div>
+                <div class="tab tab-blue" onclick="openTab(event, 'scrum')" title="Scrum"></div>
+                <div class="tab tab-red" onclick="openTab(event, 'xp')" title="XP"></div>
+                <div class="tab tab-purple" onclick="openTab(event, 'apf')" title="APF"></div>
+                <div class="tab tab-yellow" onclick="openTab(event, 'xpm')" title="XPM"></div>
+            </div>
+            
+            <div id="kanban" class="tab-content key-takeaway-tab active">
+                <h3>Kanban</h3>
+                <p>Kanban is a visual approach to Agile. Teams use online Kanban board tools to represent where certain tasks are in the development process. Tasks are represented by cards on a board, and stages are represented in columns. As team members work on tasks, they move cards from the backlog column to the column that represents the stage the task is in. This method is a good way for teams to identify roadblocks and to visualize the amount of work that's getting done.</p>
+            </div>
+            
+            <div id="scrum" class="tab-content information-tab">
+                <h3>Scrum</h3>
+                <p>Scrum is a common Agile methodology for small teams and also involves sprints. The team is led by a Scrum master whose main job is to clear all obstacles for others executing the day-to-day work. Scrum teams meet daily to discuss active tasks, roadblocks, and anything else that may affect the development team.</p>
+                <ul>
+                    <li><strong>Sprint:</strong> All work in Scrum is done in a series of short projects called Sprints. This enables rapid feedback loops.</li>
+                    <li><strong>Sprint planning:</strong> This event kicks off the sprint. Sprint planning outlines what can be delivered in a sprint (and how).</li>
+                    <li><strong>Daily scrum:</strong> This is a short, daily meeting to discuss progress and identify blockers, limited to 15 minutes.</li>
+                    <li><strong>Sprint review:</strong> At the end of the Sprint, the Sprint Team meets with stakeholders to show what they have accomplished and get feedback.</li>
+                    <li><strong>Sprint retrospective:</strong> Finally, the Scrum Team gets together to discuss how the Sprint went and if there are things they could do differently and improve in the next Sprint.</li>
+                </ul>
+            </div>
+            
+            <div id="xp" class="tab-content warning-tab">
+                <h3>Extreme Programming (XP)</h3>
+                <p>Typically used in software development, Extreme Programming (XP) is an Agile framework that outlines values that will allow your team to work together more effectively. The five values of XP include: Communication, Simplicity, Feedback, Courage, and Respect.</p>
+                <p><strong>Common Methods and Techniques:</strong></p>
+                <ul>
+                    <li><strong>Pair Programming:</strong> In XP, you write code in pairs sitting at one machine.</li>
+                    <li><strong>Ten Minute Build:</strong> The goal is to automatically build the whole system and run all of the tests in ten minutes.</li>
+                    <li><strong>Test-First Programming:</strong> You implement your features using the test-first approach, also called test-driven development (TDD).</li>
+                    <li><strong>Weekly Cycle:</strong> Synonymous with iteration. The team meets on the first day of the week to reflect on progress.</li>
+                    <li><strong>Slack:</strong> Add some low-priority tasks or stories in your weekly and quarterly cycles that can be dropped if the team gets behind.</li>
+                    <li><strong>Continuous Integration:</strong> Is a practice where code changes are immediately tested when they are added to a larger code base.</li>
+                </ul>
+            </div>
+            
+            <div id="apf" class="tab-content best-practice-tab">
+                <h3>Adaptive Project Framework (APF)</h3>
+                <p>Also known as Adaptive Project Management (APM), it grew from the idea that unknown factors can show up at any time during a project. This technique is mainly used for IT projects where more traditional project management techniques don't apply.</p>
+                <p>This framework is based on the idea that project resources can change at any time. For example, budgets can change, timelines can shift, or team members working on the project may transition to different teams. APF focuses on the resources that a project has, as opposed to the resources a project needs.</p>
+            </div>
+            
+            <div id="xpm" class="tab-content example-tab">
+                <h3>Extreme Project Management (XPM)</h3>
+                <p>This type of project management is often used for very complex projects with a high level of uncertainty. This approach involves constantly adapting processes until they lead to the desired result. This type of project involves many spontaneous changes and it's normal for teams to switch strategies from one week to the next.</p>
+                <p>XPM requires a lot of flexibility. This is one of the reasons why each sprint is short—only a few weeks maximum. This methodology allows for frequent changes, trial-and-error approaches to problems, and many iterations of self-correction.</p>
+            </div>
         </div>
         <img src="../images/kanbanVSscrum.png" alt="kanban VS scrum">
     </div>

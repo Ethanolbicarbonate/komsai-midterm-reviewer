@@ -86,42 +86,44 @@
                 
                 <p>It controls a computer's internal functioning and also controls hardware devices such as monitors, printers, and storage devices, etc.</p>
                 
-                <div class="tabs">
-                    <div class="tab tab-blue active" onclick="openTab(event, 'os')" title="Operating System"></div>
-                    <div class="tab tab-blue" onclick="openTab(event, 'processor')" title="Language Processor"></div>
-                    <div class="tab tab-blue" onclick="openTab(event, 'driver')" title="Device Driver"></div>
-                    <div class="tab tab-purple" onclick="openTab(event, 'features')" title="Features"></div>
-                </div>
-                
-                <div id="os" class="tab-content information-tab active">
-                    <h3>Operating System (OS)</h3>
-                    <p>Main program of a computer system. When the computer system ON it is the first software that loads into the computer's memory.</p>
-                    <p>It manages all the resources such as computer memory, CPU, printer, hard disk, etc., and provides an interface to the user, which helps the user to interact with the computer system.</p>
-                    <p>Examples of operating systems are Linux, Apple macOS, and Microsoft Windows.</p>
-                </div>
-                
-                <div id="processor" class="tab-content information-tab">
-                    <h3>Language Processor</h3>
-                    <p>System software converts the human-readable language into a machine language and vice versa. This conversion is done by the language processor.</p>
-                    <p>It converts programs written in high-level programming languages like Java, C, C++, Python, etc. (known as source code), into sets of instructions that are easily readable by machines (known as object code or machine code).</p>
-                </div>
-                
-                <div id="driver" class="tab-content information-tab">
-                    <h3>Device Driver</h3>
-                    <p>A program or software that controls a device and helps that device to perform its functions.</p>
-                    <p>Every device like a printer, mouse, modem, etc. needs a driver to connect with the computer system eternally.</p>
-                    <p>So, when you connect a new device with your computer system, first you need to install the driver of that device so that your operating system knows how to control or manage that device.</p>
-                </div>
-                
-                <div id="features" class="tab-content best-practice-tab">
-                    <h3>Features of System Software</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Closer to the computer system.</li>
-                        <li>Written in a low-level language in general.</li>
-                        <li>Difficult to design and understand.</li>
-                        <li>Fast in speed (working speed).</li>
-                        <li>Less interactive for the users in comparison to application software.</li>
-                    </ul>
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-blue active" onclick="openTab(event, 'os')" title="Operating System"></div>
+                        <div class="tab tab-blue" onclick="openTab(event, 'processor')" title="Language Processor"></div>
+                        <div class="tab tab-blue" onclick="openTab(event, 'driver')" title="Device Driver"></div>
+                        <div class="tab tab-purple" onclick="openTab(event, 'features')" title="Features"></div>
+                    </div>
+                    
+                    <div id="os" class="tab-content information-tab active">
+                        <h3>Operating System (OS)</h3>
+                        <p>Main program of a computer system. When the computer system ON it is the first software that loads into the computer's memory.</p>
+                        <p>It manages all the resources such as computer memory, CPU, printer, hard disk, etc., and provides an interface to the user, which helps the user to interact with the computer system.</p>
+                        <p>Examples of operating systems are Linux, Apple macOS, and Microsoft Windows.</p>
+                    </div>
+                    
+                    <div id="processor" class="tab-content information-tab">
+                        <h3>Language Processor</h3>
+                        <p>System software converts the human-readable language into a machine language and vice versa. This conversion is done by the language processor.</p>
+                        <p>It converts programs written in high-level programming languages like Java, C, C++, Python, etc. (known as source code), into sets of instructions that are easily readable by machines (known as object code or machine code).</p>
+                    </div>
+                    
+                    <div id="driver" class="tab-content information-tab">
+                        <h3>Device Driver</h3>
+                        <p>A program or software that controls a device and helps that device to perform its functions.</p>
+                        <p>Every device like a printer, mouse, modem, etc. needs a driver to connect with the computer system eternally.</p>
+                        <p>So, when you connect a new device with your computer system, first you need to install the driver of that device so that your operating system knows how to control or manage that device.</p>
+                    </div>
+                    
+                    <div id="features" class="tab-content best-practice-tab">
+                        <h3>Features of System Software</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Closer to the computer system.</li>
+                            <li>Written in a low-level language in general.</li>
+                            <li>Difficult to design and understand.</li>
+                            <li>Fast in speed (working speed).</li>
+                            <li>Less interactive for the users in comparison to application software.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         
@@ -135,40 +137,42 @@
                 
                 <p>There are different types of application software:</p>
                 
-                <div class="tabs">
-                    <div class="tab tab-blue active" onclick="openTab(event, 'general')" title="General Purpose"></div>
-                    <div class="tab tab-blue" onclick="openTab(event, 'customized')" title="Customized"></div>
-                    <div class="tab tab-blue" onclick="openTab(event, 'utility')" title="Utility"></div>
-                    <div class="tab tab-purple" onclick="openTab(event, 'appfeatures')" title="Features"></div>
-                </div>
-                
-                <div id="general" class="tab-content information-tab active">
-                    <h3>General Purpose Software</h3>
-                    <p>Used for a variety of tasks and it is not limited to performing a specific task only.</p>
-                    <p>For example, MS-Word, MS-Excel, PowerPoint, etc.</p>
-                </div>
-                
-                <div id="customized" class="tab-content information-tab">
-                    <h3>Customized Software</h3>
-                    <p>Used or designed to perform specific tasks or functions or designed for specific organizations.</p>
-                    <p>For example, railway reservation system, airline reservation system, invoice management system, etc.</p>
-                </div>
-                
-                <div id="utility" class="tab-content information-tab">
-                    <h3>Utility Software</h3>
-                    <p>Used to support the computer infrastructure. It is designed to analyze, configure, optimize and maintain the system, and take care of its requirements as well.</p>
-                    <p>For example, antivirus, disk fragmenter, memory tester, disk repair, disk cleaners, registry cleaners, disk space analyzer, etc.</p>
-                </div>
-                
-                <div id="appfeatures" class="tab-content best-practice-tab">
-                    <h3>Features of Application Software</h3>
-                    <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li>Performs more specialized tasks like word processing, spreadsheets, email, etc.</li>
-                        <li>Requires more storage space.</li>
-                        <li>More interactive for the users, so it is easy to use and design.</li>
-                        <li>Easy to design and understand.</li>
-                        <li>Written in a high-level language in general.</li>
-                    </ul>
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-blue active" onclick="openTab(event, 'general')" title="General Purpose"></div>
+                        <div class="tab tab-blue" onclick="openTab(event, 'customized')" title="Customized"></div>
+                        <div class="tab tab-blue" onclick="openTab(event, 'utility')" title="Utility"></div>
+                        <div class="tab tab-purple" onclick="openTab(event, 'appfeatures')" title="Features"></div>
+                    </div>
+                    
+                    <div id="general" class="tab-content information-tab active">
+                        <h3>General Purpose Software</h3>
+                        <p>Used for a variety of tasks and it is not limited to performing a specific task only.</p>
+                        <p>For example, MS-Word, MS-Excel, PowerPoint, etc.</p>
+                    </div>
+                    
+                    <div id="customized" class="tab-content information-tab">
+                        <h3>Customized Software</h3>
+                        <p>Used or designed to perform specific tasks or functions or designed for specific organizations.</p>
+                        <p>For example, railway reservation system, airline reservation system, invoice management system, etc.</p>
+                    </div>
+                    
+                    <div id="utility" class="tab-content information-tab">
+                        <h3>Utility Software</h3>
+                        <p>Used to support the computer infrastructure. It is designed to analyze, configure, optimize and maintain the system, and take care of its requirements as well.</p>
+                        <p>For example, antivirus, disk fragmenter, memory tester, disk repair, disk cleaners, registry cleaners, disk space analyzer, etc.</p>
+                    </div>
+                    
+                    <div id="appfeatures" class="tab-content best-practice-tab">
+                        <h3>Features of Application Software</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Performs more specialized tasks like word processing, spreadsheets, email, etc.</li>
+                            <li>Requires more storage space.</li>
+                            <li>More interactive for the users, so it is easy to use and design.</li>
+                            <li>Easy to design and understand.</li>
+                            <li>Written in a high-level language in general.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         

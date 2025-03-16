@@ -56,6 +56,173 @@
             </div>
         </nav>
 
+        <main id="content" class="maincontent">
+            <h1>Exploratory Data Analysis (EDA)</h1>
+            <p class="highlight-box">Machine Learning - Exploratory Data Analysis</p>
+        
+            <!-- Introduction Section -->
+            <div class="model-section">
+                <h2>Introduction to EDA</h2>
+                
+                <div class="concept">
+                    <p>EDA is the initial process of analyzing and summarizing datasets to discover patterns, anomalies, and underlying structures, often using visual and statistical methods. It's a detective-like approach to understand the "story" hidden within the data.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Exploratory Data Analysis (EDA)</strong> is a philosophy for data analysis that employs a variety of techniques (mostly graphical) to maximize insight into a data set.</p>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Key Objectives of EDA</h3>
+                    <p>EDA helps us to uncover underlying structure, extract important variables, detect outliers and anomalies, and test underlying assumptions.</p>
+                </div>
+            </div>
+        
+            <!-- EDA in Machine Learning Section -->
+            <div class="model-section">
+                <h2>EDA in Machine Learning</h2>
+                
+                <p>Exploratory Data Analysis plays a crucial role in the machine learning pipeline:</p>
+                
+                <div class="information">
+                    <h3>EDA Benefits for Machine Learning</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Data Quality:</strong> Ensures data is clean, consistent, and suitable for modeling.</li>
+                        <li><strong>Feature Engineering:</strong> Identifies relevant features and guides the creation of new ones.</li>
+                        <li><strong>Model Selection:</strong> Helps choose appropriate algorithms based on data characteristics.</li>
+                        <li><strong>Bias Detection:</strong> Uncovers potential biases that could affect model fairness.</li>
+                        <li><strong>Overfitting Prevention:</strong> Helps understand data complexity and avoid overfitting.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Key Stages of EDA Section -->
+            <div class="model-section">
+                <h2>Key Stages of EDA</h2>
+                
+                <p>Exploratory Data Analysis follows several important stages:</p>
+                
+                <div class="information">
+                    <h3>EDA Process</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Data Collection:</strong> Gathering raw data from various sources.</li>
+                        <li><strong>Data Cleaning:</strong> Addressing missing values, duplicates, and errors.</li>
+                        <li><strong>Univariate Analysis:</strong> Examining individual variables.</li>
+                        <li><strong>Bivariate Analysis:</strong> Investigating relationships between two variables.</li>
+                        <li><strong>Multivariate Analysis:</strong> Analyzing relationships among multiple variables.</li>
+                        <li><strong>Visualization:</strong> Creating graphical representations of data.</li>
+                        <li><strong>Statistical Analysis:</strong> Applying statistical methods to quantify patterns and relationships.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Data Cleaning and Preprocessing Section -->
+            <div class="model-section">
+                <h2>Data Cleaning and Preprocessing</h2>
+                
+                <p>Before diving into analysis, data must be properly cleaned and preprocessed:</p>
+                
+                <div class="information">
+                    <h3>Missing Values</h3>
+                    <p>Missing values are data points that are absent or unknown. They can be handled through deletion, imputation, or use of "missing" indicators.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Duplicates</h3>
+                    <p>Duplicates are identical or near-identical data entries. They can be handled by removing duplicate rows to avoid bias.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Outliers</h3>
+                    <p>Outliers are data points that deviate significantly from the rest of the data. They can be detected by using box plots, scatter plots, z-scores, IQR (Interquartile Range). Outliers can be handled through removal, transformation, or separate treatments.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Data Type Conversion</h3>
+                    <p>Ensuring data types (integer, float, string, datetime) are correct is essential for proper analysis.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Data Standardization and Normalization</h3>
+                    <p><strong>Standardization (Z-score scaling):</strong> Transforms data to have zero mean and unit variance.<br>
+                    z = (x − μ) / σ</p>
+                    
+                    <p><strong>Normalization (Min-Max scaling):</strong> Scales data to a specific range (e.g., 0 to 1).<br>
+                    y = (x − min) / (max − min)</p>
+                </div>
+            </div>
+        
+            <!-- Univariate Analysis Section -->
+            <div class="model-section">
+                <h2>Univariate Analysis</h2>
+                
+                <p>Univariate analysis examines variables individually:</p>
+                
+                <div class="information">
+                    <h3>Categorical Variables</h3>
+                    <p>Categorical variables represent categories or labels. They can be analyzed using:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Frequency Tables: Counting the occurrences of each category.</li>
+                        <li>Bar Charts: Visualizing category frequencies.</li>
+                        <li>Pie Charts: Showing the proportion of each category.</li>
+                        <li>Mode: The most frequent category.</li>
+                    </ul>
+                </div>
+                
+                <div class="information">
+                    <h3>Numerical Variables</h3>
+                    <p>Numerical variables represent quantities or measurements. They can be analyzed using:</p>
+                    
+                    <p><strong>Measurements of Central Tendency:</strong></p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Mean: Average value.</li>
+                        <li>Median: Middle value.</li>
+                        <li>Mode: Most frequent value.</li>
+                    </ul>
+                    
+                    <p><strong>Measurements of Dispersion:</strong></p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Range: Difference between maximum and minimum values.</li>
+                        <li>Variance: Average squared deviation from the mean.</li>
+                        <li>Standard Deviation: Square root of the variance.</li>
+                        <li>IQR (Interquartile Range): Range of the middle 50% of the data.</li>
+                    </ul>
+                    
+                    <p><strong>Visualizations:</strong></p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Histograms: Showing the distribution of values.</li>
+                        <li>Box Plots: Displaying quartiles and outliers.</li>
+                        <li>Density Plots: Smoothed representation of the distribution.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Multivariate Analysis Section -->
+            <div class="model-section">
+                <h2>Multivariate Analysis</h2>
+                
+                <p>Multivariate analysis examines relationships between multiple variables:</p>
+                
+                <div class="information">
+                    <h3>Visualization Techniques</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Pair Plots: Visualizing relationships between all pairs of numerical variables.</li>
+                        <li>Heatmaps (Correlation): Displaying correlation matrices for multiple variables.</li>
+                        <li>Parallel Coordinates Plots: Visualizing relationships between multiple numerical variables.</li>
+                        <li>3D Scatter Plots: Visualizing relationships between three numerical variables.</li>
+                    </ul>
+                </div>
+                
+                <div class="information">
+                    <h3>Probability Distributions</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Normal Distribution: Bell-shaped, symmetrical distribution.</li>
+                        <li>Binomial Distribution: Probability of successes in a fixed number of trials.</li>
+                        <li>Poisson Distribution: Probability of events occurring in a fixed interval.</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
 
         <div class="notecontent">
             <h2>NOTES</h2>

@@ -201,31 +201,33 @@
             <p><strong>Testing</strong> is the phase where the code produced during the implementation phase is tested for correctness.</p>
         </div>
         
-        <div class="tabs">
-            <div class="tab tab-blue active" onclick="openTab(event, 'testing-levels')" title="Testing Levels"></div>
-            <div class="tab tab-yellow" onclick="openTab(event, 'customer-testing')" title="Customer Testing"></div>
-            <div class="tab tab-green" onclick="openTab(event, 'acceptance-testing')" title="Acceptance Testing"></div>
-        </div>
-        
-        <div id="testing-levels" class="tab-content information-tab active">
-            <h3>Testing Levels</h3>
-            <p>Testing is performed in three levels:</p>
-            <ul>
-                <li><strong>First</strong>, individual modules are tested by developers.</li>
-                <li><strong>Second</strong>, modules are integrated and tested to ensure that they interface properly.</li>
-                <li><strong>Third</strong>, once all the modules had been integrated, the entire system is tested to ensure that it meets the user requirements.</li>
-            </ul>
-            <p>System testing is typically conducted by an independent quality assurance (QA) team.</p>
-        </div>
-        
-        <div id="customer-testing" class="tab-content example-tab">
-            <h3>Customer Testing (Beta Testing)</h3>
-            <p>Once system testing has been completed, several levels of customer testing are conducted. During beta testing, the software is as close to the final release as possible, and is given to part of the customer community with the understanding that they report defects they find. The goal is to uncover a set of problems that could only be discovered with this type of "real-world" testing.</p>
-        </div>
-        
-        <div id="acceptance-testing" class="tab-content key-takeaway-tab">
-            <h3>Acceptance Testing</h3>
-            <p>Once beta testing is complete, acceptance testing is conducted on the "final" release of software. Acceptance tests are comprised of a subset of system tests, and are conducted by either the customer or a representative of the customer to ensure that it meets the customer's criteria for release. Sometimes a round of acceptance testing is conducted prior to beta testing, to make sure that the system meets certain criteria before it is given to customers for beta testing.</p>
+        <div class="tab-group">
+            <div class="tabs">
+                <div class="tab tab-blue active" onclick="openTab(event, 'testing-levels')" title="Testing Levels"></div>
+                <div class="tab tab-yellow" onclick="openTab(event, 'customer-testing')" title="Customer Testing"></div>
+                <div class="tab tab-green" onclick="openTab(event, 'acceptance-testing')" title="Acceptance Testing"></div>
+            </div>
+            
+            <div id="testing-levels" class="tab-content information-tab active">
+                <h3>Testing Levels</h3>
+                <p>Testing is performed in three levels:</p>
+                <ul>
+                    <li><strong>First</strong>, individual modules are tested by developers.</li>
+                    <li><strong>Second</strong>, modules are integrated and tested to ensure that they interface properly.</li>
+                    <li><strong>Third</strong>, once all the modules had been integrated, the entire system is tested to ensure that it meets the user requirements.</li>
+                </ul>
+                <p>System testing is typically conducted by an independent quality assurance (QA) team.</p>
+            </div>
+            
+            <div id="customer-testing" class="tab-content example-tab">
+                <h3>Customer Testing (Beta Testing)</h3>
+                <p>Once system testing has been completed, several levels of customer testing are conducted. During beta testing, the software is as close to the final release as possible, and is given to part of the customer community with the understanding that they report defects they find. The goal is to uncover a set of problems that could only be discovered with this type of "real-world" testing.</p>
+            </div>
+            
+            <div id="acceptance-testing" class="tab-content key-takeaway-tab">
+                <h3>Acceptance Testing</h3>
+                <p>Once beta testing is complete, acceptance testing is conducted on the "final" release of software. Acceptance tests are comprised of a subset of system tests, and are conducted by either the customer or a representative of the customer to ensure that it meets the customer's criteria for release. Sometimes a round of acceptance testing is conducted prior to beta testing, to make sure that the system meets certain criteria before it is given to customers for beta testing.</p>
+            </div>
         </div>
     </div>
 
