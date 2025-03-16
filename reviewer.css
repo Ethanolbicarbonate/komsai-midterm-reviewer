@@ -7,7 +7,7 @@ footer {
     color: #333;
 }
 img {
-    padding-top: 16px;
+    padding-bottom: 30px;
     width: 100%; /* Fills the container */
     border-radius: 4px; /* Rounded corners */
     display: block; /* Removes extra space below inline images */
