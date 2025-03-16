@@ -72,7 +72,7 @@
                     <p><strong>Machine Learning</strong> is the science (and art) of programming computers so they can learn from data.</p>
                 </div>
                 
-                <p><span style="color: rgb(187, 46, 84);">Traditional programming approaches <strong>require explicit rules</strong></span>, while <span style="color: rgb(18, 123, 194);">machine learning uses data to <strong>automatically adapt to change and learn patterns</strong> without being explicitly programmed.</span></p>
+                <p>Traditional programming approaches <strong>require explicit rules</strong></span>, while machine learning uses data to <strong>automatically adapt to change and learn patterns</strong> without being explicitly programmed.</p>
         
                 <div class="information">
                     <h3>Learning from Data</h3>
@@ -143,12 +143,12 @@
                 <p>In unsupervised learning, there are no labels, no feedback, and the algorithm works to find hidden structures in the data.</p>
         
                 <div class="tabs">
-                    <div class="tab tab-red" onclick="openTab(event, 'clustering')" title="Clustering">Clustering</div>
-                    <div class="tab tab-yellow" onclick="openTab(event, 'dimensionality')" title="Dimensionality Reduction">Dimensionality</div>
-                    <div class="tab tab-green" onclick="openTab(event, 'unsupervised-algorithms')" title="Algorithms">Algorithms</div>
+                    <div class="tab tab-red active" onclick="openTab(event, 'clustering')" title="Clustering"></div>
+                    <div class="tab tab-yellow" onclick="openTab(event, 'dimensionality')" title="Dimensionality Reduction"></div>
+                    <div class="tab tab-green" onclick="openTab(event, 'unsupervised-algorithms')" title="Algorithms"></div>
                 </div>
                 
-                <div id="clustering" class="tab-content warning-tab">
+                <div id="clustering" class="tab-content warning-tab active">
                     <h3>Clustering</h3>
                     <p>An exploratory data analysis technique that allows us to organize information into meaningful subgroups (clusters) without having any prior knowledge of their group memberships.</p>
                     <p>Each cluster that arises during the analysis defines a group of objects that share a certain degree of similarity but are more dissimilar to objects in other clusters.</p>
@@ -225,11 +225,11 @@
                 <h2>Basic Terminologies</h2>
                 
                 <div class="tabs">
-                    <div class="tab tab-blue" onclick="openTab(event, 'data-terms')" title="Data Terms">Data Terms</div>
-                    <div class="tab tab-purple" onclick="openTab(event, 'model-terms')" title="Model Terms">Model Terms</div>
+                    <div class="tab tab-blue active" onclick="openTab(event, 'data-terms')" title="Data Terms"></div>
+                    <div class="tab tab-purple" onclick="openTab(event, 'model-terms')" title="Model Terms"></div>
                 </div>
                 
-                <div id="data-terms" class="tab-content information-tab">
+                <div id="data-terms" class="tab-content information-tab active">
                     <h3>Data Terminology</h3>
                     <ul style="list-style-type: disc; margin-left: 20px;">
                         <li><strong>Training example:</strong> A row in a table representing the dataset and synonymous with an observation, record, instance, or sample (in most contexts, sample refers to a collection of training examples).</li>
@@ -250,6 +250,7 @@
             <!-- ML System Building Section -->
             <div class="model-section">
                 <h2>Building Machine Learning Systems</h2>
+                <img src="../images/roadmapML.png" alt="">
                 
                 <div class="information">
                     <h3>Preprocessing</h3>
@@ -272,27 +273,27 @@
                 <h2>Main Challenges of Machine Learning</h2>
                 
                 <div class="tabs">
-                    <div class="tab tab-red" onclick="openTab(event, 'data-challenges')" title="Data Challenges">Data</div>
-                    <div class="tab tab-yellow" onclick="openTab(event, 'model-challenges')" title="Model Challenges">Models</div>
+                    <div class="tab tab-red active" onclick="openTab(event, 'data-challenges')" title="Data Challenges"></div>
+                    <div class="tab tab-yellow" onclick="openTab(event, 'model-challenges')" title="Model Challenges"></div>
                 </div>
                 
-                <div id="data-challenges" class="tab-content warning-tab">
+                <div id="data-challenges" class="tab-content warning-tab active">
                     <h3>Data-Related Challenges</h3>
                     <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li><strong>Insufficient Quantity of Training Data</strong></li>
-                        <li><strong>Nonrepresentative Training Data</strong></li>
-                        <li><strong>Poor-Quality Data</strong></li>
-                        <li><strong>Irrelevant Features</strong></li>
-                        <li><strong>Data Mismatch</strong></li>
+                        <li>Insufficient Quantity of Training Data</li>
+                        <li>Nonrepresentative Training Data</li>
+                        <li>Poor-Quality Data</li>
+                        <li>Irrelevant Features</li>
+                        <li>Data Mismatch</li>
                     </ul>
                 </div>
                 
                 <div id="model-challenges" class="tab-content warning-tab">
                     <h3>Model-Related Challenges</h3>
                     <ul style="list-style-type: disc; margin-left: 20px;">
-                        <li><strong>Overfitting the Training Data</strong></li>
-                        <li><strong>Underfitting the Training Data</strong></li>
-                        <li><strong>Hyperparameter Tuning and Model Selection</strong></li>
+                        <li>Overfitting the Training Data</li>
+                        <li>Underfitting the Training Data</li>
+                        <li>Hyperparameter Tuning and Model Selection</li>
                     </ul>
                 </div>
             </div>
@@ -300,8 +301,79 @@
 
         <div class="notecontent">
             <h2>NOTES</h2>
-
-            
+            <div class="information">
+                <h3>Key Notes</h3>
+                <p><strong>Machine Learning</strong> - branch of AI, imitates the way that humans learn through the use of data</p>
+                <ul>
+                    <li><strong>Traditional Programming</strong> - require explicit rules</li>
+                    <li><strong>Machine Learning</strong> - uses data to automatically adapt to change and learn patterns</li>
+                    <p style="margin: 0; padding: 0;"><strong>Types of Machine Learning (SURBO)</strong></p>
+                    <ul>
+                        <li style="margin: 0; padding: 0;">Supervised Learning</li>
+                        <li style="margin: 0; padding: 0;">Unsupervised Learning</li>
+                        <li style="margin: 0; padding: 0;">Reinforcement Learning</li>
+                        <li style="margin: 0; padding: 0;">Batch Learning</li>
+                        <li style="margin: 0; padding: 0;">Online Learning</li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="key-takeaway">
+                <h3>Supervised Learning</h3>
+                <ul>
+                    <li>provided with <strong>labeled data</strong></li>
+                    <li>receives <strong>direct feedback</strong></li>
+                    <li>learns to <strong>predict outcomes</strong> or future results</li>
+                </ul>
+                <p><strong>Classification</strong> - predict <strong>categorical</strong> class labels of new instances based on past observations</p>
+                <ul>
+                    <p style="margin: 0; padding: 0;">Types include:</p>
+                    <ul style="margin-top: 0; padding-top: 0;">
+                        <li style="margin: 0; padding: 0;">Binary classification</li>
+                        <li>Multiclass classification</li>
+                    </ul>
+                </ul>
+                <p><strong>Regression</strong> - predict <strong>continuous</strong> outcomes</p>
+                <hr style="opacity: 30%;">
+                <h3>Unsupervised Learning</h3>
+                <ul>
+                    <li>deals with <strong>unlabeled data</strong></li>
+                    <li>has <strong>no feedback</strong></li>
+                    <li>and <strong>finds hidden patterns</strong></li>
+                </ul>
+                <p><strong>Clusters</strong> - meaningful subgroups</p>
+                <p><strong>Clustering</strong> - organize information into clusters without prior knowledge</p>
+                <p><strong>Dimensionality Reduction</strong> - remove noise from data. Compresses data into smaller dimensions without losing much info</p>
+                <hr style="opacity: 30%;">
+                <h3>Reinforcement Learning</h3>
+                <ul>
+                    <li>involves a <strong>decision process</strong>
+                    <li>has a <strong>reward system</strong></li>
+                    <li>thus <strong>learns a series of actions</strong></li>
+                </ul>
+                <hr style="opacity: 30%;">
+                <h3>Batch and Online Learning</h3>
+                <ul>
+                    <li><strong>Batch Learning</strong> - trained using the entire dataset in one go, less adaptble</li>
+                    <li><strong>Online Learning</strong> - trained incrementally from data as they arrive, highly adaptable</li>
+            </div>
+            <div class="example">
+                <h3>Data Terminology</h3>
+                <ul>
+                    <li><strong>Training example</strong> a row in a table, represents one data point</li>
+                    <li><strong>Feature (X)</strong> a column in a table. represents a specific characteristic (feature) of the data.</li>
+                    <li><strong>Target (y)</strong> is what we are trying to predict using the features. The output</li>
+                </ul>
+                <h3>Model Terminology</h3>
+                <ul>
+                    <li><strong>Training</strong> - fitting the model to the data</li>
+                    <li><strong>Loss function</strong> - measures how well the model is performing</li>
+            </div>
+            <div class="information">
+                <h3>Building ML Systems</h3>
+                <p><strong>Preprocessing</strong> - preparing the data for the model</p>
+                <p><strong>Training and Selecting a Predictive Model</strong> - cross-validation to estimate model performance</p>
+                <p><strong>Evaluating Models</strong> - test dataset to estimate model performance</p>
+            </div>
         </div>
     </div>
     <script src="../reviewer.js"></script>
