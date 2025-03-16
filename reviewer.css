@@ -586,3 +586,14 @@ animation: fadeIn 0.4s ease-in-out;
     height: 100%;
     border: none;
 }
+
+.notecontent h2 {
+    margin-top: 20px;
+    padding-left: 8px;
+    
+    /* Sticky behavior - updated */
+    position: sticky;
+    top: 0px;
+    background: linear-gradient(to bottom, #f5f5f5 80%, rgba(255, 255, 255, 0)); /* Fading effect */
+    z-index: 999; /* Slightly lower than sidebar but still above regular content */
+}
