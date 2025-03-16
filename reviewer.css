@@ -205,10 +205,6 @@ li {
     display: block;
 }
 
-ul:hover li {
-    opacity: 0.5;
-}
-
 ul:hover li:hover {
     opacity: 1;
 }
