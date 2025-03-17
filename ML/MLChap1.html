@@ -6,6 +6,46 @@
     <link rel="stylesheet" href="../reviewer.css">
     <title>KomsaiReviewer</title>
     <style>
+        /* Sidebar Navbar */
+        #navbar-container {
+            width: 280px; /* Fixed width */
+            height: 100vh; /* Full height */
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #2c3e50; /* Same as sidebar */
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Placeholder Text While Navbar Loads */
+        #navbar-placeholder {
+            color: white;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        /* Main Content - Ensures It Stays Next to the Navbar */
+        #content {
+            margin-left: 280px; /* Pushes content to the right */
+            padding: 20px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            #navbar-container {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            #content {
+                margin-left: 0; /* Allow full width */
+            }
+        }
+
         body {
             animation: fadeSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
         }
@@ -357,98 +397,29 @@
             </div>
         </div>
     </div>
-    <script>
-        // Function to load the navbar
-        function loadNavbar() {
-            fetch('../navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar-container').innerHTML = data;
-                    
-                    // Initialize sidebar functions after navbar is loaded
-                    initializeSidebar();
-                    
-                    // Highlight the current page in the navbar
-                    highlightCurrentPage();
-                })
-                .catch(error => console.error('Error loading navbar:', error));
-        }
-        
-        // Function to initialize sidebar functionality
-        function initializeSidebar() {
-            // Sidebar toggle for mobile
-            const sidebarToggle = document.getElementById('sidebar-toggle');
-            const sidebar = document.getElementById('sidebar');
-            
-            if (sidebarToggle && sidebar) {
-                sidebarToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('active');
-                    
-                    // Change the toggle icon appearance
-                    const toggleIcon = sidebarToggle.querySelector('.toggle-icon');
-                    if (toggleIcon) {
-                        toggleIcon.classList.toggle('active');
-                    }
-                });
-            }
-            
-            // Subject accordions
-            const subjectNames = document.querySelectorAll('.subject-name');
-            
-            subjectNames.forEach(subject => {
-                subject.addEventListener('click', function() {
-                    const parentItem = this.parentElement;
-                    const isActive = parentItem.classList.contains('active');
-                    
-                    // Close all other subjects
-                    document.querySelectorAll('.subject-item').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    
-                    // Toggle this subject
-                    if (!isActive) {
-                        parentItem.classList.add('active');
-                    }
-                });
-            });
-        }
-        
-        // Function to highlight the current page in the navbar
-        function highlightCurrentPage() {
-            // Get current page path
-            const currentPath = window.location.pathname;
-            const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-            
-            // Find and highlight the current page link
-            const links = document.querySelectorAll('.chapter-list a');
-            links.forEach(link => {
-                if (link.getAttribute('href').endsWith(filename)) {
-                    link.classList.add('active');
-                    
-                    // Expand the parent subject
-                    let parentSubject = link.closest('.subject-item');
-                    if (parentSubject) {
-                        parentSubject.classList.add('active');
-                    }
-                }
-            });
-        }
-        
-        // Load the navbar when the page loads
-        document.addEventListener('DOMContentLoaded', loadNavbar);
-    </script>
     <script src="../reviewer.js"></script>
     <script>
-        // Function to load the navbar
         function loadNavbar() {
+            const navbarContainer = document.getElementById('navbar-container');
+            navbarContainer.innerHTML = '<div id="navbar-placeholder">Loading navbar...</div>'; // Placeholder
+
             fetch('../navbar.html')
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById('navbar-container').innerHTML = data;
+                    navbarContainer.innerHTML = data; // Replace placeholder with navbar
                     initializeSidebar();
                     highlightCurrentPage();
+                })
+                .catch(error => {
+                    console.error('Error loading navbar:', error);
+                    navbarContainer.innerHTML = '<div style="color: red;">Failed to load navbar</div>';
                 });
         }
+
+        // Load navbar first before content
+        document.addEventListener('DOMContentLoaded', function () {
+            loadNavbar();
+        });
         
         // Initialize sidebar functionality
         function initializeSidebar() {
