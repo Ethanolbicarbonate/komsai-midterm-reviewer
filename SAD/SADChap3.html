@@ -392,16 +392,27 @@
     </div>
     <script src="../reviewer.js"></script>
     <script>
-        // Function to load the navbar
         function loadNavbar() {
+            const navbarContainer = document.getElementById('navbar-container');
+            navbarContainer.innerHTML = '<div id="navbar-placeholder"></div>'; // Placeholder
+
             fetch('../navbar.html')
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById('navbar-container').innerHTML = data;
+                    navbarContainer.innerHTML = data; // Replace placeholder with navbar
                     initializeSidebar();
                     highlightCurrentPage();
+                })
+                .catch(error => {
+                    console.error('Error loading navbar:', error);
+                    navbarContainer.innerHTML = '<div style="color: red;">Failed to load navbar</div>';
                 });
         }
+
+        // Load navbar first before content
+        document.addEventListener('DOMContentLoaded', function () {
+            loadNavbar();
+        });
         
         // Initialize sidebar functionality
         function initializeSidebar() {
@@ -479,5 +490,6 @@
             });
         });
     </script>
+
 </body>
 </html>

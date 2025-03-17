@@ -30,7 +30,6 @@
         /* Main Content - Ensures It Stays Next to the Navbar */
         #content {
             margin-left: 280px; /* Pushes content to the right */
-            padding: 20px;
             transition: margin-left 0.3s ease-in-out;
         }
 
@@ -401,7 +400,7 @@
     <script>
         function loadNavbar() {
             const navbarContainer = document.getElementById('navbar-container');
-            navbarContainer.innerHTML = '<div id="navbar-placeholder">Loading navbar...</div>'; // Placeholder
+            navbarContainer.innerHTML = '<div id="navbar-placeholder"></div>'; // Placeholder
 
             fetch('../navbar.html')
                 .then(response => response.text())
