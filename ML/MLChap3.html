@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reviewer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
     <title>Software Process Models - CIT 214</title>
 </head>
 
@@ -55,10 +58,287 @@
                 </ul>
             </div>
         </nav>
+        <main id="content" class="maincontent">
+            <h1>Introduction to Regression</h1>
+            <p class="highlight-box">CCS 247 - Machine Learning</p>
 
+            <!-- Introduction to Regression Section -->
+            <div class="model-section">
+                <h2>Introduction to Regression</h2>
+                
+                <div class="concept">
+                    <p>Regression is a supervised learning technique that predicts a continuous output variable (dependent variable, target) based on one or more input variables (independent variables, features).</p>
+                    <p>The goal is to find a function (a line, curve, or hyperplane) that best approximates the relationship between the inputs and the output, minimizing the error between predicted and actual values.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Regression</strong> is a statistical method used to model and analyze the relationship between variables, particularly for prediction and forecasting.</p>
+                </div>
+                
+                <p>Regression is used for:</p>
+                
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-green active" onclick="openTab(event, 'regressionPurpose')" title="Purpose of Regression"></div>
+                        <div class="tab tab-blue" onclick="openTab(event, 'regressionApplications')" title="Applications of Regression"></div>
+                    </div>
+                    
+                    <div id="regressionPurpose" class="tab-content key-takeaway-tab active">
+                        <h3>Purpose of Regression</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Prediction: To forecast future values of the output variable.</li>
+                            <li>Explanation: To understand the relationship between the input and output variables.</li>
+                            <li>Trend Analysis: To identify patterns and trends in the data.</li>
+                            <li>Decision Making: To support informed decisions based on predictions.</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="regressionApplications" class="tab-content information-tab">
+                        <h3>Applications of Regression</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Finance (predicting stock prices)</li>
+                            <li>Economics (forecasting economic indicators)</li>
+                            <li>Healthcare (predicting patient outcomes)</li>
+                            <li>Marketing (predicting sales)</li>
+                            <li>Environmental science (predicting weather patterns)</li>
+                            <li>Real estate (predicting home prices)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regression Methods Section -->
+            <div class="model-section">
+                <h2>Regression Methods</h2>
+                
+                <div class="concept">
+                    <p>There are various types of regression methods, each suited for different types of relationships and data characteristics.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Regression Methods Overview</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Simple Linear Regression</strong> - One independent variable.</li>
+                        <li><strong>Multiple Linear Regression</strong> - Multiple independent variables.</li>
+                        <li><strong>Polynomial Regression</strong> - Non-linear relationship modeled with polynomial features.</li>
+                        <li><strong>Ridge Regression</strong> - Linear regression with L2 regularization.</li>
+                        <li><strong>Lasso Regression</strong> - Linear regression with L1 regularization.</li>
+                        <li><strong>Elastic Net Regression</strong> - Linear regression with a combination of L1 and L2 regularization.</li>
+                        <li><strong>Support Vector Regression (SVR)</strong> - Non-linear regression using support vector machines.</li>
+                        <li><strong>Decision Tree Regression</strong> - Regression using decision trees.</li>
+                        <li><strong>Random Forest Regression</strong> - Ensemble method using multiple decision tree regressors.</li>
+                    </ul>
+                </div>
+                
+                <img src="../images/regression.png" alt="">
+            </div>
+
+            <!-- Linear Regression Section -->
+            <div class="model-section">
+                <h2>Linear Regression</h2>
+                
+                <div class="concept">
+                    <p>Linear regression is a fundamental statistical method used to model the relationship between a <strong>dependent variable (Y)</strong> and one or more <strong>independent variables (X)</strong>.</p>
+                    <p>It is a simple yet powerful tool for understanding and predicting relationships between variables.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Linear Regression</strong> assumes that there exists a linear relationship between the independent variable(s) and the dependent variable, which can be expressed mathematically.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Mathematical Expression</h3>
+                    \[Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n + \varepsilon\]
+                    <p>where:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>\( \beta_0 \) is the intercept term.</li>
+                        <li>\( \beta_1, \beta_2, \dots, \beta_n \) are the coefficients of the independent variables.</li>
+                        <li>\( X_1, X_2, \dots, X_n \) are the independent variables.</li>
+                        <li>\( \varepsilon \) represents the error term, capturing the difference between the observed and predicted values.</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-purple active" onclick="openTab(event, 'coefficients')" title="Interpretation of Coefficients"></div>
+                        <div class="tab tab-red" onclick="openTab(event, 'assumptions')" title="Assumptions of Linear Regression"></div>
+                        <div class="tab tab-yellow" onclick="openTab(event, 'example')" title="Example"></div>
+                    </div>
+                    
+                    <div id="coefficients" class="tab-content best-practice-tab active">
+                        <h3>Interpretation of Coefficients</h3>
+                        <p>Each coefficient \( \beta \) represents the marginal effect of its corresponding independent variable \( X \) on the dependent variable \( Y \).</p>
+                        <p>Specifically, \( \beta_i \) indicates how much \( Y \) is expected to change for a one-unit increase in \( X_i \), assuming that all other independent variables remain constant.</p>
+                        <p>The sign of the coefficient indicates the direction of the relationship:</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>A positive coefficient means that as \( X_i \) increases, \( Y \) tends to increase.</li>
+                            <li>A negative coefficient means that as \( X_i \) increases, \( Y \) tends to decrease.</li>
+                        </ul>
+                        <p>The size of the coefficient shows the strength of the relationship. A larger absolute value means a larger change in the dependent variable for a one-unit change in the independent variable.</p>
+                    </div>
+                    
+                    <div id="assumptions" class="tab-content warning-tab">
+                        <h3>Assumptions of Linear Regression</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Linearity: The relationship between the independent and dependent variables is linear.</li>
+                            <li>Independence: The errors (residuals) are independent of each other.</li>
+                            <li>Homoscedasticity: The variance of the errors is constant across all levels of the independent variables.</li>
+                            <li>Normality: The errors follow a normal distribution.</li>
+                            <li>No multicollinearity: The independent variables are not highly correlated with each other.</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="example" class="tab-content example-tab">
+                        <h3>Example</h3>
+                        <p>Suppose you have a linear regression model that predicts house prices (\( Y \)) based on square footage (\( X_1 \)) and the number of bedrooms (\( X_2 \)):</p>
+                        <p>House Price = \( \beta_0 + \beta_1 \times \text{Square Footage} + \beta_2 \times \text{Number of Bedrooms} \)</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>If \( \beta_1 = 150 \), it means that, on average, the house price is expected to increase by $150 for each additional square foot, holding the number of bedrooms constant.</li>
+                            <li>If \( \beta_2 = 10,000 \), it means that, on average, the house price is expected to increase by $10,000 for each additional bedroom, holding the square footage constant.</li>
+                        </ul>
+                    </div>                    
+                </div>
+                
+                <div class="best-practice">
+                    <h3>Ordinary Least Squares (OLS)</h3>
+                    <p>OLS is the most common method for estimating the parameters (coefficients) of a linear regression model. It minimizes the sum of the squared differences between the observed and predicted values of the dependent variable.</p>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Applications of Linear Regression</h3>
+                    <p><strong>1. Prediction</strong> - Linear regression can be used for predictive modeling, where we use the model to predict the value of the dependent variable for new observations.</p>
+                    <p><strong>2. Understanding Relationships</strong> - Linear regression helps in understanding the relationships between variables and identifying which independent variables are significant predictors of the dependent variable.</p>
+                    <p><strong>3. Hypothesis Testing</strong> - Linear regression allows for hypothesis testing regarding the significance of individual coefficients or groups of coefficients.</p>
+                </div>
+            </div>
+
+            <!-- Logistic Regression Section -->
+            <div class="model-section">
+                <h2>Logistic Regression</h2>
+                
+                <div class="concept">
+                    <p>Logistic regression is a statistical method used for modeling the probability of a binary outcome based on one or more predictor variables.</p>
+                    <p>Unlike linear regression, which predicts continuous outcomes, logistic regression is particularly useful for binary classification problems.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Logistic Regression</strong> is suited for situations where the dependent variable (outcome) is binary, meaning it has only two possible outcomes, often denoted as 0 and 1.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Logistic Function</h3>
+                    <p>The logistic function, also known as the sigmoid function, is the core of logistic regression. It transforms any real-valued input into a value between 0 and 1, representing the probability of the positive outcome.</p>
+                    <p>The logistic function is defined as:</p>
+                    \[P(Y = 1 \mid X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n)}}\]
+                    <p>where:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>\( P(Y = 1 \mid X) \) is the probability of the positive outcome given the predictor variables (\( X \)).</li>
+                        <li>\( \beta_0, \beta_1, \beta_2, \dots, \beta_n \) are the coefficients.</li>
+                        <li>\( X_1, X_2, \dots, X_n \) are the predictor variables.</li>
+                    </ul>
+                </div>                
+                
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-purple active" onclick="openTab(event, 'lrCoefficients')" title="Interpretation of Coefficients"></div>
+                        <div class="tab tab-red" onclick="openTab(event, 'lrAssumptions')" title="Assumptions of Logistic Regression"></div>
+                        <div class="tab tab-yellow" onclick="openTab(event, 'lrApplications')" title="Applications"></div>
+                    </div>
+                    
+                    <div id="lrCoefficients" class="tab-content best-practice-tab active">
+                        <h3>Interpretation of Coefficients</h3>
+                        <p>In logistic regression, the coefficients represent the change in the log-odds of the positive outcome for a one-unit change in the corresponding predictor variable, holding other variables constant.</p>
+                        <p>The intercept \( \beta_0 \) represents the log-odds of the positive outcome when all predictor variables are zero.</p>
+                    </div>
+                    
+                    <div id="lrAssumptions" class="tab-content warning-tab">
+                        <h3>Assumptions of Logistic Regression</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Binary Outcome: The dependent variable should be binary.</li>
+                            <li>Linearity of Log-Odds: The relationship between the predictor variables and the log-odds of the positive outcome should be linear.</li>
+                            <li>Independence of Observations: Each observation should be independent of others.</li>
+                            <li>No Multicollinearity: The predictor variables should not be highly correlated with each other.</li>
+                            <li>Large Sample Size: Logistic regression performs better with larger sample sizes.</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="lrApplications" class="tab-content example-tab">
+                        <h3>Applications of Logistic Regression</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Spam Detection: Classifying emails as spam or not spam.</li>
+                            <li>Medical Diagnosis: Predicting the presence of a disease based on symptoms.</li>
+                            <li>Credit Risk Assessment: Predicting the likelihood of a loan default.</li>
+                            <li>Customer Churn Prediction: Predicting whether a customer will stop using a service.</li>
+                            <li>Sentiment Analysis: Classifying text as positive, negative, or neutral.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="best-practice">
+                    <h3>Maximum Likelihood Estimation (MLE)</h3>
+                    <p>The parameters (coefficients) of logistic regression are typically estimated using maximum likelihood estimation. MLE finds the parameter values that maximize the likelihood of observing the given data under the assumed logistic regression model.</p>
+                </div>
+            </div>
+        </main>
 
         <div class="notecontent">
             <h2>NOTES</h2>
+            <div class="information">
+                <h3>Key Points</h3>
+                <p><strong>Regression</strong> - statistical method used to model and analyze the relationship between variables, used for prediction</p>
+                <p><strong>X & Y</strong> - independent and dependent variables respectively</p>
+                <p><strong>Linear Regression</strong> - assumes that there exists a linear relationship between X & Y</p>
+                <p><strong>Logistic Regression</strong> - used for modeling the probability of a binary outcome</p>
+            </div>
+            <div class="example">
+                <p><strong>Linear Regression</strong> - predicts continuous outcome</p>
+                <p><strong>Logistic Regression</strong> - only two possible outcomes</p>
+            </div>
+            <div class="key-takeaway">
+                <h3>Linear Regression</h3>
+                <p><strong>Method</strong></p>
+                <ul>
+                    <p><strong>Ordinary Least Squares (OLS)</strong> - most common method for estimating the parameters. Minimizes the sum of squared differences between observed and predicted values.</p>
+                </ul>
+                <p><strong>Assumptions</strong></p>
+                <ul>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;"><strong>Linearity</strong> - the relationship is linear</li>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;"><strong>Independence</strong> - errors are independent</li>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;"><strong>Homoscedasticity</strong> - constant error variance</li>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;"><strong>Normality</strong> - errors are normally distributed</li>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;"><strong>No multicollinearity</strong> - independent variables are not highly correlated</li>
+                </ul>
+                <p><strong>Applications</strong></p>
+                <ul>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;">Prediction</li>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;">Understanding Relationships</li>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;">Hypothesis Testing</li>
+                </ul>
+            </div>
+            <div class="key-takeaway">
+                <h3>Logistic Regression</h3>
+                <p><strong>Method</strong></p>
+                <ul>
+                    <p><strong>Maximum Likelihood Estimation (MLE)</strong> - finds parameter values that maximize the likelihood of the observed data</p>
+                </ul>
+                <p><strong>Assumptions</strong></p>
+                <ul>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;"><strong>Binary Outcome</strong> – Dependent variable is binary.</li>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;"><strong>Linearity in Log-Odds</strong> – Predictors have a linear relationship with log-odds.</li>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;"><strong>Independence</strong> – Observations are independent.</li>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;"><strong>No Multicollinearity</strong> – Predictors aren't highly correlated.</li>
+                    <li style="padding-bottom: 0; margin-bottom: 0; margin-top: 0;"><strong>Large Sample</strong> – Works better with more data.</li>
+                </ul>
+                <p><strong>Applications</strong></p>
+                <ul>
+                    <li>Spam Detection</li>
+                    <li>Medical Diagnosis</li>
+                    <li>Credit Risk Assessment</li>
+                    <li>Customer Churn Prediction</li>
+                    <li>Sentiment Analysis</li>
+                </ul>
+                
+            </div>
 
             
         </div>
