@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reviewer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
     <title>Software Process Models - CIT 214</title>
 </head>
 
@@ -47,19 +50,403 @@
                         <span class="subject-name">Machine Learning</span>
                         <ul class="chapter-list">
                             <li><a href="MLChap1.html">Intro to Machine Learning</a></li>
-                            <li><a href="MLChap2.html">EDA</a></li>
-                            <li><a href="MLChap3.html">Regression</a></li>
-                            <li><a href="MLChap4.html">Time Series</a></li>
+                            <li><a href="MLChap2.html">Exploratory Data Analysis</a></li>
+                            <li><a href="MLChap3.html">Intro to Regression</a></li>
+                            <li><a href="MLChap4.html">Time Series Analysis & Forecasting</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </nav>
 
+        <main id="content" class="maincontent">
+            <h1>Time Series Analysis and Forecasting</h1>
+            <p class="highlight-box">CCS 247 - Machine Learning</p>
+
+            <!-- Introduction to Time Series Section -->
+            <div class="model-section">
+                <h2>Introduction to Time Series</h2>
+                
+                <div class="concept">
+                    <p>A time series is a sequence of data points collected or recorded at successive points in time. Unlike traditional machine learning datasets where rows are often treated as independent, time series data has a crucial dependency: the order of observations.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Time Series</strong> is a collection of observations made sequentially over time where temporal ordering matters and past values influence future values.</p>
+                </div>
+                <img src="../images/timeseries.png" alt="">
+                
+                <p>Ignoring this temporal order leads to inaccurate models. For example, predicting stock prices without considering the sequence of past prices is inherently flawed.</p>
+                
+                <div class="example">
+                    <h3>Examples of Time Series Data</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Stock prices</li>
+                        <li>Temperature readings</li>
+                        <li>Sales figures</li>
+                        <li>Website traffic</li>
+                        <li>Sensor data</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-blue active" onclick="openTab(event, 'components')" title="Components"></div>
+                        <div class="tab tab-green" onclick="openTab(event, 'stationarity')" title="Stationarity"></div>
+                    </div>
+                    
+                    <div id="components" class="tab-content information-tab active">
+                        <h3>Components of a Time Series</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li><strong>Trend</strong> - Long-term movement (upward, downward, or constant).</li>
+                            <img src="../images/trend.png" alt="trend">
+                            <li><strong>Seasonality</strong> - Regular, predictable patterns that repeat over fixed intervals (e.g., daily, weekly, yearly).</li>
+                            <img src="../images/seasonality.png" alt="">
+                            <li><strong>Cyclicality</strong> - Longer-term fluctuations that are not necessarily periodic (e.g., business cycles).</li>
+                            <img src="../images/cyclicality.png" alt="">
+                            <li><strong>Irregular/Residual</strong> - Random, unpredictable noise.</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="stationarity" class="tab-content key-takeaway-tab">
+                        <h3>Stationarity</h3>
+                        <img src="../images/stationary.png" alt="">
+                        <p>A stationary time series has statistical properties (mean, variance) that are constant over time.</p>
+                        <p><strong>Why it matters</strong> - Many time series models assume stationarity.</p>
+                        <p>Most real-world time series are non-stationary. Trends, seasonality, and cyclical patterns violate the assumption of constant statistical properties.</p>
+                        <p><strong>How to check</strong> -</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Visual inspection of the plot.</li>
+                            <li>Statistical tests (e.g., Augmented Dickey-Fuller (ADF) test, KPSS test).</li>
+                        </ul>
+                        <p><strong>Transformations to achieve stationarity</strong> -</p>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Differencing: Subtracting consecutive observations.</li>
+                            <li>Log transformation: Reduces variance.</li>
+                            <li>Seasonal differencing: Subtracting observations from the same season in the previous period.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Series Decomposition Section -->
+            <div class="model-section">
+                <h2>Time Series Decomposition</h2>
+                
+                <div class="concept">
+                    <p>Time series decomposition involves separating a time series into its constituent components (trend, seasonality, etc.).</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Decomposition Methods</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Additive Decomposition</strong> -<br> \( Y(t) = \text{Trend}(t) + \text{Seasonality}(t) + \text{Residual}(t) \) </li>
+                        <li><strong>Multiplicative Decomposition</strong> -<br> \( Y(t) = \text{Trend}(t) \times \text{Seasonality}(t) \times \text{Residual}(t) \) </li>
+                        <li><strong>Seasonal Decomposition of Time Series by Loess (STL)</strong> - Robust and flexible method, can handle complex seasonality.</li>
+                    </ul>
+                </div>                
+                
+                <div class="key-takeaway">
+                    <h3>Applications of Decomposition</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Understanding the underlying patterns</li>
+                        <li>Improving forecasting accuracy</li>
+                        <li>Identifying anomalies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Forecasting Methods Section -->
+            <div class="model-section">
+                <h2>Forecasting Methods</h2>
+                
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-blue active" onclick="openTab(event, 'statisticalMethods')" title="Statistical Methods"></div>
+                        <div class="tab tab-purple" onclick="openTab(event, 'mlMethods')" title="Machine Learning Methods"></div>
+                    </div>
+                    
+                    <div id="statisticalMethods" class="tab-content information-tab active">
+                        <h3>Statistical Methods</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li><strong>Moving Average (MA)</strong> - Smooths out short-term fluctuations.</li>
+                            <li><strong>Exponential Smoothing (ES)</strong> - Assigns exponentially decreasing weights to past observations.
+                                <ul style="list-style-type: circle; margin-left: 20px;">
+                                    <li>Simple ES: For time series with no trend or seasonality.</li>
+                                    <li>Holt's Linear ES: For time series with trend.</li>
+                                    <li>Holt-Winters ES: For time series with trend and seasonality.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Autoregressive Integrated Moving Average (ARIMA)</strong> -
+                                <ul style="list-style-type: circle; margin-left: 20px;">
+                                    <li>Combines autoregressive (\( \text{AR} \)), differencing (\( \text{I} \)), and moving average (\( \text{MA} \)).</li>
+                                    <li>\( \text{ARIMA}(p, d, q) \): Parameters represent the order of \( \text{AR} \), \( \text{I} \), and \( \text{MA} \) components.</li>
+                                    <li>\( p \) (Autoregressive order): Number of lag observations included in the model.</li>
+                                    <li>\( d \) (Differencing order): Number of times the raw observations are differenced.</li>
+                                    <li>\( q \) (Moving average order): Number of lagged forecast errors included in the model.</li>
+                                    <li>\( \text{SARIMA}(p, d, q)(P, D, Q)_s \): Seasonal ARIMA, accounts for seasonality.</li>
+                                </ul>
+                            </li>                            
+                            <li><strong>Vector Autoregression (VAR)</strong> - For forecasting multiple time series simultaneously.</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="mlMethods" class="tab-content best-practice-tab">
+                        <h3>Machine Learning Methods</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li><strong>Regression Models</strong>
+                                <ul style="list-style-type: circle; margin-left: 20px;">
+                                    <li>Linear regression, polynomial regression, etc., with time-lagged features.</li>
+                                    <li>Feature engineering is crucial.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Tree-Based Models</strong>
+                                <ul style="list-style-type: circle; margin-left: 20px;">
+                                    <li>Random forests, gradient boosting (e.g., XGBoost, LightGBM).</li>
+                                    <li>Can capture non-linear relationships.</li>
+                                    <li>Feature engineering is very important.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Recurrent Neural Networks (RNNs)</strong>
+                                <ul style="list-style-type: circle; margin-left: 20px;">
+                                    <li>Designed for sequential data.</li>
+                                    <li>Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) networks are commonly used.</li>
+                                    <li>Can capture long term dependencies.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Temporal Convolutional Networks (TCNs)</strong>
+                                <ul style="list-style-type: circle; margin-left: 20px;">
+                                    <li>Convolutional networks designed for time series.</li>
+                                    <li>Can be faster than RNN's.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Transformers</strong>
+                                <ul style="list-style-type: circle; margin-left: 20px;">
+                                    <li>Originally designed for natural language processing, but can be adapted to time series.</li>
+                                    <li>Attention mechanisms can capture long-range dependencies.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model Selection and Evaluation Section -->
+            <div class="model-section">
+                <h2>Model Selection and Evaluation</h2>
+                
+                <div class="information">
+                    <h3>Train-Test Split</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Split the time series into training and testing sets.</li>
+                        <li>Use a rolling or expanding window approach to preserve temporal order.</li>
+                    </ul>
+                </div>
+                
+                <div class="best-practice">
+                    <h3>Evaluation Metrics</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Mean Absolute Error (MAE)</strong> - Average absolute difference between predicted and actual values.</li>
+                        <li><strong>Mean Squared Error (MSE)</strong> - Average squared difference between predicted and actual values.</li>
+                        <li><strong>Root Mean Squared Error (RMSE)</strong> - Square root of MSE.</li>
+                        <li><strong>Mean Absolute Percentage Error (MAPE)</strong> - Average percentage difference between predicted and actual values.</li>
+                        <li><strong>Symmetric Mean Absolute Percentage Error (sMAPE)</strong> - variant of MAPE.</li>
+                    </ul>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Model Selection Techniques</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Cross-validation</strong> - Time series cross-validation (e.g., rolling forecast origin).</li>
+                        <li><strong>Information criteria</strong> - AIC, BIC (for ARIMA models).</li>
+                        <li><strong>Hyperparameter tuning</strong> - Grid search, random search, Bayesian optimization.</li>
+                    </ul>
+                </div>
+                
+                <div class="warning">
+                    <h3>Residual Analysis</h3>
+                    <p>Check for autocorrelation and heteroscedasticity in the residuals. Ensure residuals are white noise.</p>
+                </div>
+            </div>
+
+            <!-- Practical Considerations Section -->
+            <div class="model-section">
+                <h2>Practical Considerations</h2>
+                
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-green active" onclick="openTab(event, 'preprocessing')" title="Data Preprocessing"></div>
+                        <div class="tab tab-purple" onclick="openTab(event, 'features')" title="Feature Engineering"></div>
+                        <div class="tab tab-red" onclick="openTab(event, 'forecasting')" title="Forecasting Horizons"></div>
+                        <div class="tab tab-yellow" onclick="openTab(event, 'uncertainty')" title="Uncertainty Quantification"></div>
+                    </div>
+                    
+                    <div id="preprocessing" class="tab-content key-takeaway-tab active">
+                        <h3>Data Preprocessing</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Handling missing values</li>
+                            <li>Outlier detection and treatment</li>
+                            <li>Feature engineering (e.g., lag features, rolling statistics)</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="features" class="tab-content best-practice-tab">
+                        <h3>Feature Engineering</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Creating lag features</li>
+                            <li>Rolling mean, rolling standard deviation</li>
+                            <li>Time based features (day of week, month, etc.)</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="forecasting" class="tab-content warning-tab">
+                        <h3>Forecasting Horizon</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Short-term vs. long-term forecasting</li>
+                            <li>The accuracy of forecasts generally decreases with longer horizons</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="uncertainty" class="tab-content example-tab">
+                        <h3>Uncertainty Quantification</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px;">
+                            <li>Confidence intervals</li>
+                            <li>Prediction intervals</li>
+                            <li>Bootstrapping</li>
+                        </ul>
+                        <p>External factors such as weather data and economic indicators can also be incorporated as exogenous variables in forecasting models.</p>
+                    </div>
+                </div>
+            </div>    
+        </main>
 
         <div class="notecontent">
             <h2>NOTES</h2>
 
+            <div class="information">
+                <h3>Time Series</h3>
+                <p>A time series is a sequence of data points recorded over time.</p>
+                <p>The order of observations matters; past values influence future values.</p>
+                <p>
+                    <strong>Components</strong>
+                    <ul>
+                        <li><strong>Trend</strong> - long-term movement (upward, downward, or constant)</li>
+                        <li><strong>Seasonality</strong> - regular, predictable patterns that repeat over fixed intervals</li>
+                        <li><strong>Cyclicality</strong> - longer-term fluctuations that are not periodic</li>
+                        <li><strong>Irregular/Residual noise</strong> - no pattern, random noise    </li>
+                    </ul>
+                </p>
+                <hr style="opacity: 30%;">
+                <h3>Stationarity</h3>
+                <p>A stationary series has constant statistical properties (mean, variance).</p>
+            </div>
+            <div class="definition">
+                <p><strong>Stationarity isn't a component</strong> like trend, seasonality, cyclicality, and Irregular/residual; <strong>it's a property of the time series</strong>. A stationary series has constant statistical properties (like mean and variance) over time, which many models require.</p>
+            </div>
+            <div class="key-takeaway">
+                <h3>Decomposition Methods (AMS)</h3>
+                <p>Used to understand underlying patterns, detect anomalies, and improve forecasts</p>
+                <ul>
+                    <p><strong>Additive</strong> - \( Y(t) = \text{Trend}(t) + \text{Seasonality}(t) + \text{Residual}(t) \)</p>
+                    <p><strong>Multiplocative</strong> - \( Y(t) = \text{Trend}(t) \times \text{Seasonality}(t) \times \text{Residual}(t) \)</p>
+                    <p><strong>STL</strong> -  Seasonal Decomposition by Loess for complex seasonality</p>
+                </ul>
+            </div>
+            <div class="key-takeaway">
+                <h3>Forecasting Methods</h3>
+                <p><strong>2 Main Types of Forecasting Methods</strong></p>
+                <ul>
+                    <li>Statistical Method</li>
+                    <li>Machine Learning (ML) Method</li>
+                </ul>
+                <hr style="opacity: 30%;">
+                <p><strong>Statistical Methods (MA ES ARIMA VAR)</strong></p>
+                <ul>
+                    <li><strong>Moving Average (MA)</strong> - smooths short-term fluctuations</li>
+                    <li>
+                        <strong>Exponential Smoothing (ES)</strong> - applies decreasing weights to past observations
+                        <ul>
+                            <li style="padding: 0; margin: 0;">Simple ES - for TS w/ no trend/seasonality</li>
+                            <li style="padding: 0; margin: 0;">Holt's Linear ES - for TS w/ trend</li>
+                            <li style="padding: 0; margin: 0;">Holt-Winters ES - for TS w/ trend/seasonality</li>
+                        </ul>
+                    </li>
+                    <li><strong>ARIMA</strong> - Combines autoregression, differencing, and moving average (p, d, q)
+                        <br> AR = autoregression = p
+                        <br> I = differencing = d 
+                        <br> MA = moving average = q
+                        <ul>
+                            <li>Seasonal extension: SARIMA (p, d, q)(P, D, Q)s</li>
+                        </ul>
+                    </li>
+                    <li><strong>Vector Autoregression (VAR)</strong> - forecasts multiple time series simultaneously</li>
+                </ul>
+                <hr style="opacity: 30%;">
+                <p><strong>Machine Learning Methods (R T RNNs TCNs T)</strong></p>
+                <ul>
+                    <li><strong>Regression Models</strong> - incorporate time-lagged features to model temporal relationships.
+                        <ul>
+                            <li>Linear regression, polynomial regression, etc.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tree-Based Models</strong> - captures complex, non-linear relationships
+                        <ul>
+                            <li>Random forests, gradient boosting (e.g., XGBoost, LightGBM)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Recurrent Neural Networks (RNNs)</strong> - designed for sequential data, captures long-term dependencies
+                        <ul>
+                            <li>Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) networks</li>
+                        </ul>
+                    </li>
+                    <li><strong>Temporal Convolutional Networks (TCNs)</strong> - designed for time series, can be faster than RNNs</li>
+                    <li><strong>Transformers</strong> - designed for natural language processing, adapted to time series, capture long-range dependencies</li>
+                </ul>
+            </div>
+            <div class="example">
+                <h3>Model Selection and Evaluation (TEMR)</h3>
+                <p><strong>Train-Test Split</strong> - Split the time series into training and testing sets, maintain temporal order using rolling or expanding windows</p>
+                <hr style="opacity: 30%;">
+                <p>
+                    <strong>Evaluation Metrics</strong>
+                    <ul>
+                        <p>
+                            <strong>MAE, MSE, RMSE, MAPE, sMAPE</strong>
+                        </p>
+                        <div class="definition">
+                            Definition
+                            <p>M = Mean = Average
+                                <br>A = Absolute
+                                <br>S = Squared
+                                <br>E = Error = difference between predicted and actual values
+                                <br>R = Root
+                                <br>P = Percentage
+                                <br>s = Symmetric
+                            </p>
+                        </div>
+                    </ul>
+                </p>
+                <hr style="opacity: 30%;">
+                <p><strong>Model Selection Techniques</strong>
+                    <ul>
+                        <li style="padding: 0; margin: 0;">Time series cross-validation</li>
+                        <li style="padding: 0; margin: 0;">Tnformation criteria (AIC, BIC) <span style="font-style: italic; opacity: 70%;">(for ARIMA models)</span></li>
+                        <li style="padding: 0; margin: 0;">Hyperparameter tuning</li>
+                    </ul>
+                </p>
+                <hr style="opacity: 30%;">
+                <p><strong>Model Selection Techniques</strong> - check for autocorrelation and heteroscedasticity; residuals should behave like white noise.</p>
+            </div>
+            <div class="best-practice">
+                <h3>Practical Considerations</h3>
+                <ul>
+                    <li><strong>Data Preprocessing</strong> - handle missing values, outliers, and engineer features (lag features, rolling statistics, time-based features).</li>
+                    <li><strong>Forecasting Horizon</strong> - forecast accuracy generally declines over longer horizons.</li>
+                    <li><strong>Uncertainty Quantification</strong> - use confidence intervals, prediction intervals, and bootstrapping.</li>
+                    <li><strong>External Factors</strong> - incorporate exogenous variables (e.g., weather, economic indicators) into models.</li>
+                </ul>
+
+            </div>
             
         </div>
     </div>
