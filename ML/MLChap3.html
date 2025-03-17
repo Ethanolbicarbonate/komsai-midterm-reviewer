@@ -9,14 +9,17 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
     <title>KomsaiReviewer</title>
     <style>
-        /* Add these styles to control the transition */
         body {
-            animation: fadeIn 0.5s ease;
+            animation: fadeSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
