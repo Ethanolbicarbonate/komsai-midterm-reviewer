@@ -482,7 +482,6 @@ animation: fadeIn 0.4s ease-in-out;
     transition: max-height 0.3s ease;
 }
 
-.subject-item:hover .chapter-list,
 .subject-item.active .chapter-list {
     max-height: 500px;
 }
@@ -598,4 +597,80 @@ animation: fadeIn 0.4s ease-in-out;
     top: 0px;
     background: linear-gradient(to bottom, #f5f5f5 80%, rgba(255, 255, 255, 0)); /* Fading effect */
     z-index: 999; /* Slightly lower than sidebar but still above regular content */
+}
+
+.toggle-icon.active {
+    background-color: transparent;
+}
+
+.toggle-icon.active:before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.toggle-icon.active:after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+/* Ensure transitions are smooth */
+.toggle-icon,
+.toggle-icon:before,
+.toggle-icon:after {
+    transition: all 0.3s ease;
+}
+
+/* Add to reviewer.css */
+
+/* Fade transition for page content */
+.maincontent, .notecontent {
+    transition: opacity 0.3s ease;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 18px;
+    color: #3498db;
+}
+
+.loading-spinner:after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    margin-left: 15px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Page transition overlay */
+.page-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.page-transition-overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }

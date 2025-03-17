@@ -4,57 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reviewer.css">
-    <title>CC 207 A</title>
+    <title>KomsaiReviewer</title>
+    <style>
+        /* Add these styles to control the transition */
+        body {
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 
 <body>
+    <div class="page-transition-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
     <div class="page-container">
-        <!-- Left side navigation -->
-        <nav id="sidebar" class="sidebar">
-            <div class="sidebar-header">
-                <a href="../index.html" style="text-decoration: none; color: inherit;">
-                    <h3>MIDTERM REVIEWER</h3>
-                </a>
-                <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle navigation">
-                    <span class="toggle-icon"></span>
-                </button>
-            </div>
-            
-            <div class="sidebar-content">
-                <ul class="subject-list">
-                    <li class="subject-item">
-                        <span class="subject-name">Software Engineering</span>
-                        <ul class="chapter-list">
-                            <li><a href="../SE/SEChap1.html">Software</a></li>
-                            <li><a href="../SE/SEChap2.html">Software Engineering</a></li>
-                            <li><a href="../SE/SEChap3.html">Software Engineering Activities</a></li>
-                            <li><a href="../SE/SEChap4.html">Software Engineering Principles</a></li>
-                            <li><a href="../SE/SEChap5.html">Ethics in Software Engineering</a></li>
-                            <li><a href="../SE/SEChap6.html">SDLC & Software Process</a></li>
-                            <li><a href="../SE/SEChap7.html">Software Process Models</a></li>
-                            <li><a href="../SE/SEChap8.html">Agile Development</a></li>
-                        </ul>
-                    </li>
-                    <li class="subject-item">
-                        <span class="subject-name">System Analysis & Design</span>
-                        <ul class="chapter-list">
-                            <li><a href="SADChap1.html">Intro to SAD</a></li>
-                            <li><a href="SADChap2.html">Analyzing Business Case</a></li>
-                            <li><a href="SADChap3.html">Managing System Projects</a></li>
-                        </ul>
-                    </li>
-                    <li class="subject-item">
-                        <span class="subject-name">Machine Learning</span>
-                        <ul class="chapter-list">
-                            <li><a href="../ML/MLChap1.html">Intro to Machine Learning</a></li>
-                            <li><a href="../ML/MLChap2.html">Exploratory Data Analysis</a></li>
-                            <li><a href="../ML/MLChap3.html">Intro to Regression</a></li>
-                            <li><a href="../ML/MLChap4.html">Time Series Analysis & Forecasting</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div id="navbar-container"></div>
 
         <main id="content" class="maincontent">
             <h1>Managing Systems Projects</h1>
@@ -418,5 +388,93 @@
         </div>
     </div>
     <script src="../reviewer.js"></script>
+    <script>
+        // Function to load the navbar
+        function loadNavbar() {
+            fetch('../navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    initializeSidebar();
+                    highlightCurrentPage();
+                });
+        }
+        
+        // Initialize sidebar functionality
+        function initializeSidebar() {
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            if (sidebarToggle && sidebar) {
+                sidebarToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                    const toggleIcon = sidebarToggle.querySelector('.toggle-icon');
+                    if (toggleIcon) {
+                        toggleIcon.classList.toggle('active');
+                    }
+                });
+            }
+            
+            // Subject accordions
+            const subjectNames = document.querySelectorAll('.subject-name');
+            subjectNames.forEach(subject => {
+                subject.addEventListener('click', function() {
+                    const parentItem = this.parentElement;
+                    const isActive = parentItem.classList.contains('active');
+                    
+                    document.querySelectorAll('.subject-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    if (!isActive) {
+                        parentItem.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        // Highlight current page
+        function highlightCurrentPage() {
+            const currentPath = window.location.pathname;
+            const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+            
+            const links = document.querySelectorAll('.chapter-list a');
+            links.forEach(link => {
+                if (link.getAttribute('href').endsWith(filename)) {
+                    link.classList.add('active');
+                    let parentSubject = link.closest('.subject-item');
+                    if (parentSubject) {
+                        parentSubject.classList.add('active');
+                    }
+                }
+            });
+        }
+        
+        // Show transition overlay when clicking on links
+        document.addEventListener('click', function(event) {
+            const link = event.target.closest('.chapter-list a');
+            if (link && !event.ctrlKey && !event.metaKey) {
+                const overlay = document.querySelector('.page-transition-overlay');
+                if (overlay) {
+                    overlay.classList.add('active');
+                }
+            }
+        });
+        
+        // Load navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavbar();
+            
+            // Hide transition overlay when page is loaded
+            window.addEventListener('load', function() {
+                const overlay = document.querySelector('.page-transition-overlay');
+                if (overlay) {
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                    }, 100);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

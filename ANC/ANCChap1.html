@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reviewer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <title>Subject Page</title>
+    <style>
+        /* Add these styles to control the transition */
+        body {
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-transition-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="page-container">
+        <div id="navbar-container"></div>
+        
+        <div class="maincontent">
+            <!-- Content goes here -->
+        </div>
+        
+        <div class="notecontent">
+            <!-- Notes go here -->
+        </div>
+    </div>
+
+    <script src="../reviewer.js"></script>
+    <script>
+        // Function to load the navbar
+        function loadNavbar() {
+            fetch('../navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    initializeSidebar();
+                    highlightCurrentPage();
+                });
+        }
+        
+        // Initialize sidebar functionality
+        function initializeSidebar() {
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            if (sidebarToggle && sidebar) {
+                sidebarToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                    const toggleIcon = sidebarToggle.querySelector('.toggle-icon');
+                    if (toggleIcon) {
+                        toggleIcon.classList.toggle('active');
+                    }
+                });
+            }
+            
+            // Subject accordions
+            const subjectNames = document.querySelectorAll('.subject-name');
+            subjectNames.forEach(subject => {
+                subject.addEventListener('click', function() {
+                    const parentItem = this.parentElement;
+                    const isActive = parentItem.classList.contains('active');
+                    
+                    document.querySelectorAll('.subject-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    if (!isActive) {
+                        parentItem.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        // Highlight current page
+        function highlightCurrentPage() {
+            const currentPath = window.location.pathname;
+            const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+            
+            const links = document.querySelectorAll('.chapter-list a');
+            links.forEach(link => {
+                if (link.getAttribute('href').endsWith(filename)) {
+                    link.classList.add('active');
+                    let parentSubject = link.closest('.subject-item');
+                    if (parentSubject) {
+                        parentSubject.classList.add('active');
+                    }
+                }
+            });
+        }
+        
+        // Show transition overlay when clicking on links
+        document.addEventListener('click', function(event) {
+            const link = event.target.closest('.chapter-list a');
+            if (link && !event.ctrlKey && !event.metaKey) {
+                const overlay = document.querySelector('.page-transition-overlay');
+                if (overlay) {
+                    overlay.classList.add('active');
+                }
+            }
+        });
+        
+        // Load navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavbar();
+            
+            // Hide transition overlay when page is loaded
+            window.addEventListener('load', function() {
+                const overlay = document.querySelector('.page-transition-overlay');
+                if (overlay) {
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                    }, 100);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
