@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reviewer.css">
+    <title>KomsaiReviewer</title>
+    <style>
+        /* Sidebar Navbar */
+        #navbar-container {
+            width: 280px; /* Fixed width */
+            height: 100vh; /* Full height */
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #2c3e50; /* Same as sidebar */
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Placeholder Text While Navbar Loads */
+        #navbar-placeholder {
+            color: white;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        /* Main Content - Ensures It Stays Next to the Navbar */
+        #content {
+            margin-left: 280px; /* Pushes content to the right */
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            #navbar-container {
+                width: 100%;
+                height: auto;
+                position: sticky;
+            }
+            #content {
+                margin-left: 0; /* Allow full width */
+            }
+        }
+
+        body {
+            animation: fadeSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-transition-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="page-container">
+        <div id="navbar-container"></div>
+
+        <main id="content" class="maincontent">
+            <div class="tab-group">
+                <div class="tabs">
+                    <div class="tab tab-blue active" onclick="openTab(event, 'step1')" title="Step 1"></div>
+                    <div class="tab tab-green" onclick="openTab(event, 'step2')" title="Step 2"></div>
+                    <div class="tab tab-yellow" onclick="openTab(event, 'step3')" title="Step 3"></div>
+                </div>
+                
+                <div id="step3" class="tab-content example-tab">
+                    <h1>Project Management Test: Chapter 3</h1>
+                        <div class="model-section">
+                            <h2>Multiple Choice (Choose the best answer)</h2>
+                            <p>1. Which of the following best describes the project triangle?</p>
+                            <ul>
+                                <li>a) Time, resources, and skills</li>
+                                <li>b) Cost, scope, and time</li>
+                                <li>c) Budget, timeline, and personnel</li>
+                                <li>d) Requirements, deliverables, and deadlines</li>
+                            </ul>
+                            
+                            <p>2. The critical path in a project is:</p>
+                            <ul>
+                                <li>a) The shortest sequence of tasks to complete the project</li>
+                                <li>b) The series of tasks with the most resources assigned</li>
+                                <li>c) The series of tasks that, if delayed, would delay the entire project</li>
+                                <li>d) The tasks assigned to the most critical team members</li>
+                            </ul>
+                            
+                            <p>3. PERT stands for:</p>
+                            <ul>
+                                <li>a) Project Evaluation and Review Technology</li>
+                                <li>b) Program Evaluation Review Technique</li>
+                                <li>c) Project Estimation and Resource Tracking</li>
+                                <li>d) Performance Evaluation and Risk Testing</li>
+                            </ul>
+                            
+                            <p>4. In project management, a task or activity is defined as:</p>
+                            <ul>
+                                <li>a) Any work assigned to a team member</li>
+                                <li>b) Work that has a beginning and end and requires company resources</li>
+                                <li>c) A milestone that marks project progress</li>
+                                <li>d) Any work that appears on the Gantt chart</li>
+                            </ul>
+                            
+                            <p>5. When several tasks can start immediately after a single task is completed, this is called:</p>
+                            <ul>
+                                <li>a) Multiple successor tasks</li>
+                                <li>b) Dependent tasks</li>
+                                <li>c) Multiple predecessor tasks</li>
+                                <li>d) Concurrent initialization</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="model-section">
+                            <h2>True or False</h2>
+                            <p>6. A work breakdown structure (WBS) must clearly identify each task but does not need to include duration estimates.</p>
+                            <p>7. If a task is not on the critical path, it can be delayed indefinitely without affecting the project completion date.</p>
+                            <p>8. Gantt charts are more useful than PERT charts for displaying complex task patterns and relationships.</p>
+                            <p>9. The failure of an IT project can be caused by poor project management techniques.</p>
+                            <p>10. In qualitative risk analysis, you evaluate each risk by estimating the probability it will occur and its potential impact.</p>
+                        </div>
+
+                        <div class="model-section">
+                            <h2>Identification (Provide the term being described)</h2>
+                            <p>11. A horizontal bar chart that shows planned and actual progress on a project, displaying time on the horizontal axis.</p>
+                            <p>12. The basic units of work that project managers plan, schedule, and monitor.</p>
+                            <p>13. The unit of measurement representing work one person can complete in one day.</p>
+                            <p>14. The series of tasks which, if delayed, would affect the completion date of the overall project.</p>
+                            <p>15. The process of guiding, supervising, and coordinating the project team's workload.</p>
+                        </div>
+
+                        <div class="model-section">
+                            <h2>Enumeration (List the items requested)</h2>
+                            <p>16. List the four main responsibilities of a project manager.</p>
+                            <p>17. Name the three main types of task patterns discussed in the chapter.</p>
+                            <p>18. List four common reasons why projects fail.</p>
+                            <p>19. Identify the three steps needed to create a PERT/CPM chart.</p>
+                            <p>20. Name three views available in Microsoft Project software.</p>
+                        </div>
+
+                        <div class="model-section">
+                            <h2>Answer Key</h2>
+                            <p>1. b) Cost, scope, and time</p>
+                            <p>2. c) The series of tasks that, if delayed, would delay the entire project</p>
+                            <p>3. b) Program Evaluation Review Technique</p>
+                            <p>4. b) Work that has a beginning and end and requires company resources</p>
+                            <p>5. a) Multiple successor tasks</p>
+                            
+                            <p>6. False</p>
+                            <p>7. False</p>
+                            <p>8. False</p>
+                            <p>9. True</p>
+                            <p>10. True</p>
+                            
+                            <p>11. Gantt chart</p>
+                            <p>12. Tasks</p>
+                            <p>13. Person-day</p>
+                            <p>14. Critical path</p>
+                            <p>15. Project monitoring</p>
+                            
+                            <p>16. Project planning, project scheduling, project monitoring, project reporting</p>
+                            <p>17. Dependent tasks, multiple successor tasks, multiple predecessor tasks</p>
+                            <p>18. Business issues, budget issues, schedule issues, poor project management techniques</p>
+                            <p>19. Display the tasks and task patterns, enter task durations, calculate start and finish times</p>
+                            <p>20. Gantt chart view, network diagram view, calendar view</p>
+                        </div>
+                    </div>
+                <div id="step1" class="tab-content information-tab active">
+                    <h1>Chapter 1: Introduction to Systems Analysis and Design Test</h1>
+                    
+                    <div class="model-section">
+                        <h2>Multiple Choice (Select the best answer)</h2>
+                        <p>1. Which of the following best describes systems analysis and design?</p>
+                        <ul>
+                            <li>a) The physical components of an information system</li>
+                            <li>b) A step-by-step process for developing high-quality information systems</li>
+                            <li>c) The process of managing IT projects and resources</li>
+                            <li>d) The combination of hardware and software products</li>
+                        </ul>
+                        
+                        <p>2. According to the text, an information system consists of how many key components?</p>
+                        <ul>
+                            <li>a) Three</li>
+                            <li>b) Four</li>
+                            <li>c) Five</li>
+                            <li>d) Six</li>
+                        </ul>
+                        
+                        <p>3. Which of the following is NOT one of the five components of an information system?</p>
+                        <ul>
+                            <li>a) Hardware</li>
+                            <li>b) Software</li>
+                            <li>c) Internet</li>
+                            <li>d) People</li>
+                        </ul>
+                        
+                        <p>4. What type of information system processes data generated by day-to-day business operations?</p>
+                        <ul>
+                            <li>a) Enterprise Computing System</li>
+                            <li>b) Transaction Processing System</li>
+                            <li>c) Knowledge Management System</li>
+                            <li>d) User Productivity System</li>
+                        </ul>
+                        
+                        <p>5. Which of the following is an example of a Business-to-Consumer (B2C) relationship?</p>
+                        <ul>
+                            <li>a) A company ordering materials from a supplier</li>
+                            <li>b) An online retailer selling products to individual customers</li>
+                            <li>c) Two companies exchanging inventory data</li>
+                            <li>d) Supply chain management between businesses</li>
+                        </ul>
+                        
+                        <p>6. What development method combines data and processes into things called objects?</p>
+                        <ul>
+                            <li>a) Structured Analysis</li>
+                            <li>b) Object-Oriented Analysis</li>
+                            <li>c) Joint Application Development</li>
+                            <li>d) Rapid Application Development</li>
+                        </ul>
+                        
+                        <p>7. The systems development life cycle (SDLC) is associated with which development approach?</p>
+                        <ul>
+                            <li>a) Agile Methods</li>
+                            <li>b) Object-Oriented Analysis</li>
+                            <li>c) Structured Analysis</li>
+                            <li>d) Rapid Application Development</li>
+                        </ul>
+                        
+                        <p>8. Which of the following is NOT typically a phase in the waterfall model of the SDLC?</p>
+                        <ul>
+                            <li>a) Systems Planning</li>
+                            <li>b) Systems Analysis</li>
+                            <li>c) Systems Testing</li>
+                            <li>d) Systems Design</li>
+                        </ul>
+                    </div>
+
+                    <div class="model-section">
+                        <h2>True or False</h2>
+                        <p>9. Mission-critical systems are optional systems that would not significantly impact company operations if they failed.</p>
+                        <p>10. Legacy systems refer to newer systems that have replaced outdated technology.</p>
+                        <p>11. RFID (Radio Frequency Identification) technology uses high-frequency radio waves to track physical objects.</p>
+                        <p>12. In object-oriented analysis, objects are members of a class, which is a collection of similar objects.</p>
+                        <p>13. Top managers typically need more detailed information than middle managers.</p>
+                        <p>14. The Agile Manifesto is associated with structured analysis methodology.</p>
+                        <p>15. A system requirements document is the deliverable from the systems design phase.</p>
+                        <p>16. Prototyping can speed up the development process significantly.</p>
+                    </div>
+
+                    <div class="model-section">
+                        <h2>Identification (Fill in the blank)</h2>
+                        <p>17. _____________ is the combination of hardware and software products and services that companies use to manage, access, communicate, and share information.</p>
+                        <p>18. A business model that combines physical stores with online presence is known as a _____________ firm.</p>
+                        <p>19. _____________ systems support company-wide operations and data management requirements.</p>
+                        <p>20. _____________ is a logical rule that identifies data patterns and relationships in a knowledge management system.</p>
+                        <p>21. The _____________ model usually includes five steps: Systems Planning, Systems Analysis, Systems Design, Systems Implementation, and Systems Security and Support.</p>
+                        <p>22. _____________ development is a key component of Agile methods where systems are built incrementally through repeated cycles.</p>
+                        <p>23. _____________ is a team-based fact-finding technique used in systems development.</p>
+                        <p>24. The statement that computing power doubles approximately every two years is known as _____________.</p>
+                    </div>
+
+                    <div class="model-section">
+                        <h2>Answer Key</h2>
+                        <p>1. b) A step-by-step process for developing high-quality information systems</p>
+                        <p>2. c) Five</p>
+                        <p>3. c) Internet</p>
+                        <p>4. b) Transaction Processing System</p>
+                        <p>5. b) An online retailer selling products to individual customers</p>
+                        <p>6. b) Object-Oriented Analysis</p>
+                        <p>7. c) Structured Analysis</p>
+                        <p>8. c) Systems Testing</p>
+                        <p>9. False</p>
+                        <p>10. False</p>
+                        <p>11. True</p>
+                        <p>12. True</p>
+                        <p>13. False</p>
+                        <p>14. False</p>
+                        <p>15. False</p>
+                        <p>16. True</p>
+                        <p>17. Information Technology (IT)</p>
+                        <p>18. Brick-and-mortar</p>
+                        <p>19. Enterprise computing</p>
+                        <p>20. Inference rule</p>
+                        <p>21. SDLC (Systems Development Life Cycle)</p>
+                        <p>22. Iterative</p>
+                        <p>23. Joint Application Development (JAD)</p>
+                        <p>24. Moore's Law</p>
+                    </div>
+                </div>
+    <div id="step2" class="tab-content key-takeaway-tab">
+            <h1>Chapter 2: Analyzing the Business Case Test</h1>
+        <div class="model-section">
+            <h2>Multiple Choice (Select the best answer)</h2>
+            <p>1. What is a business case?</p>
+            <ul>
+                <li>a) A legal document filed with the government before starting a new business</li>
+                <li>b) The reasons or justification for a project proposal</li>
+                <li>c) A case study of successful businesses in the same industry</li>
+                <li>d) A financial statement showing the company's annual profits</li>
+            </ul>
+            
+            <p>2. What does SWOT stand for in a SWOT analysis?</p>
+            <ul>
+                <li>a) Software, Websites, Operations, Technology</li>
+                <li>b) Strategic Warnings and Operational Threats</li>
+                <li>c) Strengths, Weaknesses, Opportunities, Threats</li>
+                <li>d) System Workflow Optimization Tracking</li>
+            </ul>
+            
+            <p>3. Which of the following is NOT one of the four types of feasibility that should be evaluated for a systems project?</p>
+            <ul>
+                <li>a) Operational feasibility</li>
+                <li>b) Technical feasibility</li>
+                <li>c) Marketing feasibility</li>
+                <li>d) Economic feasibility</li>
+            </ul>
+            
+            <p>4. What is the first step in a preliminary investigation?</p>
+            <ul>
+                <li>a) Perform fact-finding</li>
+                <li>b) Define the project scope and constraints</li>
+                <li>c) Understand the problem or opportunity</li>
+                <li>d) Present results to management</li>
+            </ul>
+            
+            <p>5. Which tool might an analyst use to display the causes of a problem in priority order?</p>
+            <ul>
+                <li>a) SWOT analysis</li>
+                <li>b) Pareto chart</li>
+                <li>c) Fishbone diagram</li>
+                <li>d) XY chart</li>
+            </ul>
+            
+            <p>6. What is a constraint in project management?</p>
+            <ul>
+                <li>a) A limitation on the project budget</li>
+                <li>b) A requirement or condition that the system must satisfy</li>
+                <li>c) A directive from top management</li>
+                <li>d) A fixed deadline for project completion</li>
+            </ul>
+            
+            <p>7. Which of the following is an example of a tangible benefit?</p>
+            <ul>
+                <li>a) Improved employee job satisfaction</li>
+                <li>b) Enhanced company image</li>
+                <li>c) Better information for marketing decisions</li>
+                <li>d) Reduced overtime costs</li>
+            </ul>
+            
+            <p>8. Project creep refers to:</p>
+            <ul>
+                <li>a) The gradual increase in project scope beyond original boundaries</li>
+                <li>b) The slow movement of a project through approval channels</li>
+                <li>c) The tendency of projects to fall behind schedule</li>
+                <li>d) The process of monitoring project milestones</li>
+            </ul>
+        </div>
+        <div class="model-section">
+            <h2>True or False</h2>
+            <p>9. A mission statement is part of the tactical planning process, not strategic planning.</p>
+            <p>10. The systems review committee is always more effective than having a single person evaluate systems requests.</p>
+            <p>11. Nondiscretionary projects are those where management has a choice in implementing them.</p>
+            <p>12. Economic feasibility involves determining whether the necessary technical resources and people are available for a project.</p>
+            <p>13. A fishbone diagram is used to display the causes of a problem.</p>
+            <p>14. During fact-finding, observing operations is generally more efficient than conducting interviews.</p>
+            <p>15. The project scope can be defined by creating a list with sections called Must Do, Should Do, Could Do, and Won't Do.</p>
+            <p>16. An XY chart shows correlation between variables, which can be important in problem solving.</p>
+        </div>
+        <div class="model-section">
+            <h2>Identification (Fill in the blank)</h2>
+            <p>17. The _____________ is a team that evaluates systems requests in many organizations.</p>
+            <p>18. A(n) _____________ refers to the specific boundaries or extent of a project.</p>
+            <p>19. _____________ benefits are results of a new system that are difficult to measure in terms of dollars, such as improved customer satisfaction.</p>
+            <p>20. A(n) _____________ is a tool that displays causes of a problem, with main categories branching into more specific causes.</p>
+            <p>21. A systems request that builds on what currently exists rather than proposing a radical new approach is called a(n) _____________ request.</p>
+            <p>22. The tendency for projects to expand beyond their original scope is called project _____________. </p>
+            <p>23. Projects where management has no choice but to implement them, such as those required by law, are called _____________ projects.</p>
+            <p>24. A(n) _____________ displays the relationship between two variables to determine if they are correlated.</p>
+        </div>
+        <div class="model-section">
+            <h2>Answer Key</h2>
+            <p>1. b) The reasons or justification for a project proposal</p>
+            <p>2. c) Strengths, Weaknesses, Opportunities, Threats</p>
+            <p>3. c) Marketing feasibility</p>
+            <p>4. c) Understand the problem or opportunity</p>
+            <p>5. b) Pareto chart</p>
+            <p>6. b) A requirement or condition that the system must satisfy</p>
+            <p>7. d) Reduced overtime costs</p>
+            <p>8. a) The gradual increase in project scope beyond original boundaries</p>
+            <p>9. False</p>
+            <p>10. False</p>
+            <p>11. False</p>
+            <p>12. False</p>
+            <p>13. True</p>
+            <p>14. False</p>
+            <p>15. True</p>
+            <p>16. True</p>
+            <p>17. systems review committee</p>
+            <p>18. project scope</p>
+            <p>19. Intangible</p>
+            <p>20. fishbone diagram</p>
+            <p>21. enhancement</p>
+            <p>22. creep</p>
+            <p>23. nondiscretionary</p>
+            <p>24. XY chart</p>
+        </div>
+    </div>
+
+
+</div>
+</main>
+</body>
+    <script src="../reviewer.js"></script>
+    <script>
+        function loadNavbar() {
+            const navbarContainer = document.getElementById('navbar-container');
+            navbarContainer.innerHTML = '<div id="navbar-placeholder"></div>'; // Placeholder
+
+            fetch('../navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    navbarContainer.innerHTML = data; // Replace placeholder with navbar
+                    initializeSidebar();
+                    highlightCurrentPage();
+                })
+                .catch(error => {
+                    console.error('Error loading navbar:', error);
+                    navbarContainer.innerHTML = '<div style="color: red;">Failed to load navbar</div>';
+                });
+        }
+
+        // Load navbar first before content
+        document.addEventListener('DOMContentLoaded', function () {
+            loadNavbar();
+        });
+
+        
+        // Initialize sidebar functionality
+        function initializeSidebar() {
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            if (sidebarToggle && sidebar) {
+                sidebarToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                    const toggleIcon = sidebarToggle.querySelector('.toggle-icon');
+                    if (toggleIcon) {
+                        toggleIcon.classList.toggle('active');
+                    }
+                });
+            }
+            
+            // Subject accordions
+            const subjectNames = document.querySelectorAll('.subject-name');
+            subjectNames.forEach(subject => {
+                subject.addEventListener('click', function() {
+                    const parentItem = this.parentElement;
+                    const isActive = parentItem.classList.contains('active');
+                    
+                    document.querySelectorAll('.subject-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    if (!isActive) {
+                        parentItem.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        // Highlight current page
+        function highlightCurrentPage() {
+            const currentPath = window.location.pathname;
+            const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+            
+            const links = document.querySelectorAll('.chapter-list a');
+            links.forEach(link => {
+                if (link.getAttribute('href').endsWith(filename)) {
+                    link.classList.add('active');
+                    let parentSubject = link.closest('.subject-item');
+                    if (parentSubject) {
+                        parentSubject.classList.add('active');
+                    }
+                }
+            });
+        }
+        
+        // Show transition overlay when clicking on links
+        document.addEventListener('click', function(event) {
+            const link = event.target.closest('.chapter-list a');
+            if (link && !event.ctrlKey && !event.metaKey) {
+                const overlay = document.querySelector('.page-transition-overlay');
+                if (overlay) {
+                    overlay.classList.add('active');
+                }
+            }
+        });
+        
+        // Load navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavbar();
+            
+            // Hide transition overlay when page is loaded
+            window.addEventListener('load', function() {
+                const overlay = document.querySelector('.page-transition-overlay');
+                if (overlay) {
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                    }, 100);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

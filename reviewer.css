@@ -674,3 +674,31 @@ animation: fadeIn 0.4s ease-in-out;
     opacity: 1;
     pointer-events: all;
 }
+
+pre {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+/* Webkit-based browsers (Chrome, Edge, Safari) */
+pre::-webkit-scrollbar {
+    width: 6px; /* Make scrollbar thinner */
+    height: 6px;
+}
+
+pre::-webkit-scrollbar-track {
+    background: transparent; /* No background */
+}
+
+pre::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3); /* Subtle scrollbar */
+    border-radius: 3px;
+}
+
+/* Firefox */
+pre {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
