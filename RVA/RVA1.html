@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reviewer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <title>KomsaiReviewer</title>
+    <style>
+        /* Sidebar Navbar */
+        #navbar-container {
+            width: 280px; /* Fixed width */
+            height: 100vh; /* Full height */
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #2c3e50; /* Same as sidebar */
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Placeholder Text While Navbar Loads */
+        #navbar-placeholder {
+            color: white;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        /* Main Content - Ensures It Stays Next to the Navbar */
+        #content {
+            margin-left: 280px; /* Pushes content to the right */
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            #navbar-container {
+                width: 100%;
+                height: auto;
+                position: sticky;
+            }
+            #content {
+                margin-left: 0; /* Allow full width */
+            }
+        }
+
+        body {
+            animation: fadeSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-transition-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="page-container">
+        <div id="navbar-container"></div>
+
+        <main id="content" class="maincontent">
+            <h1>Reading Visual Art</h1>
+            <p class="highlight-box">By F. D. PERALTA</p>
+            <div class="model-section">
+                <h2>What is Visual Literacy?</h2>
+                
+                <div class="definition">
+                    <p><strong>Visual Literacy</strong> is the ability to decode and interpret visual messages and to encode and compose meaningful visual communications (Metros, 2008).</p>
+                </div>
+                
+                <p>Visual literacy encompasses several key abilities:</p>
+                <ul style="list-style-type: disc; margin-left: 20px;">
+                    <li>Visualize internally</li>
+                    <li>Communicate visually</li>
+                    <li>Read and interpret visual images</li>
+                </ul>
+                
+                <div class="definition">
+                    <p><strong>Visual Literacy</strong> is a set of abilities that enables an individual to effectively find, interpret, evaluate, use, and create images and visual media (Association of College and Research Libraries, 2011).</p>
+                </div>
+                
+                <p>It includes skills that equip a learner to understand and analyze the contextual, cultural, ethical, aesthetic, intellectual, and technical components involved in the production and use of visual materials.</p>
+                
+            </div>
+            <div class="model-section">
+                <h2>Viewing - The 5th Macroskill</h2>
+                <div class="definition">
+                    <p>A visually literate individual is both a critical consumer of visual media and a competent contributor to a shared knowledge and culture. <br><strong>Critical and informed reading (thinking) of visual texts.</strong></p>
+                </div>
+                
+                <div class="concept">
+                    <p>Visual literacy involves a critical and informed reading (thinking) of visual texts through various skills:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>Find image</li>
+                        <li>Interpret & analyze image</li>
+                        <li>Evaluate image</li>
+                        <li>Define image need</li>
+                        <li>Use images effectively</li>
+                        <li>Use images ethically & cite</li>
+                        <li>Create visual media</li>
+                    </ul>
+                    <p><em>Hattwig, Bussert, Medaille, & Burgess (2013)</em></p>
+                </div>
+            </div>
+            <div class="model-section">
+                <h2>Visual and Cultural Texts</h2>
+                <div class="definition">
+                    Cultural and visual texts are powerful tools that shape consumer behavior, ideas, cultural representation, and decision-making.
+                </div>
+                <h3>They can:</h3>
+                <ul>
+                    <li><strong>Sell a product</strong> – Visual communication is often used in marketing.</li>
+                    <li><strong>Sell an idea</strong> – Persuasion through imagery and media.</li>
+                    <li><strong>Represent reality, culture</strong> – Visual media reflects and shapes cultural identity.</li>
+                    <li><strong>Influence to a decision</strong> – Can persuade people's choices, whether in politics, purchasing, or beliefs.</li>
+                </ul>
+            </div>
+            <div class="model-section">
+                <h2>THE WORLD IS A TEXT</h2>
+                <div class="key-takeaway">
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li>We are born <strong>readers</strong>.</li>
+                        <li>We make <strong>sense</strong> of everything by drawing conclusions based on our <strong>experiences</strong>.</li>
+                        <li>We construct a <strong>worldview</strong> based on these readings and the readings of other people.</li>
+                        <li>We <strong>influence</strong> other people's readings and they influence ours.</li>
+                        <li>As we become more adept at reading our world, we <strong>constantly rewrite</strong> our worldview.</li>
+                        <li>The world is open to interpretation—we can <strong>make meaning</strong> out of just about anything.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="model-section">
+                <h2>HIGHER LEVEL QUESTIONS FOR CRITICAL READING AND ANALYSIS</h2>
+                <h3>WHO | ISSUES | INFORMATION | PERSUATION | ASSUMPTIONS</h3>
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-blue active" onclick="openTab(event, 'who-tab')" title="WHO"></div>
+                        <div class="tab tab-green" onclick="openTab(event, 'issues-tab')" title="ISSUES"></div>
+                        <div class="tab tab-yellow" onclick="openTab(event, 'info-tab')" title="INFORMATION"></div>
+                        <div class="tab tab-red" onclick="openTab(event, 'persuasion-tab')" title="PERSUASION"></div>
+                        <div class="tab tab-purple" onclick="openTab(event, 'assumptions-tab')" title="ASSUMPTIONS"></div>
+                    </div>
+                    
+                    <div id="who-tab" class="tab-content information-tab active">
+                        <h3>WHO</h3>
+                        <ol>
+                            <li>What people are depicted in the image? Whose culture or experiences is being shown?</li>
+                            <li>Who created the image and for what purpose?</li>
+                            <li>Who is the intended audience for the image?</li>
+                            <li>Whose point-of-view does the image take?</li>
+                        </ol>
+                    </div>
+                    
+                    <div id="issues-tab" class="tab-content key-takeaway-tab">
+                        <h3>ISSUES</h3>
+                        <ol>
+                            <li>What issues are being shown in the image?</li>
+                            <li>How is the way the issue is shown in the image similar to or different from how you see this issue in the world?</li>
+                            <li>What might this image mean to someone who see it?</li>
+                            <li>What is the message of the image?</li>
+                        </ol>
+                    </div>
+                    
+                    <div id="info-tab" class="tab-content example-tab">
+                        <h3>INFORMATION</h3>
+                        <ol>
+                            <li>Where does the information in the image come from?</li>
+                            <li>What information has been included and what has been left out?</li>
+                            <li>What proportion of the image could be inaccurate?</li>
+                            <li>What information presented is factual/manipulated/framed?</li>
+                            <li>What is the relationship between the image and the text?</li>
+                            <li>What impact does the size of images within the photo have?</li>
+                        </ol>
+                    </div>
+                    
+                    <div id="persuasion-tab" class="tab-content warning-tab">
+                        <h3>PERSUASION</h3>
+                        <ol>
+                            <li>Why has a certain media been chosen?</li>
+                            <li>Why was a particular image chosen?</li>
+                            <li>Why was the image arranged that way?</li>
+                            <li>Is the information contained in the image factual?</li>
+                            <li>What rhetorical appeals have been used? How are they achieved?</li>
+                            <li>What devices have been used to get the message across to the viewer?</li>
+                            <li>How has the message been affected by what has been left out or is not shown?</li>
+                        </ol>
+                    </div>
+                    
+                    <div id="assumptions-tab" class="tab-content best-practice-tab">
+                        <h3>ASSUMPTIONS</h3>
+                        <ol>
+                            <li>What attitudes are assumed?</li>
+                            <li>Whose voice is heard?</li>
+                            <li>Whose voice is not heard?</li>
+                            <li>What experiences or points of view are assumed?</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="model-section">
+                <h2>VISUAL RHETORIC</h2>
+                
+                <div class="definition">
+                    <p><strong>Visual Rhetoric</strong> is the study of how images, design, and visual elements <strong>communicate messages</strong> and <strong>persuade audiences</strong>.</p>
+                </div>
+                
+                <div class="information">
+                    <p>It involves analyzing how visuals function as a <strong>form of argument</strong>, much like written or spoken language.</p>
+                    <p>Visual rhetoric is widely used in advertisements, political campaigns, social media, art, branding, and everyday communication.</p>
+                    <p>It helps us understand how visuals influence emotions, shape perceptions, and reinforce cultural narratives.</p>    
+                </div>
+            </div>
+
+            <div class="model-section">
+                <h2>READING PRINTED ADVERTS</h2>
+                
+                <h3>Using the Social Semiotics Approach</h3>
+                
+                <div class="definition">
+                    <p><strong>Social Semiotic Theory</strong> (Michael Halliday) explores how communication systems, including language and other semiotic resources, are used to convey meaning within specific social contexts.</p>
+                </div>
+                
+                <p>A framework for understanding communication as a socially embedded and multimodal phenomenon, emphasizing the role of context, semiotic resources, social practices, ideology, and power in the construction of meaning within different communities and cultures.</p>
+                
+                <div class="information">
+                    <h3>In social semiotics theory it is assumed that:</h3>
+                    <ul>
+                        <li>Signs are always newly made in social interaction</li>
+                        <li>Signs are motivated; not arbitrary relations of meaning and form</li>
+                        <li>All signs are metaphors</li>
+                    </ul>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Visual Social Semiotic</strong> extends the principles of social semiotics to the analysis of visual communication. This approach focuses on how visual elements, such as images, graphics, and spatial arrangements, contribute to the construction of meaning in a social context.</p>
+                </div>
+            </div>
+
+            <div class="model-section">
+                <h2>SEMIOTICS</h2>
+                
+                <div class="definition">
+                    <p><strong>Semiotics</strong> is the study of signs (from Greek semeiotikos σημειωτικός "a sign, a mark").</p>
+                </div>
+                
+                <p>Semiotics as a field of study was founded based on the research of Saussure and Peirce, who each postulated it as the study of signs in their own distinct way.</p>
+                
+                <div class="information">
+                    <p><strong>Ferdinand de Saussure</strong> called it <em>Semiology</em></p>
+                    <p><strong>Charles Sanders Peirce</strong> called it <em>Semiotics</em></p>
+                    <p>Saussure claimed a sign to be a dyadic entity—consisting of the <strong>signifier and the signified</strong>, and the <strong>arbitrary relationship</strong> between them; while Peirce had a <strong>three-fold approach</strong> of “something that stands for something, to someone in some capacity."</p>
+                </div>
+            </div>
+            <div class="model-section">
+                <h2>SAUSSURE'S SEMIOTIC CONCEPTS</h2>
+                
+                <div class="concept">
+                    <p>Key semiotic concepts introduced by Ferdinand de Saussure include the signifier-signified relationship and the distinction between connotation and denotation, and syntagm and paradigm</p>
+                </div>
+                
+                <div class="key-takeaway">
+                <h3>Signifier and Signified</h3>
+                <ul>
+                    <li><strong>Signifier:</strong> Any motion, gesture, image, sound, pattern, or event that conveys meaning.</li>
+                    <li><strong>Signified:</strong> The concept or meaning that the signifier represents.</li>
+                </ul>
+                
+                <img src="../images/signifiersignified.png" alt="">
+                    <ul>
+                        <li>The word "Rose" or an image of a rose (signifier)</li>
+                        <li>The idea or concept of a rose (signified)</li>
+                    </ul>
+                
+                <h3>Connotation vs. Denotation</h3>
+                <ul>
+                    <li><strong>Denotation:</strong> The <strong>literal or primary meaning</strong> of a word or object.
+                        <ul>
+                            <li>Example: A rose is a type of flower with red petals.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Connotation:</strong> The <strong>feelings, ideas, or cultural meanings</strong> associated with the word or object.
+                        <ul>
+                            <li>Example: A rose might symbolize love, romance, passion, or beauty in different cultures.</li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+                <div class="key-takeaway">
+                <h3>SYNTAGM AND PARADIGM</h3>
+                <div class="definition">
+                    <p><strong>Syntagm:</strong> A single word or element of design that, when altered, can change the overall meaning.</p>
+                    <p><strong>Paradigm:</strong> A group or related ideas that are interchangeable in a sentence or design, yet they still have the same collective meaning.</p>
+                </div>
+                
+                <img src="../images/paradigm.png" alt="">
+                
+                    <h3>Understanding Syntagm and Paradigm</h3>
+                    <p><strong>Syntagm (Horizontal Relationship)</strong></p>
+                    
+                    <ul>
+                        <li>A sequence of elements (e.g., words in a sentence, design elements in a visual composition).</li>
+                        <li><strong>Changing one element in the structure alters the overall meaning.</strong></li>
+                        <li>In the sentence, "The man ___ into the house," replacing the missing word (walked, stormed, ran, etc.) changes the sentence's meaning.</li>
+                    </ul>
+                    
+                    <p><strong>Paradigm (Vertical Relationship)</strong></p>
+                    <ul>
+                        <li><strong>A set of interchangeable elements that can be swapped while maintaining a general meaning.</strong></li>
+                        <li>The words walked, stormed, ran, jumped, crashed, and broke form a paradigm set—they are different verbs that fit into the sentence while altering its tone, all of which are part of the paradigm for describing how the man entered the house.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Peirce's Semiotic Theory Section -->
+            <div class="model-section">
+                <h2>PEIRCE'S SEMIOTIC THEORY</h2>
+                <div class="definition">
+                    <h3>Semiosis</h3>
+                    <p>According to Peirce's theory, <strong>Semiosis</strong> is the act of signifying - the transfer of meaning from one object to the other. The act of 'Meaning making'.</p>
+                </div>
+                
+                <h3>Semiotic Triangle</h3>
+                <img src="../images/semiotictriangle.png" alt="">
+                <p>The semiotic triangle represents the relationship between:</p>
+                <ul>
+                    <li><strong>Referent</strong> (the actual thing being represented)</li>
+                    <li><strong>Object</strong> (the thing itself)</li>
+                    <li><strong>Interpretant</strong> (the meaning we derive)</li>
+                </ul>
+                <p>It illustrates how meaning is constructed through signs, and how different signs connect to their meanings in distinct ways.</p>
+                
+                <h3>Types of Signs</h3>
+                <img src="../images/icons.png" alt="">
+                <div class="best-practice">
+                    <h3>Icons</h3>
+                    <p>Signs where the signifier resembles the signified.</p>
+                    <p>Example: A volume icon (speaker symbol) resembles a real speaker.</p>
+                </div>
+                
+                <div class="best-practice">
+                    <h3>Symbols</h3>
+                    <p>Signs where the relation between signifier and signified is purely conventional and culturally learned.</p>
+                    <p>Example: A radiation warning symbol—it does not physically resemble radiation but is universally understood due to convention.</p>
+                </div>
+                
+                <div class="best-practice">
+                    <h3>Indexes</h3>
+                    <p>Signs where the signifier is caused by the signified (has a direct connection).</p>
+                    <p>Example: Smoke is an index of fire—it signals that fire exists.</p>
+                </div>
+            </div>
+            <div class="model-section">
+                <h2>READING VIDEO ADVERTISEMENTS</h2>
+                
+                <div class="concept">
+                    <h3>Using Multimodal Discourse Analysis (MDA)</h3>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Multimodality</strong> is the application of multiple literacies within one medium. Multiple literacies ("modes") contribute to an audience's understanding of a composition.</p>
+                </div>
+                
+                <div class="example">
+                    <h3>Example: Televised weather forecast</h3>
+                    <img src="../images/reporter.png" alt="">
+                    <ul>
+                        <li>Spoken language</li>
+                        <li>Written language</li>
+                        <li>Weather specific language</li>
+                        <li>Geography</li>
+                        <li>Symbols</li>
+                    </ul>
+                </div>
+                
+                <p>Everything from the placement of images to the organization of the content to the method of delivery creates meaning. This is the result of a shift from isolated text being relied on as the primary source of communication, to the image being utilized more frequently in the digital age.</p>                
+            </div>
+            <div class="model-section">
+                <h3>Multimodal discourse analysis</h3>
+                <div class="definition">
+                    <p><strong>Multimodal discourse analysis (MDA)</strong> extends the study of language per se to the study of language in combination with other resources, such as images, scientific symbolism, gesture, action, music and sound.</p>
+                </div>
+                <img src="../images/multimodality.png" alt="">
+                
+                <h3>Semiotic Resource</h3>
+                <p>"Semiotic Resource" describes the resources (or modes--- language, image, music, gesture and architecture), which integrate across sensory modalities---visual, auditory, tactile, olfactory, gustatory, kinesthetic) in multimodal texts, discourses and events, collectively called multimodal phenomena.</p>
+                <img src="../images/resource.png" alt="">
+            </div>
+        </main>
+        
+        <div class="notecontent">
+
+        </div>
+
+    </div>
+
+    <script src="../reviewer.js"></script>
+    <script>
+        function loadNavbar() {
+            const navbarContainer = document.getElementById('navbar-container');
+            navbarContainer.innerHTML = '<div id="navbar-placeholder"></div>'; // Placeholder
+
+            fetch('../navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    navbarContainer.innerHTML = data; // Replace placeholder with navbar
+                    initializeSidebar();
+                    highlightCurrentPage();
+                })
+                .catch(error => {
+                    console.error('Error loading navbar:', error);
+                    navbarContainer.innerHTML = '<div style="color: red;">Failed to load navbar</div>';
+                });
+        }
+
+        // Load navbar first before content
+        document.addEventListener('DOMContentLoaded', function () {
+            loadNavbar();
+        });
+        
+        // Initialize sidebar functionality
+        function initializeSidebar() {
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            if (sidebarToggle && sidebar) {
+                sidebarToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                    const toggleIcon = sidebarToggle.querySelector('.toggle-icon');
+                    if (toggleIcon) {
+                        toggleIcon.classList.toggle('active');
+                    }
+                });
+            }
+            
+            // Subject accordions
+            const subjectNames = document.querySelectorAll('.subject-name');
+            subjectNames.forEach(subject => {
+                subject.addEventListener('click', function() {
+                    const parentItem = this.parentElement;
+                    const isActive = parentItem.classList.contains('active');
+                    
+                    document.querySelectorAll('.subject-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    if (!isActive) {
+                        parentItem.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        // Highlight current page
+        function highlightCurrentPage() {
+            const currentPath = window.location.pathname;
+            const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+            
+            const links = document.querySelectorAll('.chapter-list a');
+            links.forEach(link => {
+                if (link.getAttribute('href').endsWith(filename)) {
+                    link.classList.add('active');
+                    let parentSubject = link.closest('.subject-item');
+                    if (parentSubject) {
+                        parentSubject.classList.add('active');
+                    }
+                }
+            });
+        }
+        
+        // Show transition overlay when clicking on links
+        document.addEventListener('click', function(event) {
+            const link = event.target.closest('.chapter-list a');
+            if (link && !event.ctrlKey && !event.metaKey) {
+                const overlay = document.querySelector('.page-transition-overlay');
+                if (overlay) {
+                    overlay.classList.add('active');
+                }
+            }
+        });
+        
+        // Load navbar
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavbar();
+            
+            // Hide transition overlay when page is loaded
+            window.addEventListener('load', function() {
+                const overlay = document.querySelector('.page-transition-overlay');
+                if (overlay) {
+                    setTimeout(() => {
+                        overlay.classList.remove('active');
+                    }, 100);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

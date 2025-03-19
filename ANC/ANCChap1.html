@@ -72,11 +72,601 @@
         <div id="navbar-container"></div>
 
         <main id="content" class="maincontent">
+            <h1>Introduction to Algorithms</h1>
+            <p class="highlight-box">CCS 224 Algorithms and Complexity</p>
+        
+            <!-- Definition of Algorithm Section -->
+            <div class="model-section">
+                <h2>Definition of Algorithm</h2>
+                
+                <div class="definition">
+                    <p><strong>Algorithm</strong> is a procedure consisting of a clear set of instructions or steps designed to solve a particular problem or accomplish a specific task.</p>
+                </div>
+                
+                <p>Algorithms function by taking input data, processing it through logical and mathematical operations, and producing an output that represents the solution to the problem.</p>
+        
+                <div class="key-takeaway">
+                    <h3>How Algorithms Work</h3>
+                    <p>Algorithms <strong>take input data</strong>, which can be in various formats, such as numbers, text, or images. It then <strong>processes the input data through logical and mathematical operations</strong>, manipulating and transforming it as needed.</p>
+                    <p>After the processing, the algorithm <strong>produces an output</strong>, which could be a result, a decision, or some other meaningful information.</p>
+                </div>
+                
+                <div class="example">
+                    <h3>Example of an Algorithm</h3>
+                    <p>Searching for an Item in a List (Linear Search Algorithm)</p>
+                    <ul>
+                        <p>Problem: Find if a specific item exists in a list.</p>
+                        <p>Steps:</p>
+                        <ol>
+                            <li>Start</li>
+                            <li>Take the list and the item to search for as inputs</li>
+                            <li>Compare each item in the list with the target item</li>
+                            <li>If a match is found, return its position</li>
+                            <li>If the end of the list is reached without finding the item, return "Not Found."</li>
+                            <li>Stop</li>
+                        </ol>
+                    </ul>
+                    <div class="tab-group">
+                        <div class="tabs">
+                            <div class="tab tab-green active" onclick="openTab(event, 'inputTab')" title="Input"></div>
+                            <div class="tab tab-blue" onclick="openTab(event, 'processTab')" title="Process"></div>
+                            <div class="tab tab-purple" onclick="openTab(event, 'outputTab')" title="Output"></div>
+                        </div>
+                        
+                        <div id="inputTab" class="tab-content key-takeaway-tab active">
+                            <h3>Input</h3>
+                            <p><strong>The list</strong> - This is the collection of items you're searching through. It could be a list of numbers, words, names, or any other data type.</p>
+                            <p><strong>Example list</strong> - Car brand names (Toyota, Hyundai, Nissan, BMW, KIA, Volvo)</p>
+                            <p><strong>The item to search for (target item)</strong> - This is the specific item you're trying to find within the list. Example: Volvo</p>
+                        </div>
+                        
+                        <div id="processTab" class="tab-content information-tab">
+                            <h3>Process</h3>
+                            <p>• The algorithm iterates (goes through) each item in the list, one by one.</p>
+                            <p>• For each item in the list, it compares that item to the target item.</p>
+                            <p>• If the current item in the list matches the target item, the algorithm stops and records the position of the matched item.</p>
+                            <p>• If the algorithm reaches the end of the list without finding a match, it stops.</p>
+                        </div>
+                        
+                        <div id="outputTab" class="tab-content best-practice-tab">
+                            <h3>Output</h3>
+                            <p><strong>The position (index) of the item if found</strong> - If the target item is present in the list, the algorithm returns the location (usually the index, like 0 for the first item, 1 for the second, etc.) where it was found.</p>
+                            <p><strong>"Not Found"</strong> - If the target item is not in the list, the algorithm returns a special value (often the string "Not Found" or -1) to indicate that the search was unsuccessful.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        
+            <!-- Measures of Efficiency Section -->
+            <div class="model-section">
+                <h2>Measures of Efficiency</h2>
+                
+                <div class="concept">
+                    <p>Algorithm efficiency relates to how many resources a computer needs to expend to process an algorithm. Efficient algorithms use minimal resources to perform their functions.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Algorithm Efficiency</strong> - The measure of how many resources (time and space) are required by an algorithm to process data.</p>
+                </div>
+                
+                <p>When creating an algorithm, it is important to make it as simplified as possible so it does not drain the software or device that runs it. The efficiency of an algorithm needs to be determined to ensure it can perform without the risk of crashes or severe delays.</p>
+        
+                <div class="information">
+                    <h3>Main Measures of Efficiency</h3>
+                    <p>There are two main measures for calculating algorithm efficiency:</p>
+                    <p><strong>Space complexity & Time complexity</strong></p>
+                </div>
+                
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-purple active" onclick="openTab(event, 'spaceTab')" title="Space Complexity"></div>
+                        <div class="tab tab-yellow" onclick="openTab(event, 'timeTab')" title="Time Complexity"></div>
+                    </div>
+                    
+                    <div id="spaceTab" class="tab-content best-practice-tab active">
+                        <h3>Space Complexity</h3>
+                        <p>Space complexity refers to the amount of memory needed during the execution of a program compared to the function input, i.e., the amount of memory on a computer or device that is required.</p>
+                        <p><strong>Four key factors to consider in analyzing space complexity</strong> -</p>
+                        <ol>
+                            <li>The memory required to hold the code for the algorithm</li>
+                            <li>The memory required to input the data</li>
+                            <li>The memory required to output the data</li>
+                            <li>The memory required for working space while the algorithm is calculated</li>
+                        </ol>
+                        <p><strong>Mathematically, space complexity S(a) is calculated as</strong> -</p>
+                        <p>\( S(a) = c + v(i) \) 
+                            <br>\(c =\) (the fixed part) 
+                            <br>\(v(i) =\) (the variable part which depends on an instance characteristic \(i\))</p>
+                    </div>
+                    
+                    <div id="timeTab" class="tab-content information-tab">
+                        <h3>Time Complexity</h3>
+                        <p>Time complexity is the total time required to execute an algorithm, and it depends on all of the same factors used by space complexity, but these are broken down into a numerical function.</p>
+                        <p>This measure can be useful when comparing different algorithms, mainly when large quantities of data are being processed.</p>
+                        <p>Time complexity is defined as T(num). It is measured by the number of steps, as long as each step equates to the constant time.</p>
+                    </div>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Common Complexity Classes</h3>
+                    <p><strong>Constant Complexity</strong></p>
+                    <ul>
+                        <p><strong>\( O(1) \)</strong> - Execution time/memory usage remain unchanged regardless of input size.</p>
+                    </ul>
+                
+                    <p><strong>Logarithmic Complexity</strong></p>
+                    <ul>
+                        <p>\( O(\log n) \) - Time/space grow logarithmically as input size increases.</p>
+                    </ul>
+                
+                    <p><strong>Linear Complexity</strong></p>
+                    <ul>
+                        <p>\( O(n) \) - Time/memory consumption increase proportionally with input size.</p>
+                    </ul>
+                
+                    <p><strong>Quadratic Complexity</strong></p>
+                    <ul>
+                        <p>\( O(n^2) \) - Execution time/memory usage grow quadratically with input size.</p>
+                    </ul>
+                
+                    <p><strong>Exponential Complexity</strong></p>
+                    <ul>
+                        <p>\( O(2^n) \) - Resources (time/space) double with each additional input element.</p>
+                    </ul>
+                </div>
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-green active" onclick="openTab(event, 'constant')" title="O(1)"></div>
+                        <div class="tab tab-green" onclick="openTab(event, 'logarithmic')" title="O(log n)"></div>
+                        <div class="tab tab-green" onclick="openTab(event, 'linear')" title="O(n)"></div>
+                        <div class="tab tab-green" onclick="openTab(event, 'quadratic')" title="O(n²)"></div>
+                        <div class="tab tab-green" onclick="openTab(event, 'exponential')" title="O(2^n)"></div>
+                    </div>
+                
+                    <!-- Constant Complexity O(1) -->
+                    <div id="constant" class="tab-content key-takeaway-tab active">
+                        <h3>Constant Complexity \( O(1) \)</h3>
+                        <P><strong>Time Complexity Example</strong></h3>
+                            <pre>
+            def get_first_element(arr):
+                return arr[0]  # Always takes constant time
+                            </pre>
+                        <p><strong>Space Complexity Exampl</strong>e</p>
+                            <pre>
+            def constant_space():
+                x = 42  # Only uses a fixed amount of space
+                            </pre>
+                    </div>
+                
+                    <!-- Logarithmic Complexity O(log n) -->
+                    <div id="logarithmic" class="tab-content key-takeaway-tab">
+                        <h3>Logarithmic Complexity \( O(\log n) \)</h3>
+                        <p><strong>Time Complexity Example</strong></p>
+                            <pre>
+            def binary_search(arr, target):
+                left, right = 0, len(arr) - 1
+                while left <= right:
+                    mid = (left + right) // 2
+                    if arr[mid] == target:
+                        return mid
+                    elif arr[mid] < target:
+                        left = mid + 1
+                    else:
+                        right = mid - 1
+                return -1
+                            </pre>
+                        <p><strong>Space Complexity Example</strong></p>
+                            <pre>
+            def recursive_binary_search(arr, left, right, target):
+                if left > right:
+                    return -1
+                mid = (left + right) // 2
+                if arr[mid] == target:
+                    return mid
+                elif arr[mid] < target:
+                    return recursive_binary_search(arr, mid + 1, right, target)
+                else:
+                    return recursive_binary_search(arr, left, mid - 1, target)
+                            </pre>
+                    </div>
+                
+                    <!-- Linear Complexity O(n) -->
+                    <div id="linear" class="tab-content key-takeaway-tab">
+                        <h3>Linear Complexity \( O(n) \)</h3>
+                        <p><strong>Time Complexity Example</strong></p>
+                            <pre>
+            def find_max(arr):
+                max_value = arr[0]
+                for num in arr:
+                    if num > max_value:
+                        max_value = num
+                return max_value
+                            </pre>
+                        <p><strong>Space Complexity Example</strong></p>
+                            <pre>
+            def create_list(n):
+                return [i for i in range(n)]  # Uses O(n) space
+                            </pre>
+                    </div>
+                
+                    <!-- Quadratic Complexity O(n²) -->
+                    <div id="quadratic" class="tab-content key-takeaway-tab">
+                        <h3>Quadratic Complexity \( O(n^2) \)</h3>
+                        <p><strong>Time Complexity Example</strong></p>
+                            <pre>
+            def bubble_sort(arr):
+                n = len(arr)
+                for i in range(n):
+                    for j in range(n - i - 1):
+                        if arr[j] > arr[j + 1]:
+                            arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                return arr
+                            </pre>
+                        <p><strong>Space Complexity Example</strong></p>
+                            <pre>
+            def create_matrix(n):
+                return [[0] * n for _ in range(n)]  # Uses O(n^2) space
+                            </pre>
+                    </div>
+                
+                    <!-- Exponential Complexity O(2^n) -->
+                    <div id="exponential" class="tab-content key-takeaway-tab">
+                        <h3>Exponential Complexity \( O(2^n) \)</h3>
+                        <p><strong>Time Complexity Example</strong></p>
+                            <pre>
+            def fibonacci(n):
+                if n <= 1:
+                    return n
+                return fibonacci(n-1) + fibonacci(n-2)
+                            </pre>
+                        <p><strong>Space Complexity Example</strong></p>
+                            <pre>
+            def power_set(s):
+                if not s:
+                    return [[]]
+                subsets = power_set(s[:-1])
+                return subsets + [sub + [s[-1]] for sub in subsets]
+                            </pre>
+                    </div>
+                </div>
+                
+                                
+                <div class="warning">
+                    <h3>Resource-Draining Algorithms</h3>
+                    <p>Creating algorithms that drain computer resources is unethical and potentially harmful. Such code could be considered malware.</p>
+                    <p>Examples of harmful algorithmic practices include:</p>
+                    <ul>
+                        <li>Infinite loops without termination conditions</li>
+                        <li>Memory leaks</li>
+                        <li>Unbounded recursion</li>
+                        <li>Fork bombs (denial-of-service)</li>
+                        <li>Unnecessarily inefficient algorithms</li>
+                    </ul>
+                </div>
+            </div>
 
+            <div class="model-section">
+                <h2>Solutions for Program Efficiency</h2>
+                
+                <div class="concept">
+                    <p>Creating efficient algorithms involves following best practices to optimize resource usage and prevent potential issues.</p>
+                </div>
+                
+                <div class="best-practice">
+                    <h3>Best Practices</h3>
+                    <ol>
+                        <li><strong>Avoid infinite loops</strong> - Always have a way to exit a loop.</li>
+                        <li><strong>Manage memory</strong> - Be mindful of memory usage. Clean up data when it's no longer needed.</li>
+                        <li><strong>Use recursion carefully</strong> - Ensure recursive functions have a base case to prevent stack overflows.</li>
+                        <li><strong>Be aware of denial-of-service attacks</strong> - Understand how fork bombs and similar techniques work so you can avoid them.</li>
+                        <li><strong>Choose efficient algorithms</strong> - Optimize code for performance.</li>
+                    </ol>
+                </div>
+            </div>
+        
+            <!-- Algorithms and Complexity Factors Section -->
+            <div class="model-section">
+                <h2>Algorithms and Complexity Factors</h2>
+                
+                <div class="concept">
+                    <p>Several factors influence the efficiency and complexity of algorithms, ranging from the programming language used to the underlying hardware architecture.</p>
+                </div>
+                
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-green active" onclick="openTab(event, 'languageTab')" title="Programming Language"></div>
+                        <div class="tab tab-blue" onclick="openTab(event, 'compilerTab')" title="Compiler/Interpreter"></div>
+                        <div class="tab tab-purple" onclick="openTab(event, 'hardwareTab')" title="Hardware Architecture"></div>
+                        <div class="tab tab-yellow" onclick="openTab(event, 'optimizationTab')" title="Code Optimization"></div>
+                    </div>
+                    
+                    <div id="languageTab" class="tab-content key-takeaway-tab active">
+                        <h3>1. Programming Language</h3>
+                        <p>The language you use to write the algorithm significantly impacts memory usage. Some languages are more memory-efficient than others.</p>
+                        <p><strong>C and C++</strong> - Considered low-level languages, giving you very fine-grained control over memory management. You can allocate and deallocate memory directly, which can be very efficient if done carefully.</p>
+                        <p><strong>Trade-offs</strong> - This control comes with responsibility. If you're not careful, you can introduce memory leaks (forgetting to deallocate memory) or dangling pointers (trying to access memory that's already been freed), leading to crashes or security vulnerabilities.</p>
+                    </div>
+                    
+                    <div id="compilerTab" class="tab-content information-tab">
+                        <h3>2. Compiler/Interpreter</h3>
+                        <p>How the code is translated (compiled or interpreted) into machine instructions affects its size.</p>
+                        <p><strong>Java's Two-Step Process</strong> -</p>
+                        <ul>
+                            <li><strong>Compilation to Bytecode</strong> - When you write Java code, the Java compiler (javac) doesn't directly translate it into machine code that your computer's CPU understands. Instead, it compiles the code into an intermediate form called bytecode. Bytecode is like a set of instructions for a virtual machine.</li>
+                            <li><strong>Interpretation (and JIT Compilation)</strong> - This is where the Java Virtual Machine (JVM) comes in. The JVM takes the bytecode and executes it. Initially, the JVM acts as an interpreter, reading and executing the bytecode instructions line by line. However, modern JVMs also use Just-In-Time (JIT) compilation, during runtime, the JVM analyzes the bytecode and compiles frequently used parts of it into native machine code. This machine code is then executed directly by the CPU, significantly speeding up performance.</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="hardwareTab" class="tab-content best-practice-tab">
+                        <h3>3. Hardware Architecture</h3>
+                        <p>The specific computer architecture (processor, memory organization) influences how the code is stored and executed.</p>
+                        <p><strong>Example</strong> - x86 architecture (commonly found in desktop and laptop computers) affects code storage and execution.</p>
+                        <p>Key characteristics include:</p>
+                        <ul>
+                            <li>Complex Instruction Set Computing</li>
+                            <li>Variable Instruction</li>
+                            <li>Registers</li>
+                            <li>Memory segmentation</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="optimizationTab" class="tab-content example-tab">
+                        <h3>4. Code Optimization</h3>
+                        <p>How well the code is written and optimized can reduce its size and improve execution efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Numerical Algorithms and Computational Complexity Section -->
+            <div class="model-section">
+                <h2>Numerical Algorithms and Computational Complexity</h2>
+                
+                <div class="concept">
+                    <p>Numerical algorithms and computational complexity are two closely related areas in computer science that deal with solving mathematical problems using computers.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Numerical Algorithms</strong> - Algorithms designed to solve mathematical problems that involve continuous data, as opposed to discrete data. These problems often arise in science, engineering, and finance.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Key Considerations for Numerical Algorithms</h3>
+                    <ul>
+                        <li><strong>Accuracy</strong> - Numerical algorithms often produce approximate solutions, so it's important to consider the accuracy of the results and how to minimize errors.</li>
+                        <li><strong>Stability</strong> - Some numerical algorithms can be sensitive to small changes in the input data, leading to large errors in the output. Stable algorithms are less susceptible to this.</li>
+                        <li><strong>Efficiency</strong> - Numerical algorithms should be computationally efficient, especially when dealing with large datasets or complex problems.</li>
+                    </ul>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Computational Complexity</strong> - A field that studies the amount of resources (time, memory, etc.) required to solve computational problems. It aims to classify problems based on their inherent difficulty and to understand the limitations of algorithms.</p>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Key Concepts in Computational Complexity</h3>
+                    <ul>
+                        <li><strong>Time Complexity</strong> - Measures how the runtime of an algorithm scales with the size of the input.</li>
+                        <li><strong>Space Complexity</strong> - Measures how the memory usage of an algorithm scales with the size of the input.</li>
+                        <li><strong>Big O Notation</strong> - A mathematical notation used to describe the asymptotic behavior of functions, often used to express time and space complexity.</li>
+                        <li><strong>Complexity Classes</strong> - Sets of problems with similar complexity (e.g., P, NP, NP-complete).</li>
+                    </ul>
+                </div>
+                
+                <div class="information">
+                    <h3>Relationship Between Numerical Algorithms and Computational Complexity</h3>
+                    <ul>
+                        <li><strong>Algorithm Design</strong> - When designing numerical algorithms, it's crucial to consider their computational complexity. The choice of algorithm can significantly impact the time and memory required to solve a problem.</li>
+                        <li><strong>Problem Classification</strong> - Computational complexity theory helps classify the inherent difficulty of numerical problems. Some problems may be inherently harder to solve than others, regardless of the algorithm used.</li>
+                        <li><strong>Efficiency Analysis</strong> - Analyzing the time and space complexity of numerical algorithms helps determine their efficiency and scalability. This is essential for choosing the best algorithm for a given problem.</li>
+                        <li><strong>Lower Bounds</strong> - Computational complexity theory can sometimes provide lower bounds on the resources required to solve certain numerical problems. This can help guide the development of more efficient algorithms.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Numerical Algorithms and Numerical Accuracy Section -->
+            <div class="model-section">
+                <h2>Numerical Algorithms and Numerical Accuracy</h2>
+                
+                <div class="concept">
+                    <p>When working with numerical algorithms, accuracy is a critical concern due to the inherent limitations of representing continuous mathematical concepts in discrete computational environments.</p>
+                </div>
+                
+                <div class="information">
+                    <h3>Numerical Algorithms: The Challenge of Approximation</h3>
+                    <ul>
+                        <li><strong>Continuous Data</strong> - Numerical algorithms deal with continuous data (real numbers), which can't be represented exactly in a computer's finite memory. This leads to inherent rounding errors.</li>
+                        <li><strong>Approximations</strong> - Many mathematical problems (like solving non-linear equations or integrals) don't have exact solutions. Numerical algorithms often provide approximate solutions.</li>
+                        <li><strong>Iterative Methods</strong> - Some algorithms use iterative methods to refine an approximate solution until it reaches a desired level of accuracy.</li>
+                    </ul>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Numerical Accuracy: The Quest for Precision</h3>
+                    <p><strong>Sources of Error</strong> -</p>
+                    <ul>
+                        <li><strong>Rounding Errors</strong> - Due to the finite precision of computers, numbers are rounded, introducing small errors in each calculation.</li>
+                        <li><strong>Truncation Errors</strong> - Occur when an infinite process (like a series) is approximated by a finite number of steps.</li>
+                        <li><strong>Data Errors</strong> - Errors in the initial input data can propagate through the algorithm.</li>
+                    </ul>
+                </div>
+                
+                <div class="information">
+                    <h3>Measures of Accuracy</h3>
+                    <ul>
+                        <li><strong>Absolute Error</strong> - The difference between the computed value and the true value.</li>
+                        <li><strong>Relative Error</strong> - The absolute error divided by the true value (often more meaningful).</li>
+                        <li><strong>Significant Digits</strong> - The number of digits that are considered reliable in a numerical result.</li>
+                    </ul>
+                </div>
+                
+                <div class="best-practice">
+                    <h3>Factors Affecting Numerical Accuracy</h3>
+                    <ul>
+                        <li><strong>Algorithm Choice</strong> - The choice of numerical algorithm significantly impacts accuracy. Some algorithms are more stable and less prone to error accumulation than others.</li>
+                        <li><strong>Error Analysis</strong> - Analyzing the sources and propagation of errors in a numerical algorithm is crucial to understanding its accuracy and limitations.</li>
+                        <li><strong>Precision</strong> - The precision of the computer's arithmetic (e.g., single-precision vs. double-precision floating-point) affects rounding errors. Higher precision reduces rounding errors but may increase computation time.</li>
+                        <li><strong>Conditioning</strong> - The "conditioning" of a problem refers to how sensitive the solution is to small changes in the input data. Ill-conditioned problems can be challenging to solve accurately, even with the best algorithms.</li>
+                    </ul>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Stability</strong> - A numerically stable algorithm is one where small errors in the input data do not lead to large errors in the output.</p>
+                </div>
+            </div>
+        
+            <!-- Types of Algorithm Analysis Section -->
+            <div class="model-section">
+                <h2>Types of Algorithm Analysis</h2>
+                
+                <div class="concept">
+                    <p>Algorithm analysis is the process of evaluating the performance of an algorithm, primarily in terms of its time and space complexity. There are several types of algorithm analysis, each offering a different perspective on how an algorithm behaves.</p>
+                </div>
+                
+                <div class="tab-group">
+                    <div class="tabs">
+                        <div class="tab tab-green active" onclick="openTab(event, 'timeTab2')" title="Time Complexity Analysis"></div>
+                        <div class="tab tab-blue" onclick="openTab(event, 'spaceAnalysisTab')" title="Space Complexity Analysis"></div>
+                        <div class="tab tab-red" onclick="openTab(event, 'amortizedTab')" title="Amortized Analysis"></div>
+                        <div class="tab tab-purple" onclick="openTab(event, 'empiricalTab')" title="Empirical Analysis"></div>
+                        <div class="tab tab-yellow" onclick="openTab(event, 'asymptoticTab')" title="Asymptotic Analysis"></div>
+                    </div>
+                    
+                    <div id="timeTab2"t class="tab-content key-takeaway-tab active">
+                        <h3>1. Time Complexity Analysis</h3>
+                        <p><strong>Focus</strong> - How the runtime of an algorithm scales with the size of the input.</p>
+                        <p><strong>Metric</strong> - Number of basic operations (e.g., comparisons, assignments, arithmetic operations) the algorithm performs.</p>
+                        <p><strong>Notation</strong> - Big O notation (O), Omega notation (Ω), Theta notation (Θ) are used to express the growth rate of the runtime.</p>
+                        <p><strong>Types</strong> -</p>
+                        <ul>
+                            <li><strong>Worst-case</strong> - The maximum time an algorithm takes for any input of a given size. This is the most common type of analysis.</li>
+                            <li><strong>Average-case</strong> - The average time an algorithm takes over all possible inputs of a given size. This is often harder to determine than worst-case.</li>
+                            <li><strong>Best-case</strong> - The minimum time an algorithm takes for any input of a given size. This is often not very useful in practice.</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="spaceAnalysisTab" class="tab-content information-tab">
+                        <h3>2. Space Complexity Analysis</h3>
+                        <p><strong>Focus</strong> - How much memory an algorithm requires as a function of the input size.</p>
+                        <p><strong>Metric</strong> - Amount of memory (e.g., number of variables, data structures) the algorithm uses.</p>
+                        <p><strong>Notation</strong> - Big O notation, Omega notation, Theta notation are also used for space complexity.</p>
+                        <p><strong>Considerations</strong> - Space complexity includes the memory used by the algorithm's code, input data, and any auxiliary data structures.</p>
+                    </div>
+                    
+                    <div id="amortizedTab" class="tab-content example-tab">
+                        <h3>3. Amortized Analysis</h3>
+                        <p><strong>Focus</strong> - The average cost per operation over a sequence of operations, even if individual operations might be expensive.</p>
+                        <p><strong>Context</strong> - Useful for algorithms that perform a mix of cheap and expensive operations.</p>
+                        <p><strong>Method</strong> - Averages the cost over a sequence of operations. This is different from average-case analysis, which averages over different inputs.</p>
+                        <p><strong>Example</strong> - Dynamic arrays that resize themselves. Adding an element is usually cheap, but resizing is expensive. Amortized analysis considers the average cost over many additions.</p>
+                    </div>
+                    
+                    <div id="empiricalTab" class="tab-content best-practice-tab">
+                        <h3>4. Empirical Analysis (Profiling)</h3>
+                        <p><strong>Focus</strong> - Measuring the actual runtime and memory usage of an algorithm by running it on specific inputs.</p>
+                        <p><strong>Method</strong> - Uses profiling tools to collect performance data.</p>
+                        <p><strong>Advantages</strong> - Provides concrete measurements for specific hardware and input data.</p>
+                        <p><strong>Disadvantages</strong> - Results are not generalizable to all inputs or hardware.</p>
+                    </div>
+                    
+                    <div id="asymptoticTab" class="tab-content warning-tab">
+                        <h3>5. Asymptotic Analysis</h3>
+                        <p><strong>Focus</strong> - How the runtime or space usage of an algorithm grows as the input size approaches infinity.</p>
+                        <p><strong>Notation</strong> - Big O, Omega, and Theta notations are used.</p>
+                        <p><strong>Importance</strong> - Helps compare the scalability of algorithms for large input sizes.</p>
+                    </div>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Notation in Algorithm Analysis</h3>
+                    <ul>
+                        <li><strong>Big O Notation (O)</strong> - Describes the upper bound of an algorithm's growth rate. It represents the worst-case scenario. "The algorithm will never be slower than this."</li>
+                        <li><strong>Omega Notation (Ω)</strong> - Describes the lower bound of an algorithm's growth rate. It represents the best-case scenario. "The algorithm will never be faster than this."</li>
+                        <li><strong>Theta Notation (Θ)</strong> - Describes both the upper and lower bounds of an algorithm's growth rate. It represents a tight bound on the runtime or space. "The algorithm's performance will always be within this range."</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Bounds on Complexity and Models of Computation Section -->
+            <div class="model-section">
+                <h2>Bounds on Complexity</h2>
+                
+                <div class="concept">
+                    <p>Understanding the bounds on algorithm complexity and the different models of computation provides insights into the fundamental limits and capabilities of computational systems.</p>
+                </div>
+                
+                <div class="definition">
+                    <p><strong>Bounds on Complexity</strong> - Limits on the resources (time, space) required to solve a problem.</p>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Types of Bounds</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px;">
+                        <li><strong>Upper Bound</strong>
+                            <ul>
+                                An upper bound on the complexity of a problem is established by demonstrating an algorithm that solves the problem within a certain time or space limit. It shows that the problem can be solved at most with that amount of resources.
+                            </ul>
+                        </li>
+                        <li><strong>Lower Bound</strong>
+                            <ul>
+                                A lower bound on the complexity of a problem proves that at least a certain amount of resources are necessary to solve the problem. This is much harder to establish than an upper bound.
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="information">
+                    <h3>Importance of Bounds</h3>
+                    <p>Bounds help us understand the fundamental limitations of computation. By understanding the lower bound for a problem, we can assess how close our algorithms are to optimal. If our algorithm's complexity matches the lower bound, we know it's the best we can do (in terms of that resource).</p>
+                </div>
+            </div>
+            <div class="model-section">
+                <h2>Models of Computation</h2>
+                <div class="definition">
+                    <p><strong>Models of Computation</strong> - Abstract mathematical systems used to define what it means to compute. They provide a formal framework for studying algorithms and their complexity.</p>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h3>Key Aspects of a Model of Computation</h3>
+                    <ul>
+                        <li><strong>Describes computation</strong> - It details the steps involved in transforming input data into output.</li>
+                        <li><strong>Organizes resources</strong> - It specifies how memory is allocated and managed during computation.</li>
+                        <li><strong>Handles communication</strong> - It defines how different parts of the system interact and exchange information.</li>
+                    </ul>
+                </div>
+                
+                <div class="example">
+                    <h3>Common Types of Models of Computation</h3>
+                    <ul>
+                        <li><strong>Sequential models</strong> - These models execute instructions one after another in a linear order.</li>
+                        <li><strong>Functional models</strong> - These models treat computation as the evaluation of mathematical functions.</li>
+                        <li><strong>Concurrent models</strong> - These models allow multiple computations to occur simultaneously and interact with each other.</li>
+                    </ul>
+                </div>
+                
+                <div class="information">
+                    <h3>Model Selection</h3>
+                    <p>The choice of a specific model depends on the problem being addressed. Some models are better suited for studying certain types of computations or systems.</p>
+                </div>
+            </div>
         </main>
 
         <div class="notecontent">
-
+            <h2>NOTES</h2>
+            <div class="information">
+                <h3>Key Points</h3>
+                <p><strong>Algorithm</strong> - A sequence of well-defined steps to solve a problem. Takes input, processes it, and produces output</p>
+                <p><strong>Algorithm Efficiency</strong> - Measures the resources an algorithm needs</p>
+                <ul>
+                    <p><strong>2 main measures of efficiency</strong>
+                        <ul>
+                            <p>Space Complexity - memory required during execution</p>
+                            <p>Time complexity - total time required to execute an algorithm</p>
+                            <p></p>
+                        </ul>
+                    </p>
+                </ul>
+            </div>
         </div>
 
     </div>
