@@ -10,6 +10,11 @@
     <title>KomsaiReviewer</title>
     <style>
         /* Sidebar Navbar */
+        .scroll-container {
+            overflow: scroll;
+            -ms-overflow-style: none;  /* Hides scrollbar in Internet Explorer & Edge */
+            scrollbar-width: 0;
+        }
         #navbar-container {
             width: 280px; /* Fixed width */
             height: 100vh; /* Full height */
@@ -158,6 +163,7 @@
                 <!-- Definition block -->
                 <div class="model-section">
                     <p><strong>General Form of a Polynomial in Horner's Form</strong></p>
+                    <div class="scroll-container">
                     \[
                         P(x) 
                         = a_0 
@@ -166,6 +172,7 @@
                         + x \Bigl(a_3 + \dots 
                         + x(a_{n-1} + x\,a_n)\Bigr)\Bigr)\Bigr)
                     \]
+                    </div>
                     <p>where:</p>
                     <ul>
                         <li>\(a_0, a_1, \dots, a_n\) are the polynomial's coefficients.</li>
@@ -216,6 +223,371 @@
                     <p>Horner's Form rewrites a polynomial to minimize operations when evaluating it at a specific value of \(x\). Each nesting level represents a single multiplication and addition, making it more efficient and numerically stable for computation.</p>
                 </div>
             </div>
+
+            <div class="model-section">
+                <h2>Lagrange Form of Polynomials</h2>
+                
+                <!-- Concept description -->
+                <div class="concept">
+                    <p>This form is useful for polynomial interpolation, where you want to find a polynomial that passes through a given set of points.</p>
+                </div>
+                
+                <!-- Definition block -->
+                <div class="model-section">
+                    <p><strong>General Form of a Lagrange Polynomial</strong></p>
+                    <p>Given \(n+1\) data points \(\bigl(x_0, y_0\bigr), \bigl(x_1, y_1\bigr), \dots, \bigl(x_n, y_n\bigr)\) where all \(x_i\) are distinct, the Lagrange polynomial \(L(x)\) is defined as:</p>
+                    \[
+                        L(x) = \sum_{j=0}^{n} 
+                            \Bigl( 
+                                y_j \, \ell_j(x) 
+                            \Bigr),
+                    \]
+                    <p>where each Lagrange basis polynomial \(\ell_j(x)\) is given by:</p>
+                    \[
+                        \ell_j(x) 
+                        = \prod_{\substack{0 \le m \le n \\ m \neq j}} 
+                        \frac{x - x_m}{x_j - x_m}.
+                    \]
+                    <p>This formulation ensures that \(L(x_j) = y_j\) for each \(j\), meaning the polynomial perfectly fits all the given points.</p>
+                </div>
+                                
+                <!-- Examples block -->
+                <div class="definition">
+                    <p><strong>Example: Lagrange Interpolation for (1, 4), (2, 3), (3, 8)</strong></p>
+                    <p>Points:</p>
+                    <ul>
+                        <li>\( (x_0,y_0)=(1,4) \)</li>
+                        <li>\( (x_1,y_1)=(2,3) \)</li>
+                        <li>\( (x_2,y_2)=(3,8) \)</li>
+                    </ul>
+                    
+                    <p>we compute each basis polynomial:</p>
+                    
+                    <p><strong>Basis Polynomial \(\ell_0(x)\):</strong></p>
+                    <div class="scroll-container">
+                    \[
+                        \ell_0(x) = \frac{(x-2)(x-3)}{(1-2)(1-3)} 
+                        = \frac{(x-2)(x-3)}{(-1)(-2)} 
+                        = \frac{(x-2)(x-3)}{2}
+                    \]
+                    </div>
+                    
+                    <p><strong>Basis Polynomial \(\ell_1(x)\):</strong></p>
+                    <div class="scroll-container">
+                    \[
+                        \ell_1(x) = \frac{(x-1)(x-3)}{(2-1)(2-3)}
+                        = \frac{(x-1)(x-3)}{(1)(-1)}
+                        = - (x-1)(x-3)
+                    \]
+                    </div>
+                    
+                    <p><strong>Basis Polynomial \(\ell_2(x)\):</strong></p>
+                    <div class="scroll-container">
+                    \[
+                        \ell_2(x) = \frac{(x-1)(x-2)}{(3-1)(3-2)}
+                        = \frac{(x-1)(x-2)}{2 \cdot 1}
+                        = \frac{(x-1)(x-2)}{2}
+                    \]
+                    </div>
+                    
+                    <p>Substituting into the Lagrange formula, we have:</p>
+                    \[
+                        L(x) = 4\,\ell_0(x) \;+\; 3\,\ell_1(x) \;+\; 8\,\ell_2(x)
+                    \]
+                    
+                    <p><strong>Step 1: Expand each term.</strong></p>
+                    
+                    <p>For the first term:</p>
+                    <div class="scroll-container">
+                    \[
+                        4\,\ell_0(x) = 4\cdot\frac{(x-2)(x-3)}{2} 
+                        = 2\,(x-2)(x-3)
+                        = 2\,(x^2 - 5x + 6)
+                        = 2x^2 - 10x + 12
+                    \]
+                    </div>
+                    <p>For the second term:</p>
+                    <div class="scroll-container">
+                    \[
+                        3\,\ell_1(x) = 3\cdot \Bigl[-(x-1)(x-3)\Bigr]
+                        = -3\,(x-1)(x-3)
+                        = -3\,(x^2 - 4x + 3)
+                        = -3x^2 + 12x - 9
+                    \]
+                    </div>
+                    <p>For the third term:</p>
+                    <div class="scroll-container">
+                    \[
+                        8\,\ell_2(x) = 8\cdot\frac{(x-1)(x-2)}{2}
+                        = 4\,(x-1)(x-2)
+                        = 4\,(x^2 - 3x + 2)
+                        = 4x^2 - 12x + 8
+                    \]
+                    </div>
+                    
+                    <p><strong>Step 2: Combine the expanded terms.</strong></p>
+                    <p>Add the contributions from each term:</p>
+                    <ul>
+                        <li>\(x^2\) terms: \( 2x^2 - 3x^2 + 4x^2 = 3x^2 \)</li>
+                        <li>\(x\) terms: \( -10x + 12x - 12x = -10x \)</li>
+                        <li>Constant terms: \( 12 - 9 + 8 = 11 \)</li>
+                    </ul>
+                    
+                    <p><strong>Final Result:</strong></p>
+                    \[
+                        L(x) = 3x^2 - 10x + 11
+                    \]
+                    
+                    <p>This is the polynomial in standard power form that interpolates the points \( (1,4) \), \( (2,3) \), and \( (3,8) \).</p>
+                </div>
+            </div> 
+
+            <div class="model-section">
+                <h2>Newton's Form of Polynomials</h2>
+                
+                <!-- Concept description -->
+                <div class="concept">
+                    <p>Newton’s Form is another way to represent an interpolating polynomial, particularly useful for adding new data points incrementally. It uses divided differences to build up the polynomial in a way that can be more numerically stable than directly solving for coefficients in other forms.</p>
+                </div>
+                
+                <!-- Definition block -->
+                <div class="model-section">
+                    <p><strong>General Form of a Newton Polynomial</strong></p>
+                    <div class="scroll-container">
+                    \[
+                        N(x) 
+                        = a_0 
+                        + a_1 (x - x_0) 
+                        + a_2 (x - x_0)(x - x_1) 
+                        + \dots 
+                        + a_n \prod_{k=0}^{n-1} (x - x_k),
+                    \]
+                    </div>
+                    <p>where the coefficients \(a_i\) are computed using divided differences derived from the data points.</p>
+                </div>
+                
+                <!-- Example block -->
+                <div class="definition">
+                    <p><strong>Example: Interpolation with Points (1, 3), (2, 7), (3, 13)</strong></p>
+                    
+                    <p>We have three data points:</p>
+                    <ul>
+                        <li>\( (x_0, y_0) = (1, 3) \)</li>
+                        <li>\( (x_1, y_1) = (2, 7) \)</li>
+                        <li>\( (x_2, y_2) = (3, 13) \)</li>
+                    </ul>
+                    
+                    <p>To construct the Newton polynomial, we first compute the divided differences.</p>
+                    
+                    <!-- Zeroth divided differences -->
+                    <p><strong>Zeroth Divided Differences:</strong></p>
+                    \[
+                        f[x_0] = 3, 
+                        \quad
+                        f[x_1] = 7, 
+                        \quad
+                        f[x_2] = 13.
+                    \]
+                    
+                    <!-- First divided differences -->
+                    <p><strong>First Divided Differences:</strong></p>
+                    \[
+                        f[x_1, x_0] 
+                        = \frac{f[x_1] - f[x_0]}{x_1 - x_0} 
+                        = \frac{7 - 3}{2 - 1} 
+                        = 4,
+                    \]
+                    \[
+                        f[x_2, x_1] 
+                        = \frac{f[x_2] - f[x_1]}{x_2 - x_1} 
+                        = \frac{13 - 7}{3 - 2} 
+                        = 6.
+                    \]
+                    
+                    <!-- Second divided difference -->
+                    <p><strong>Second Divided Difference:</strong></p>
+                    \[
+                        f[x_2, x_1, x_0] 
+                        = \frac{f[x_2, x_1] - f[x_1, x_0]}{x_2 - x_0} 
+                        = \frac{6 - 4}{3 - 1} 
+                        = \frac{2}{2} 
+                        = 1.
+                    \]
+                    
+                    <p>The Newton form of the interpolating polynomial is then:</p>
+                    <div class="scroll-container">
+                    \[
+                        N(x) 
+                        = f[x_0] 
+                        + f[x_1, x_0](x - x_0) 
+                        + f[x_2, x_1, x_0](x - x_0)(x - x_1).
+                    \]
+                    </div>
+                    <p>Substituting our values:</p>
+                    \[
+                        N(x) 
+                        = 3 
+                        + 4(x - 1) 
+                        + 1 \cdot (x - 1)(x - 2).
+                    \]
+                    
+                    <p><strong>Final Step: Expand to Power Form</strong></p>
+                    <p>Let’s expand \(N(x)\) into the standard polynomial (power) form:</p>
+                    
+                    ```latex
+                    \[
+                    \begin{aligned}
+                    N(x) &= 3 + 4(x - 1) + (x - 1)(x - 2) \\
+                        &= 3 + 4x - 4 + \bigl(x^2 - 3x + 2\bigr) \\
+                        &= (x^2) + (4x - 3x) + (3 - 4 + 2) \\
+                        &= x^2 + x + 1.
+                    \end{aligned}
+                    \]
+
+                    <p>Hence, the polynomial in standard power form is:</p>
+                    \[
+                        \boxed{N(x) = x^2 + x + 1.}
+                    \]
+                    <p>This polynomial satisfies \(N(1) = 3\), \(N(2) = 7\), and \(N(3) = 13\), as required.</p>
+                </div>
+                
+                <!-- Key Takeaway box -->
+                <div class="key-takeaway">
+                    <h3>Key Takeaway</h3>
+                    <p>Newton’s form of interpolation is built on divided differences. It’s especially convenient if you need to add more data points later, because you can extend the polynomial by computing just one more divided difference term and multiplying by an additional \((x - x_k)\) factor. In this example, we found the interpolating polynomial for three points and showed its equivalence to a simple power form.</p>
+                </div>
+        
+            </div>
+
+            <div class="model-section">
+                <h2>Direct Evaluation of a Polynomial</h2>
+                
+                <!-- Concept description -->
+                <div class="concept">
+                    <p>When you have a polynomial in its power form, the most direct way to evaluate it at a specific value of \(x\) is to substitute the value into each term, compute them individually, and then sum the results. Although this is straightforward, it can be computationally intensive for higher-degree polynomials because it involves multiple exponentiations and multiplications.</p>
+                </div>
+                
+                <!-- Example block -->
+                <div class="definition">
+                    <p><strong>Example: </strong></p>
+                    <p>Consider the polynomial:</p>
+                    \[
+                        P(x) = 2x^3 - 5x^2 + 3x + 1.
+                    \]
+                    <p>We want to find \(P(2)\). We calculate each term separately:</p>
+                    <ul>
+                        <li>Term 1 (\(2x^3\)): \(2 \times 2^3 = 2 \times 8 = 16\)</li>
+                        <li>Term 2 (\(-5x^2\)): \(-5 \times 2^2 = -5 \times 4 = -20\)</li>
+                        <li>Term 3 (\(3x\)): \(3 \times 2 = 6\)</li>
+                        <li>Term 4 (constant, \(1\)): \(1\)</li>
+                    </ul>
+                    <p>Now, sum these results:</p>
+                    \[
+                        16 + (-20) + 6 + 1 = 3.
+                    \]
+                    <p>Therefore, \( P(2) = 3 \).</p>
+                </div>
+                
+                <!-- Key Takeaway box -->
+                <div class="key-takeaway">
+                    <h3>Key Takeaway</h3>
+                    <p>Direct substitution into the power form is simple and intuitive but can become inefficient for polynomials of high degree. More sophisticated methods like Horner’s scheme (nested form) can reduce the total number of multiplications required.</p>
+                </div>
+            </div>
+            
+            <div class="model-section">
+                <h2>Horner’s Method for Polynomial Evaluation</h2>
+                
+                <!-- Concept description -->
+                <div class="concept">
+                    <p>Horner’s Method provides a more efficient way to evaluate a polynomial by reducing the number of multiplications. Instead of computing each power of \(x\) independently, it “nests” the calculations, which can also help minimize floating-point errors.</p>
+                </div>
+                
+                <!-- Example block -->
+                <div class="mode-section">
+                    <p><strong>Example: </strong>Evaluating \( P(x) = 3x^3 - 2x^2 + 5x - 1 \) at \( x = 2 \)</p>
+                    
+                    <p>The coefficients (from highest degree to lowest) are: \(3, -2, 5, -1\). We apply Horner’s method as follows:</p>
+                    
+                    <ol>
+                        <li>Initialize result = 0. </li>
+                        <li>For each coefficient \(a_i\) (starting from \(3\) for \(x^3\), then \(-2\), \(5\), and finally \(-1\)):</li>
+                        <li>Update result by multiplying by \(x\) and adding the current coefficient:
+                            <ul>
+                                <li>\( \text{result} = (\text{result} \times 2) + 3 = 0 \times 2 + 3 = 3 \)</li>
+                                <li>\( \text{result} = (3 \times 2) + (-2) = 6 - 2 = 4 \)</li>
+                                <li>\( \text{result} = (4 \times 2) + 5 = 8 + 5 = 13 \)</li>
+                                <li>\( \text{result} = (13 \times 2) + (-1) = 26 - 1 = 25 \)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                    <p>After processing all coefficients, we have \(\text{result} = 25\). Therefore, \( P(2) = 25 \).</p>
+                </div>
+                
+                <!-- Key Takeaway box -->
+                <div class="key-takeaway">
+                    <h3>Key Takeaway</h3>
+                    <p>Horner’s Method greatly reduces the number of multiplications needed to evaluate a polynomial. By nesting the arithmetic, it also tends to be more numerically stable than direct power-by-power evaluation, especially for higher-degree polynomials.</p>
+                </div>
+            </div>
+            
+            <div class="model-section">
+                <h2>Estrin's Scheme: Parallel Polynomial Evaluation</h2>
+                
+                <!-- Concept description -->
+                <div class="concept">
+                    <p><strong>Estrin’s Scheme</strong> is a parallel algorithm for polynomial evaluation. It restructures computation to allow for parallel execution of some operations, beneficial for multi-core processors. Unlike Horner’s method, which evaluates terms sequentially, Estrin’s Scheme breaks down the polynomial into independent parts that can be computed simultaneously.</p>
+                </div>
+                
+                <!-- Example block -->
+                <div class="definition">
+                    <p><strong>Example: Evaluating \( P(x) = 2x^5 + 3x^4 - x^3 + 4x^2 - 5x + 1 \) at \( x = 2 \)</strong></p>
+                    
+                    <!-- Step 1: Grouping Terms -->
+                    <p><strong>Grouping Terms:</strong> Group the terms in pairs:</p>
+                    \[
+                    (2x^5 + 3x^4) + (-x^3 + 4x^2) + (-5x + 1)
+                    \]
+                    
+                    <!-- Step 2: Factoring -->
+                    <p><strong>Factoring:</strong> Factor out the highest power of \( x \) from each group:</p>
+                    \[
+                    x^4(2x + 3) + x^2(-x + 4) + (-5x + 1)
+                    \]
+            
+                    <!-- Step 3: Substituting y = x^2 -->
+                    <p><strong>Substitution:</strong> Let \( y = x^2 \), then:</p>
+                    \[
+                    y^2(2x + 3) + y(-x + 4) + (-5x + 1)
+                    \]
+            
+                    <!-- Step 4: Evaluating terms -->
+                    <p><strong>Evaluation:</strong> Compute each term at \( x = 2 \):</p>
+                    <ul>
+                        <li>\( 2(2) + 3 = 4 + 3 = 7 \)</li>
+                        <li>\( -x + 4 = -2 + 4 = 2 \)</li>
+                        <li>\( -5(2) + 1 = -10 + 1 = -9 \)</li>
+                        <li>\( y = x^2 = 2^2 = 4 \)</li>
+                    </ul>
+            
+                    <!-- Step 5: Final Computation -->
+                    <p><strong>Final Computation:</strong> Substitute back:</p>
+                    \[
+                    4^2(7) + 4(2) + (-9) = 16(7) + 8 - 9 = 112 + 8 - 9 = 111
+                    \]
+            
+                    <p><strong>Conclusion:</strong> \( P(2) = 111 \).</p>
+                </div>
+                
+                <!-- Key Takeaway box -->
+                <div class="key-takeaway">
+                    <h3>Key Takeaway</h3>
+                    <p>Estrin’s Scheme enables efficient parallel computation of polynomial evaluation by grouping terms and reducing dependencies between calculations. This makes it a useful alternative to sequential methods like Horner’s rule.</p>
+                </div>
+            </div>
+            
+            
             
 
         </main>
