@@ -67,17 +67,163 @@
     <div class="page-transition-overlay">
         <div class="loading-spinner"></div>
     </div>
-
     <div class="page-container">
         <div id="navbar-container"></div>
 
         <main id="content" class="maincontent">
+            <h1>Evaluation of Polynomials 2.1</h1>
+            <p class="highlight-box">CCS 224 Algorithms and Complexity</p>
+
+            <div class="model-section">
+                    <h2>Polynomials</h2>
+                    
+                    <!-- Concept description -->
+                    <div class="concept">
+                        <p>A polynomial is a mathematical expression that consists of variables, constants, and exponents, combined using addition, subtraction, and multiplication.</p>
+                    </div>
+                    
+                    <!-- Definition block -->
+                    <div class="definition">
+                        <p><strong>Examples of Polynomials</strong></p>
+                        \(3x^2 + 5x - 2\)
+                    </div>
+                    
+                    <!-- Regular content paragraph -->
+                    <p>Polynomials are essential tools in algorithms due to their ability to represent problems, their role in efficiency analysis, their fundamental nature as mathematical building blocks, and their wide-ranging applications across various fields. They provide a foundation for solving computational problems and understanding the limits of what can be computed efficiently.</p>
+                    
+                    <!-- Key Takeaway box -->
+                    <div class="key-takeaway">
+                        <h3>Key Takeaway</h3>
+                        <p>Polynomials consist of variables, constants, and exponents combined using addition, subtraction, and multiplication, making them fundamental mathematical expressions with wide-ranging applications in computer science and algorithms.</p>
+                    </div>
+            </div>
+            <div class="model-section">
+                    <h2>Power Form of Polynomials</h2>
+                    
+                    <!-- Concept description -->
+                    <div class="concept">
+                        <p>This is the most common form, where the polynomial is expressed as a sum of terms, each consisting of a coefficient multiplied by a power of the variable.</p>
+                    </div>
+                    
+                    <!-- Definition block -->
+                    <div class="model-section">
+                        <p><strong>General Form of a Polynomial</strong></p>
+                        \[
+                        P(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0
+                        \]
+                        <p>where:</p>
+                        <ul>
+                            <li>\( a_n, a_{n-1}, \dots, a_1, a_0 \) are coefficients</li>
+                            <li>\( x \) is the variable</li>
+                            <li>\( n \) is the degree of the polynomial</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Regular content paragraph -->
+                    <p>The power form is the most common way of representing polynomials, making it easy to identify terms, coefficients, and exponents. It plays a fundamental role in algebra, calculus, and computational applications.</p>
+                    
+                    <!-- Examples block -->
+                    <div class="definition">
+                        <p><strong>Example:</strong></p>
+                        <p>Consider the polynomial:</p>
+                        \[
+                        6x^3 - 4x^2 + 3x - 7
+                        \]
+                        <p>This polynomial consists of four terms:</p>
+                        <ul>
+                            <li>term with degree 3 : \( 6x^3 \) </li>
+                            <li>term with degree 2 : \( -4x^2 \) </li>
+                            <li>term with degree 1 : \( 3x \) </li>
+                            <li>constant term, degree 0 : \( -7 \) </li>
+                        </ul>
+                    </div>                    
+            
+                    <!-- Key Takeaway box -->
+                    <div class="key-takeaway">
+                        <h3>Key Takeaway</h3>
+                        <p>A polynomial's degree is determined by the term with the highest power, regardless of whether other terms are present or missing.</p>
+                    </div>
+            </div>
+
+            <div class="model-section">
+                <h2>Nested Form (Horner's Form) of Polynomials</h2>
+                
+                <!-- Concept description -->
+                <div class="concept">
+                    <p>(also known as Horner's form or factored form for evaluation).
+                        This is a rearranged form of the power form that is more efficient for evaluation. It groups the terms
+                        in a nested manner</p>
+                </div>
+                
+                <!-- Definition block -->
+                <div class="model-section">
+                    <p><strong>General Form of a Polynomial in Horner's Form</strong></p>
+                    \[
+                        P(x) 
+                        = a_0 
+                        + x \Bigl(a_1 
+                        + x \Bigl(a_2 
+                        + x \Bigl(a_3 + \dots 
+                        + x(a_{n-1} + x\,a_n)\Bigr)\Bigr)\Bigr)
+                    \]
+                    <p>where:</p>
+                    <ul>
+                        <li>\(a_0, a_1, \dots, a_n\) are the polynomial's coefficients.</li>
+                        <li>\(x\) is the variable.</li>
+                        <li>This nested structure allows efficient evaluation using fewer multiplications and additions.</li>
+                    </ul>
+                </div>
+                                
+                <!-- Examples block -->
+                <div class="definition">
+                    <p><strong>Example:</strong></p>
+                    <p>Consider the polynomial:</p>
+                    \[
+                        p(x) = 4x^3 \;-\; 5x^2 \;+\; 2x \;+\; 7.
+                    \]
+                    <p>To convert \(p(x)\) into Horner's Form, we systematically factor out \(x\) from each term except the constant:</p>
+                    <ul>
+                        <li><strong>Step 1:</strong> Start from the highest-degree term and group: 
+                            \[
+                            4x^3 - 5x^2 + 2x + 7 
+                            = x \bigl(4x^2 - 5x + 2\bigr) + 7.
+                            \]
+                        </li>
+                        <li><strong>Step 2:</strong> Factor again inside the parentheses:
+                            \[
+                            4x^2 - 5x + 2 
+                            = x(4x - 5) + 2.
+                            \]
+                        </li>
+                        <li><strong>Step 3:</strong> Factor once more inside the next parentheses:
+                            \[
+                            4x - 5 
+                            = 4x + (-5).
+                            \]
+                        </li>
+                    </ul>
+                    <p>Putting it all together in a fully nested form:</p>
+                    \[
+                        p(x) 
+                        = \bigl(\bigl(4x - 5\bigr)x + 2\bigr)x + 7.
+                    \]
+                    <p>This final expression shows the polynomial in Horner's (nested) form.</p>
+                </div>
+                
+                <!-- Key Takeaway box -->
+                <div class="key-takeaway">
+                    <h3>Key Takeaway</h3>
+                    <p>Horner's Form rewrites a polynomial to minimize operations when evaluating it at a specific value of \(x\). Each nesting level represents a single multiplication and addition, making it more efficient and numerically stable for computation.</p>
+                </div>
+            </div>
+            
+            
+            
 
         </main>
-        
-        <div class="notecontent">
 
-        </div>
+    </div>
+    <div class="notecontent">
 
     </div>
 
