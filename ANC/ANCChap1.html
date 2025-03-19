@@ -675,7 +675,7 @@
                 <p><strong>Bounds on Complexity</strong> - limits on the resources (time, space) required to solve a problem</p>
                 <p><strong>Models of Computation</strong> - provide a formal framework for studying algorithms and their complexity</p>
             </div>
-            <div class="key-takeaway">
+            <div class="best-practice">
                 <h3>Common Complexity Classes</h3>
                 <ul>
                     <li><strong>\(O(1)\) Constant Complexity</strong>remains unchanged regardless of input size</li>
@@ -683,6 +683,26 @@
                     <li><strong>\(O(n)\) Linear Complexity</strong> increases in proportion to the input size</li>
                     <li><strong>\(O(n^2)\) Quadratic Complexity</strong> grows quadratically w/ input size</li>
                     <li><strong>\(O(2^n)\) Exponential Complexity</strong> doubles with every additional input element</li>
+                </ul>
+            </div>
+            <div class="warning">
+                <p>Resource-draining algorithms could be considered as malwares</p>
+                <ul>
+                    <li>Infinite loops without termination</li>
+                    <li>Memory Leaks</li>
+                    <li>Unbounded Recursion</li>
+                    <li>Fork Bombs (DOS)</li>
+                    <li>Inefficient Algorithms</li>
+                </ul>
+            </div>
+            <div class="key-takeaway">
+                <p>Solutions for Program Efficiency</p>
+                <ul>
+                    <li>Avoid infinite loops</li>
+                    <li>Manage memory</li>
+                    <li>Use recursion carefully</li>
+                    <li>Be aware of denial-of-service attacks</li>
+                    <li>Choose efficient algorithms</li>
                 </ul>
             </div>
         </div>
